@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formitize-API-Examples", "Formitize-API-Examples\Formitize-API-Examples.csproj", "{B6F46B6B-B539-4C8C-B342-24896583DD2C}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Formitize", "FormitizeAPI\Formitize.shproj", "{0FAFA46A-F2B4-4C46-BD0F-896391F2AC8A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6F46B6B-B539-4C8C-B342-24896583DD2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F46B6B-B539-4C8C-B342-24896583DD2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6F46B6B-B539-4C8C-B342-24896583DD2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6F46B6B-B539-4C8C-B342-24896583DD2C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		FormitizeAPI\FormitizeAPI.projitems*{b6f46b6b-b539-4c8c-b342-24896583dd2c}*SharedItemsImports = 4
+		FormitizeAPI\FormitizeAPI.projitems*{0fafa46a-f2b4-4c46-bd0f-896391f2ac8a}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

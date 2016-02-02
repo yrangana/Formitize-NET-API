@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>0fafa46a-f2b4-4c46-bd0f-896391f2ac8a</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Formitize</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)API\CMS\CMSEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\CMS\CMSEntryDeleteRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\CMS\CMSEntryDeleteResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\CMS\CMSWhere.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\CMS\CMSEntryPostResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\Interface\iDeleteRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\Interface\iGetRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\Interface\iDeleteResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\Interface\iGetResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\Interface\iPostResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\Interface\iPostRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\Job\Job.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\Job\JobForm.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\Job\JobGetRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\Job\JobGetResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\Job\JobPostResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\Job\Response\Job.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\Method\Helper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\REST\Client.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\REST\Credentials.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\Form\FormGetRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\Form\FormGetResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\Form\Submit\FormSubmittedDataGetRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\Form\Submit\FormSubmittedListGetRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\Form\Submit\FormSubmittedListGetResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\Form\Submit\FormSubmittedReportGetRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\Form\Submit\FormSubmittedReportGetResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)API\Form\Submit\FormSubmittedDataGetResponse.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)API\Form\" />
+    <Folder Include="$(MSBuildThisFileDirectory)API\Form\Submit\" />
+  </ItemGroup>
+</Project>
