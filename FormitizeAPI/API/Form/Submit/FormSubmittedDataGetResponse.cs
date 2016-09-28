@@ -78,6 +78,11 @@ namespace Formitize.API.Form.Submit
 			_data = data;
 		}
 
+		public int GetMaxIndex()
+		{
+			return _data.Keys.Count;
+		}
+
 		public FormitizeFormSubmittedDataContent GetEntry(string ObjectName, int RepeatedCount)
 		{
 			if (!_data.ContainsKey (RepeatedCount.ToString()))
