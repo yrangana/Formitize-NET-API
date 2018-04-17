@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formitize", "FormitizeAPI\Formitize.csproj", "{FD2E965C-19D8-4C72-A819-C1EF994AC121}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{72C20F8A-BDC1-4514-88E5-51774EC6BCA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD2E965C-19D8-4C72-A819-C1EF994AC121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD2E965C-19D8-4C72-A819-C1EF994AC121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD2E965C-19D8-4C72-A819-C1EF994AC121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD2E965C-19D8-4C72-A819-C1EF994AC121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72C20F8A-BDC1-4514-88E5-51774EC6BCA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72C20F8A-BDC1-4514-88E5-51774EC6BCA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72C20F8A-BDC1-4514-88E5-51774EC6BCA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72C20F8A-BDC1-4514-88E5-51774EC6BCA3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
