@@ -46,6 +46,9 @@
     <Compile Include="API\Error\Wrapper.cs" />
     <Compile Include="API\Response\JobRequest.cs" />
     <Compile Include="API\Response\JobDelete.cs" />
+    <Compile Include="API\Response\SubmittedFormGetEntry.cs" />
+    <Compile Include="API\Response\SubmittedFormContent.cs" />
+    <Compile Include="API\Response\SubmittedFormRequest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="API\" />

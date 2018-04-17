@@ -29,14 +29,20 @@
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTests\Serialization\JobDeserialize.cs" />
-    <Compile Include="UnitTests\Serialization\JobSerialize.cs" />
     <Compile Include="Core\Helper.cs" />
     <Compile Include="UnitTests\Job\Create.cs" />
     <Compile Include="UnitTests\Job\List.cs" />
     <Compile Include="UnitTests\Job\Delete.cs" />
+    <Compile Include="UnitTests\Job\Get.cs" />
+    <Compile Include="UnitTests\Serialization\JobDeserialize.cs" />
+    <Compile Include="UnitTests\Serialization\JobSerialize.cs" />
+    <Compile Include="UnitTests\Serialization\SubmittedFormDeserialize.cs" />
+    <Compile Include="UnitTests\SubmittedForm\Get.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -46,9 +52,10 @@
     <Folder Include="UnitTests\Serialization\" />
     <Folder Include="Core\" />
     <Folder Include="UnitTests\Job\" />
+    <Folder Include="UnitTests\SubmittedForm\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FormitizeAPI\FormitizeAPI.csproj">
+    <ProjectReference Include="..\FormitizeAPI\Formitize.csproj">
       <Project>{FD2E965C-19D8-4C72-A819-C1EF994AC121}</Project>
       <Name>Formitize</Name>
     </ProjectReference>

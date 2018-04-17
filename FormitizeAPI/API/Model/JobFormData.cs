@@ -1,26 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace Formitize.API.Model
 {
     [DataContract(Namespace = "")]
     public class JobFormData
     {
-        [DataMember(EmitDefaultValue = false, Name = "formID")]
+        [JsonProperty(PropertyName = "formID")]
         public int FormID
         {
             get; set;
         }
 
-        [DataMember(EmitDefaultValue = false, Name = "id")]
+        [JsonProperty(PropertyName = "id")]
         public int SubmittedFormID
         {
             get; set;
         }
 
 
-        [DataMember(EmitDefaultValue = false, Name = "content")]
+        [JsonProperty(PropertyName = "content")]
         public Dictionary<string, Dictionary<string, object>> content
         {
             get; private set;

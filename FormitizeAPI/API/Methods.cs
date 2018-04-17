@@ -23,10 +23,24 @@ namespace Formitize.API
         /**
          * <exception cref="Formitize.API.Error.APIException">On any API errors.</exception>
          */
-        public static async Task<JobGetEntry> GetJob(Client client, JobRequest job)
+        public static async Task<JobGetEntry> GetJob(Client client, int jobID)
         {
-            return JSONMapper.To<JobGetEntry>((String)(await client.GetAsync<JobRequest>("job/", job)));
+            JobRequest jobRequest = new JobRequest();
+            jobRequest.JobID = jobID;
+            return JSONMapper.To<JobGetEntry>((String)(await client.GetAsync<JobRequest>("job/", jobRequest)));
         }
+
+        /**
+         * <exception cref="Formitize.API.Error.APIException">On any API errors.</exception>
+         */
+        public static async Task<SubmittedFormGetEntry> GetSubmittedForm(Client client, int submittedID)
+        {
+            SubmittedFormRequest jobRequest = new SubmittedFormRequest();
+            jobRequest.SubmittedID = submittedID;
+            return JSONMapper.To<SubmittedFormGetEntry>((String)(await client.GetAsync<SubmittedFormRequest>("form/submit/", jobRequest)));
+        }
+
+
 
         /**
          * <exception cref="Formitize.API.Error.APIException">On any API errors.</exception>

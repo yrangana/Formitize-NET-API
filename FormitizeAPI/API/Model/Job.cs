@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Formitize.API.Model
 {
@@ -12,76 +13,94 @@ namespace Formitize.API.Model
         public const string PRIORITY_HIGH = "High";
         public const string PRIORITY_URGENT = "Urgent";
 
-        [DataMember(Name = "id")]
+        [JsonProperty(PropertyName = "id")]
         public int ID
         {
             get; set;
         }
 
-        [DataMember(EmitDefaultValue = false, Name = "formData")]
+        [JsonProperty(PropertyName = "formData")]
         public Dictionary<string, Dictionary<string, Dictionary<string, object>>> FormData
         {
             get; set;
         }
 
-        [DataMember(EmitDefaultValue = false, Name = "title")]
+        [JsonProperty(PropertyName = "title")]
         public string Title
         {
             get; set;
         }
 
-        [DataMember(EmitDefaultValue = false, Name = "jobNumber")]
+        [JsonProperty(PropertyName = "jobNumber")]
         public string JobNumber
         {
             get; set;
         }
 
-        [DataMember(EmitDefaultValue = false, Name = "orderNumber")]
+        [JsonProperty(PropertyName = "orderNumber")]
         public string OrderNumber
         {
             get; set;
         }
 
-        [DataMember(EmitDefaultValue = false, Name = "notes")]
+        [JsonProperty(PropertyName =  "notes")]
         public string Notes
         {
             get; set;
         }
 
-        [DataMember(EmitDefaultValue = false, Name = "agent")]
+        [JsonProperty(PropertyName =  "agent")]
         public string Agent
         {
             get; set;
         }
 
-        [DataMember(EmitDefaultValue = false, Name = "priority")]
+        [JsonProperty(PropertyName = "priority")]
         public string Priority
         {
             get; set;
         }
 
-        [DataMember(EmitDefaultValue = false, Name = "location")]
+        [JsonProperty(PropertyName =  "location")]
         public string Location
         {
             get; set;
         }
 
-        [DataMember(EmitDefaultValue = false, Name = "sendNotification")]
+        [JsonProperty(PropertyName = "sendNotification")]
         public bool SendNotificaiton
         {
             get; set;
         }
 
-        [DataMember(EmitDefaultValue = false, Name = "jobDuration")]
+        [JsonProperty(PropertyName = "jobDuration")]
         public float Duration
         {
             get; set;
         }
 
-        [DataMember(EmitDefaultValue = false, Name = "dueDate")]
-        public DateTime DueDate
+        [DataMember(Name = "dueDate")]
+        [JsonProperty(PropertyName = "dueDate")]
+        public double DueDateUnixtimestamp
         {
             get; set;
+        }
+
+        [IgnoreDataMember]
+        [JsonIgnore]
+        public DateTime DueDate
+        {
+            get
+            {
+                System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
+                dtDateTime = dtDateTime.AddSeconds(DueDateUnixtimestamp).ToLocalTime();
+                return dtDateTime;
+
+            }
+            set
+            {
+                DueDateUnixtimestamp = (value.ToUniversalTime() - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalSeconds;
+            }
         }
 
         public Job()
@@ -89,6 +108,7 @@ namespace Formitize.API.Model
             JobNumber = "";
             OrderNumber = "";
             Agent = "";
+            DueDateUnixtimestamp = DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
 
             FormData = new Dictionary<string, Dictionary<string, Dictionary<string, object>>>();
 

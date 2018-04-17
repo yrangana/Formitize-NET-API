@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace Formitize.API.Response
 {
     public class JobDelete
     {
 
-        [DataMember(Name = "id")]
+        [JsonProperty(PropertyName = "id")]
         public int JobID 
         {
             get; set;
         }
 
-        [DataMember(Name = "message")]
+        [JsonProperty(PropertyName = "message")]
         public String Message
         {
             get; set; 
