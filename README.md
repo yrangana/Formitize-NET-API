@@ -10,3 +10,6 @@ Still in early stages here is the road map
 - CRUD actions for Invoices
 - Allow Jobs to have Clients/Invoices attached to it
 - CRUD actions for Submitted Forms
+
+# Examples
+Check out the Tests directory for Examples/Usage.
