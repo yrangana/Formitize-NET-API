@@ -11,8 +11,7 @@ namespace Formitize.API
     public class Client
     {
         const String Version = "v1";
-        //const String URL = "https://service.formitize.com/";
-        const String URL = "http://localhost:8888/formitize/home/service/";
+        const String URL = "https://service.formitize.com/";
 
         private Credentials credentials;
 
