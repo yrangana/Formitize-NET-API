@@ -49,6 +49,10 @@
     <Compile Include="API\Response\SubmittedFormGetEntry.cs" />
     <Compile Include="API\Response\SubmittedFormContent.cs" />
     <Compile Include="API\Response\SubmittedFormRequest.cs" />
+    <Compile Include="API\Model\Client.cs" />
+    <Compile Include="API\Model\Contact.cs" />
+    <Compile Include="API\Model\Location.cs" />
+    <Compile Include="API\Model\CRMVariableField.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="API\" />
