@@ -43,6 +43,7 @@
     <Compile Include="UnitTests\Serialization\JobSerialize.cs" />
     <Compile Include="UnitTests\Serialization\SubmittedFormDeserialize.cs" />
     <Compile Include="UnitTests\SubmittedForm\Get.cs" />
+    <Compile Include="UnitTests\CRM\Client\Create.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -53,6 +54,8 @@
     <Folder Include="Core\" />
     <Folder Include="UnitTests\Job\" />
     <Folder Include="UnitTests\SubmittedForm\" />
+    <Folder Include="UnitTests\CRM\" />
+    <Folder Include="UnitTests\CRM\Client\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FormitizeAPI\Formitize.csproj">

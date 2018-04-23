@@ -29,7 +29,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="API\Client.cs" />
+    <Compile Include="API\WebClient.cs" />
     <Compile Include="API\Credentials.cs" />
     <Compile Include="API\Interface\iGetRequest.cs" />
     <Compile Include="API\Model\Job.cs" />

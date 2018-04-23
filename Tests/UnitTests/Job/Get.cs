@@ -11,7 +11,7 @@ namespace Tests.UnitTests
         [Test()]
         public void post_job_get()
         {
-            var client = new Client(Helper.createCredentials());
+            var client = new WebClient(Helper.createCredentials());
             var job = new Formitize.API.Model.Job();
 
             job.Title = "Test";

@@ -10,7 +10,7 @@ namespace Tests.UnitTests
         [Test(Description = "Get Job List")]
         public async void get_job_list()
         {
-            var client = new Client(Helper.createCredentials());
+            var client = new WebClient(Helper.createCredentials());
             var job = new Formitize.API.Response.JobRequest();
 
             var Response = await Methods.GetJobList(client, job);
@@ -21,7 +21,7 @@ namespace Tests.UnitTests
         [Test(Description = "Get Job List Bad Credentrials")]
         public async void get_job_list_bad_credentials()
         {
-            var client = new Client(Helper.createBadCredentials());
+            var client = new WebClient(Helper.createBadCredentials());
             var job = new Formitize.API.Response.JobRequest();
 
             try

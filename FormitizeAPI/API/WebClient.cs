@@ -8,21 +8,21 @@ using Formitize.API.Serialization;
 
 namespace Formitize.API
 {
-    public class Client
+    public class WebClient
     {
         const String Version = "v1";
         const String URL = "https://service.formitize.com/";
 
         private Credentials credentials;
 
-        public Client(Credentials credentials)
+        public WebClient(Credentials credentials)
         {
             this.credentials = credentials;
         }
 
         private String getBaseURL()
         {
-            return Client.URL + "api/rest/" + Client.Version + "/";
+            return WebClient.URL + "api/rest/" + WebClient.Version + "/";
         }
 
         public String GetURL(String URL)
