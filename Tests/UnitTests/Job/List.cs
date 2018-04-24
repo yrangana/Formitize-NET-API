@@ -1,6 +1,8 @@
 ﻿using NUnit.Framework;
 using System;
 using Formitize.API;
+using Formitize.API.Model;
+using Formitize.API.Response;
 
 namespace Tests.UnitTests
 {
@@ -13,9 +15,9 @@ namespace Tests.UnitTests
             var client = new WebClient(Helper.createCredentials());
             var job = new Formitize.API.Response.JobRequest();
 
-            var Response = await Methods.GetJobList(client, job);
+            var APIResponse = await Methods.GetJobList(client, job);
 
-            Assert.IsInstanceOf(typeof(Formitize.API.Response.JobGetList), Response);
+            Assert.IsInstanceOf(typeof(Response<JobGetList>), APIResponse);
         }
 
         [Test(Description = "Get Job List Bad Credentrials")]
@@ -26,8 +28,8 @@ namespace Tests.UnitTests
 
             try
             {
-                var Response = await Methods.GetJobList(client, job);
-                Assert.IsInstanceOf(typeof(Formitize.API.Response.JobGetList), Response);
+                var APIResponse = await Methods.GetJobList(client, job);
+                Assert.IsInstanceOf(typeof(Response<JobGetList>), APIResponse);
             }
             catch(Formitize.API.Error.APIException Exception)
             {

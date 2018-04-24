@@ -10,8 +10,9 @@ namespace Formitize.API
 {
     public class WebClient
     {
-        const String Version = "v1";
-        const String URL = "https://service.formitize.com/";
+        const String Version = "v2";
+        //const String URL = "https://service.formitize.com/";
+        const String URL = "http://localhost:8888/formitize/home/service/";
 
         private Credentials credentials;
 

@@ -27,14 +27,14 @@ namespace Tests.UnitTests
 
 
             var task = Methods.PostJob(client, job);
-            var Response =  task.Result;
+            var APIResponse =  task.Result;
 
-            Assert.IsFalse(Response.JobID == 0, "failed");
+            Assert.IsFalse(APIResponse.Payload.JobID == 0, "failed");
 
-            var deleteTask = Methods.DeleteJob(client, Response.JobID);
+            var deleteTask = Methods.DeleteJob(client, APIResponse.Payload.JobID);
             var deleteResponse = deleteTask.Result;
 
-            Assert.AreEqual(deleteResponse.Message, "Successfully deleted job.");
+            Assert.AreEqual(deleteResponse.Payload.Message, "Successfully deleted job.");
 
             
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Net.Http;
+using Formitize.API.Response;
 
 namespace Formitize.API.Error
 {
@@ -14,15 +15,15 @@ namespace Formitize.API.Error
         public APIException(string json)
             : base(GetErrorMessage(json))
         {
-            Wrapper wrapper = Formitize.API.Serialization.JSONMapper.To<Wrapper>(json);
-            StatusCode = (HttpStatusCode)Enum.Parse(typeof(HttpStatusCode), wrapper.Error.Code.ToString());
+            var wrapper = Formitize.API.Serialization.JSONMapper.To<Response<Wrapper>>(json);
+            StatusCode = (HttpStatusCode)Enum.Parse(typeof(HttpStatusCode), wrapper.Payload.Error.Code.ToString());
         }
 
         public APIException(string json, Exception inner)
             : base(GetErrorMessage(json), inner)
         {
-            Wrapper wrapper = Formitize.API.Serialization.JSONMapper.To<Wrapper>(json);
-            StatusCode = (HttpStatusCode)Enum.Parse(typeof(HttpStatusCode), wrapper.Error.Code.ToString());
+            var wrapper = Formitize.API.Serialization.JSONMapper.To<Response<Wrapper>>(json);
+            StatusCode = (HttpStatusCode)Enum.Parse(typeof(HttpStatusCode), wrapper.Payload.Error.Code.ToString());
         }
 
 
@@ -33,9 +34,9 @@ namespace Formitize.API.Error
 
         private static string GetErrorMessage(string JSON)
         {
-            Wrapper wrapper = Formitize.API.Serialization.JSONMapper.To<Wrapper>(JSON);
+            var wrapper = Formitize.API.Serialization.JSONMapper.To<Response<Wrapper>>(JSON);
             
-            return wrapper.Error.Message;
+            return wrapper.Payload.Error.Message;
         }
 
     }

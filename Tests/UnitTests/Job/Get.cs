@@ -30,17 +30,17 @@ namespace Tests.UnitTests
             var task = Methods.PostJob(client, job);
             var Response =  task.Result;
 
-            Assert.IsFalse(Response.JobID == 0, "failed");
+            Assert.IsFalse(Response.Payload.JobID == 0, "failed");
 
-            var getTask = Methods.GetJob(client, Response.JobID);
+            var getTask = Methods.GetJob(client, Response.Payload.JobID);
             var getResponse = getTask.Result;
 
-            Assert.AreEqual(getResponse.JobID, Response.JobID);
+            Assert.AreEqual(getResponse.Payload.JobID, Response.Payload.JobID);
 
-            var deleteTask = Methods.DeleteJob(client, Response.JobID);
+            var deleteTask = Methods.DeleteJob(client, Response.Payload.JobID);
             var deleteResponse = deleteTask.Result;
 
-            Assert.AreEqual(deleteResponse.Message, "Successfully deleted job.");
+            Assert.AreEqual(deleteResponse.Payload.Message, "Successfully deleted job.");
 
         }
     }

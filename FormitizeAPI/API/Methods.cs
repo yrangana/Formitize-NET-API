@@ -13,31 +13,29 @@ namespace Formitize.API
         /**
          * <exception cref="Formitize.API.Error.APIException">On any API errors.</exception>
          */
-        public static async Task<JobGetList> GetJobList(Client client, JobRequest job)
+        public static async Task<Response<JobGetList>> GetJobList(WebClient client, JobRequest job)
         {
-            JobGetList list = JSONMapper.To<JobGetList>((String)(await client.GetAsync<JobRequest>("job/", job)));
-
-            return list;
+            return JSONMapper.To<Response<JobGetList>>((String)(await client.GetAsync<JobRequest>("job/", job)));
         }
 
         /**
          * <exception cref="Formitize.API.Error.APIException">On any API errors.</exception>
          */
-        public static async Task<JobGetEntry> GetJob(Client client, int jobID)
+        public static async Task<Response<JobGetEntry>> GetJob(WebClient client, int jobID)
         {
             JobRequest jobRequest = new JobRequest();
             jobRequest.JobID = jobID;
-            return JSONMapper.To<JobGetEntry>((String)(await client.GetAsync<JobRequest>("job/", jobRequest)));
+            return JSONMapper.To<Response<JobGetEntry>>((String)(await client.GetAsync<JobRequest>("job/", jobRequest)));
         }
 
         /**
          * <exception cref="Formitize.API.Error.APIException">On any API errors.</exception>
          */
-        public static async Task<SubmittedFormGetEntry> GetSubmittedForm(Client client, int submittedID)
+        public static async Task<Response<SubmittedFormGetEntry>> GetSubmittedForm(WebClient client, int submittedID)
         {
             SubmittedFormRequest jobRequest = new SubmittedFormRequest();
             jobRequest.SubmittedID = submittedID;
-            return JSONMapper.To<SubmittedFormGetEntry>((String)(await client.GetAsync<SubmittedFormRequest>("form/submit/", jobRequest)));
+            return JSONMapper.To<Response<SubmittedFormGetEntry>>((String)(await client.GetAsync<SubmittedFormRequest>("form/submit/", jobRequest)));
         }
 
 
@@ -45,16 +43,16 @@ namespace Formitize.API
         /**
          * <exception cref="Formitize.API.Error.APIException">On any API errors.</exception>
          */
-        public static async Task<JobPost> PostJob(Client client, Job job) 
+        public static async Task<Response<JobPost>> PostJob(WebClient client, Job job) 
         {
-            return JSONMapper.To<JobPost>((String)(await client.PostAsync<Job>("job/", job)));
+            return JSONMapper.To<Response<JobPost>>((String)(await client.PostAsync<Job>("job/", job)));
         }
 
-        public static async Task<JobDelete> DeleteJob(Client client, int jobID)
+        public static async Task<Response<JobDelete>> DeleteJob(WebClient client, int jobID)
         {
             JobRequest jobRequest = new JobRequest();
             jobRequest.JobID = jobID;
-            return JSONMapper.To<JobDelete>((String)(await client.DeleteAsync<JobRequest>("job/", jobRequest)));
+            return JSONMapper.To<Response<JobDelete>>((String)(await client.DeleteAsync<JobRequest>("job/", jobRequest)));
         }
     }
 }

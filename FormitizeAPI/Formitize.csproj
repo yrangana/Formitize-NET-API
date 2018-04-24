@@ -53,6 +53,8 @@
     <Compile Include="API\Model\Contact.cs" />
     <Compile Include="API\Model\Location.cs" />
     <Compile Include="API\Model\CRMVariableField.cs" />
+    <Compile Include="API\Response\Response.cs" />
+    <Compile Include="API\Model\Pagination.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="API\" />
