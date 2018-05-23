@@ -5,10 +5,9 @@ using Formitize.API.Serialization;
 
 using System.Threading.Tasks;
 
-namespace Formitize.API
+namespace Formitize.API.Helper
 {
-    [Obsolete("Methods is too vague, please use the more specific helper classes eg Helper.Jobs or Helper.SubmittedForms")]
-    public class Methods
+    public class Jobs
     {
 
         /**
@@ -27,20 +26,7 @@ namespace Formitize.API
             JobRequest jobRequest = new JobRequest();
             jobRequest.JobID = jobID;
             return JSONMapper.To<Response<JobGetEntry>>((String)(await client.GetAsync<JobRequest>("job/", jobRequest)));
-        }
-
-        /**
-         * <exception cref="Formitize.API.Error.APIException">On any API errors.</exception>
-         */
-        public static async Task<Response<SubmittedFormGetEntry>> GetSubmittedForm(WebClient client, int submittedID)
-        {
-            SubmittedFormRequest jobRequest = new SubmittedFormRequest();
-            jobRequest.SubmittedID = submittedID;
-            return JSONMapper.To<Response<SubmittedFormGetEntry>>((String)(await client.GetAsync<SubmittedFormRequest>("form/submit/", jobRequest)));
-        }
-
-
-
+        } 
         /**
          * <exception cref="Formitize.API.Error.APIException">On any API errors.</exception>
          */

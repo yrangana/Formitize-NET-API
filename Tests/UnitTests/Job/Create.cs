@@ -2,6 +2,8 @@
 using System;
 using Formitize.API;
 using Formitize.API.Model;
+using FormitizeHelper = Formitize.API.Helper;
+
 
 namespace Tests.UnitTests
 {
@@ -26,12 +28,12 @@ namespace Tests.UnitTests
             job.AttachJobForm(form);
 
 
-            var task = Methods.PostJob(client, job);
+            var task = FormitizeHelper.Jobs.PostJob(client, job);
             var APIResponse =  task.Result;
 
             Assert.IsFalse(APIResponse.Payload.JobID == 0, "failed");
 
-            var deleteTask = Methods.DeleteJob(client, APIResponse.Payload.JobID);
+            var deleteTask = FormitizeHelper.Jobs.DeleteJob(client, APIResponse.Payload.JobID);
             var deleteResponse = deleteTask.Result;
 
             Assert.AreEqual(deleteResponse.Payload.Message, "Successfully deleted job.");

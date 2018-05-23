@@ -55,6 +55,8 @@
     <Compile Include="API\Model\CRMVariableField.cs" />
     <Compile Include="API\Response\Response.cs" />
     <Compile Include="API\Model\Pagination.cs" />
+    <Compile Include="API\Helper\Jobs.cs" />
+    <Compile Include="API\Helper\SubmittedForms.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="API\" />
@@ -63,6 +65,7 @@
     <Folder Include="API\Serialization\" />
     <Folder Include="API\Response\" />
     <Folder Include="API\Error\" />
+    <Folder Include="API\Helper\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">

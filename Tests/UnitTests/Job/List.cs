@@ -3,6 +3,7 @@ using System;
 using Formitize.API;
 using Formitize.API.Model;
 using Formitize.API.Response;
+using FormitizeHelper = Formitize.API.Helper;
 
 namespace Tests.UnitTests
 {
@@ -15,7 +16,7 @@ namespace Tests.UnitTests
             var client = new WebClient(Helper.createCredentials());
             var job = new Formitize.API.Response.JobRequest();
 
-            var APIResponse = await Methods.GetJobList(client, job);
+            var APIResponse = await FormitizeHelper.Jobs.GetJobList(client, job);
 
             Assert.IsInstanceOf(typeof(Response<JobGetList>), APIResponse);
         }
@@ -28,7 +29,7 @@ namespace Tests.UnitTests
 
             try
             {
-                var APIResponse = await Methods.GetJobList(client, job);
+                var APIResponse = await FormitizeHelper.Jobs.GetJobList(client, job);
                 Assert.IsInstanceOf(typeof(Response<JobGetList>), APIResponse);
             }
             catch(Formitize.API.Error.APIException Exception)

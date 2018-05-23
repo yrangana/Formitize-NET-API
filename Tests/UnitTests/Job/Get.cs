@@ -2,6 +2,7 @@
 using System;
 using Formitize.API;
 using Formitize.API.Model;
+using FormitizeHelper = Formitize.API.Helper;
 
 namespace Tests.UnitTests
 {
@@ -27,17 +28,17 @@ namespace Tests.UnitTests
             job.AttachJobForm(form);
 
 
-            var task = Methods.PostJob(client, job);
+            var task = FormitizeHelper.Jobs.PostJob(client, job);
             var Response =  task.Result;
 
             Assert.IsFalse(Response.Payload.JobID == 0, "failed");
 
-            var getTask = Methods.GetJob(client, Response.Payload.JobID);
+            var getTask = FormitizeHelper.Jobs.GetJob(client, Response.Payload.JobID);
             var getResponse = getTask.Result;
 
             Assert.AreEqual(getResponse.Payload.JobID, Response.Payload.JobID);
 
-            var deleteTask = Methods.DeleteJob(client, Response.Payload.JobID);
+            var deleteTask = FormitizeHelper.Jobs.DeleteJob(client, Response.Payload.JobID);
             var deleteResponse = deleteTask.Result;
 
             Assert.AreEqual(deleteResponse.Payload.Message, "Successfully deleted job.");
