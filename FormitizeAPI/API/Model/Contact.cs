@@ -8,6 +8,12 @@ namespace Formitize.API.Model
     [DataContract(Namespace ="")]
     public class Contact
     {
+        [JsonProperty(PropertyName = "id")]
+        int ID
+        {
+            get; set;
+        }
+
         [JsonProperty(PropertyName = "firstName")]
         string FirstName
         {
