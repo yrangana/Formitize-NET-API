@@ -18,6 +18,17 @@ namespace Tests.UnitTests
 
             job.Title = "Test";
 
+            job.Client.BillingName = "Test";
+
+            var contact = new Contact();
+            contact.FirstName = "FIRST_NAME";
+            contact.LastName = "LAST_NAME";
+            contact.Mobile = "0000 000 000";
+            contact.Email = "test@test.com";
+            contact.CustomFields.Add("Custom_Variable", new CRMVariableField() { Value = "Test" });
+
+            job.Client.ContactList.Add(contact);
+
             var form = new Formitize.API.Model.JobFormData();
 
             form.FormID = 10355;
