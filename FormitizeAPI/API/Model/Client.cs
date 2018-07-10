@@ -10,13 +10,13 @@ namespace Formitize.API.Model
     {
 
         [JsonProperty(PropertyName = "id")]
-        int ID
+        public int ID
         {
             get; set;
         }
 
         [JsonProperty(PropertyName = "billingName")]
-        string BillingName
+        public string BillingName
         {
             get; set;
         }
@@ -46,11 +46,11 @@ namespace Formitize.API.Model
         }
 
         [JsonProperty(PropertyName = "contact")]
-        List<Contact> ContactList;
+        public List<Contact> ContactList;
 
 
         [JsonProperty(PropertyName = "location")]
-        List<Location> LocationList;
+        public List<Location> LocationList;
 
         public Client()
         {
