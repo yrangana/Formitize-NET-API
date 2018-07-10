@@ -8,6 +8,13 @@ namespace Formitize.API.Model
     [DataContract(Namespace = "")]
     public class Client
     {
+
+        [JsonProperty(PropertyName = "id")]
+        int ID
+        {
+            get; set;
+        }
+
         [JsonProperty(PropertyName = "billingName")]
         string BillingName
         {
@@ -50,7 +57,5 @@ namespace Formitize.API.Model
             ContactList = new List<Contact>();
             LocationList = new List<Location>();
         }
-
-
     }
 }
