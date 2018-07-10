@@ -9,25 +9,19 @@ namespace Formitize.API.Model
     public class Contact
     {
         [JsonProperty(PropertyName = "id")]
-        int ID
+        public int ID
         {
             get; set;
         }
 
         [JsonProperty(PropertyName = "firstName")]
-        string FirstName
-        {
-            get; set;
-        }
-
-        [JsonProperty(PropertyName = "id")]
-        int ID
+        public string FirstName
         {
             get; set;
         }
 
         [JsonProperty(PropertyName = "lastName")]
-        string LastName
+        public string LastName
         {
             get; set;
         }
@@ -39,46 +33,46 @@ namespace Formitize.API.Model
         }
 
         [JsonProperty(PropertyName = "email")]
-        string Email
+        public string Email
         {
             get; set;
         }
 
 
         [JsonProperty(PropertyName = "mobile")]
-        string Mobile
+        public string Mobile
         {
             get; set;
         }
 
         [JsonProperty(PropertyName = "mobileAreaCode")]
-        string MobileAreaCode
+        public string MobileAreaCode
         {
             get; set;
         }
 
         [JsonProperty(PropertyName = "workPhone")]
-        string WorkPhone
+        public string WorkPhone
         {
             get; set;
 
         }
 
         [JsonProperty(PropertyName = "homePhoneAreaCode")]
-        string HomePhoneeAreaCode
+        public string HomePhoneAreaCode
         {
             get; set;
         }
 
         [JsonProperty(PropertyName = "homePhone")]
-        string HomePhone
+        public string HomePhone
         {
             get; set;
 
         }
 
         [JsonProperty(PropertyName = "workPhoneAreaCode")]
-        string WorkPhoneeAreaCode
+        public string WorkPhoneAreaCode
         {
             get; set;
         }
