@@ -31,6 +31,12 @@ namespace Formitize.API.Model
             get; set;
         }
 
+        [JsonProperty(PropertyName = "jobType")]
+        public string JobType
+        {
+            get; set;
+        }
+
         [JsonProperty(PropertyName = "jobNumber")]
         public string JobNumber
         {
