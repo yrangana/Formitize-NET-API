@@ -10,7 +10,7 @@ namespace Formitize.API.Model
     {
 
         [JsonProperty(PropertyName = "id")]
-        int ID
+        public int ID
         {
             get; set;
         }
@@ -18,31 +18,31 @@ namespace Formitize.API.Model
 
 
         [JsonProperty(PropertyName = "street1")]
-        string Street1
+        public string Street1
         {
             get; set;
         }
 
         [JsonProperty(PropertyName = "street2")]
-        string Street2
+        public string Street2
         {
             get; set;
         }
 
         [JsonProperty(PropertyName = "city")]
-        string City
+        public string City
         {
             get; set;
         }
 
         [JsonProperty(PropertyName = "state")]
-        string State
+        public string State
         {
             get; set;
         }
 
         [JsonProperty(PropertyName = "country")]
-        string Country
+        public string Country
         {
             get; set;
         }
