@@ -25,6 +25,12 @@ namespace Formitize.API.Model
             get; set;
         }
 
+        [JsonProperty(PropertyName = "client")]
+        public Client Client
+        {
+            get; set;
+        }
+
         [JsonProperty(PropertyName = "title")]
         public string Title
         {
@@ -115,6 +121,7 @@ namespace Formitize.API.Model
             OrderNumber = "";
             Agent = "";
             DueDateUnixtimestamp = DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
+            Client = new Formitize.API.Model.Client();
 
             FormData = new Dictionary<string, Dictionary<string, Dictionary<string, object>>>();
 
