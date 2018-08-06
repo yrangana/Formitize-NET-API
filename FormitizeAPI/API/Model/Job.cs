@@ -49,6 +49,18 @@ namespace Formitize.API.Model
             get; set;
         }
 
+        [JsonProperty(PropertyName = "status")]
+        public int Status
+        {
+            get; set;
+        }
+
+        [JsonProperty(PropertyName = "statusLabel")]
+        public string StatusLabel
+        {
+            get;
+        }
+
         [JsonProperty(PropertyName = "orderNumber")]
         public string OrderNumber
         {
@@ -98,6 +110,12 @@ namespace Formitize.API.Model
             get; set;
         }
 
+        [DataMember(Name = "queueGroups")]
+        public List<string> QueueGroups
+        {
+            get; set;
+        }
+
         [IgnoreDataMember]
         [JsonIgnore]
         public DateTime DueDate
@@ -122,6 +140,7 @@ namespace Formitize.API.Model
             Agent = "";
             DueDateUnixtimestamp = DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
             Client = new Formitize.API.Model.Client();
+            QueueGroups = new List<string>();
 
             FormData = new Dictionary<string, Dictionary<string, Dictionary<string, object>>>();
 

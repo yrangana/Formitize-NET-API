@@ -18,6 +18,7 @@ namespace Tests.UnitTests
 
             job.Title = "Test";
             job.Agent = "-1"; //Assign to Queue (Taxi-Rank style) - Job is free-for-all to pick up by any agent.
+            job.QueueGroups.Add("Main"); //optional - assign to main group.
 
             job.Client.BillingName = "Test";
 

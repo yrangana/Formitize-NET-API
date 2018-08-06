@@ -71,6 +71,24 @@ namespace Formitize.API.Response
             get; set;
         }
 
+        [JsonProperty(PropertyName = "status")]
+        public int Status
+        {
+            get; set;
+        }
+
+        [JsonProperty(PropertyName = "statusLabel")]
+        public string StatusLabel
+        {
+            get; set;
+        }
+
+        [DataMember(Name = "queueGroups")]
+        public Dictionary<int, string> QueueGroups
+        {
+            get; set;
+        }
+
         [JsonProperty(PropertyName = "deliveryContact")]
         public String DeliveryContact
         {
@@ -150,6 +168,9 @@ namespace Formitize.API.Response
             }
         }
 
-
+        public JobGetEntry()
+        {
+            QueueGroups = new Dictionary<int, string>();
+        }
     }
 }

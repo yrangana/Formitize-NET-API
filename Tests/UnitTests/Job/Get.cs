@@ -17,6 +17,7 @@ namespace Tests.UnitTests
 
             job.Title = "Test";
             job.DueDate = DateTime.Now;
+            job.QueueGroups.Add("Main");
 
             var form = new Formitize.API.Model.JobFormData();
 
