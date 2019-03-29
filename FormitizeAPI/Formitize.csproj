@@ -57,6 +57,8 @@
     <Compile Include="API\Model\Pagination.cs" />
     <Compile Include="API\Helper\Jobs.cs" />
     <Compile Include="API\Helper\SubmittedForms.cs" />
+    <Compile Include="API\Model\SubmittedForm.cs" />
+    <Compile Include="API\Response\SubmittedFormPost.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="API\" />

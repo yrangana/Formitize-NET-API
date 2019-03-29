@@ -44,6 +44,7 @@
     <Compile Include="UnitTests\Serialization\SubmittedFormDeserialize.cs" />
     <Compile Include="UnitTests\SubmittedForm\Get.cs" />
     <Compile Include="UnitTests\CRM\Client\Create.cs" />
+    <Compile Include="UnitTests\SubmittedForm\AddImage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -18,5 +18,19 @@ namespace Formitize.API.Helper
             jobRequest.SubmittedID = submittedID;
             return JSONMapper.To<Response<SubmittedFormGetEntry>>((String)(await client.GetAsync<SubmittedFormRequest>("form/submit/", jobRequest)));
         }
+
+        /**
+         * <exception cref="Formitize.API.Error.APIException">On any API errors.</exception>
+         */
+        public static async Task<Response<SubmittedFormPost>> PostSubmittedForm(WebClient client, SubmittedForm sf)
+        {
+            var id = sf.SubmittedFormID;
+
+            string url = "form/submit/";
+
+            if (id != 0) url += id.ToString();
+
+            return JSONMapper.To<Response<SubmittedFormPost>>((String)(await client.PostAsync<SubmittedForm>(url, sf)));
+        }
     }
 }
