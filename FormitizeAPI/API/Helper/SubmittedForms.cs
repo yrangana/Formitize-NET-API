@@ -22,15 +22,13 @@ namespace Formitize.API.Helper
         /**
          * <exception cref="Formitize.API.Error.APIException">On any API errors.</exception>
          */
-        public static async Task<Response<SubmittedFormPost>> PostSubmittedForm(WebClient client, SubmittedForm sf, Boolean append = false)
+        public static async Task<Response<SubmittedFormPost>> PostSubmittedForm(WebClient client, SubmittedForm sf)
         {
             var id = sf.SubmittedFormID;
 
             string url = "form/submit/";
 
             if (id != 0) url += id.ToString();
-
-            if (append) url += "?append=true";
 
             return JSONMapper.To<Response<SubmittedFormPost>>((String)(await client.PostAsync<SubmittedForm>(url, sf)));
         }
