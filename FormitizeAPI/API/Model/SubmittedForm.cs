@@ -45,6 +45,11 @@ namespace Formitize.API.Model
             get; private set;
         }
 
+        [JsonProperty(PropertyName = "append")]
+        public bool Append
+        {
+            get; set;
+        }
 
 		public SubmittedForm()
 		{
