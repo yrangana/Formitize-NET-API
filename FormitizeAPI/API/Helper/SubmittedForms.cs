@@ -4,6 +4,7 @@ using Formitize.API.Model;
 using Formitize.API.Serialization;
 
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Formitize.API.Helper
 {
@@ -32,5 +33,15 @@ namespace Formitize.API.Helper
 
             return JSONMapper.To<Response<SubmittedFormPost>>((String)(await client.PostAsync<SubmittedForm>(url, sf)));
         }
+
+        /**
+         * <exception cref="Formitize.API.Error.APIException">On any API errors.</exception>
+         */
+        public static async Task<Response<Dictionary<string, SubmittedFormGetEntry>>> GetSubmittedFormsByJobID(WebClient client, int jobID){
+            SubmittedFormRequest jobRequest = new SubmittedFormRequest();
+            jobRequest.AddHeader("jobID", jobID.ToString());
+            return JSONMapper.To<Response<Dictionary<string, SubmittedFormGetEntry>>>((String)(await client.GetAsync<SubmittedFormRequest>("form/submit/", jobRequest)));
+        }
+
     }
 }
