@@ -23,6 +23,18 @@ namespace Formitize.API.Response
                 {
                     var par = token.Parent.Parent.SelectToken("value");
                     if (par == null) return "";
+
+                    if ( par.GetType().FullName == "Newtonsoft.Json.Linq.JObject" )
+                    {
+
+                        List<String> values = new List<string>();
+                        foreach (JProperty value in par)
+                        {
+                            values.Add(value.Value.ToString());
+                        }
+
+                        return String.Join(",", values);
+                    }
                        
                     return par.Value<string>();
 
