@@ -59,6 +59,8 @@
     <Compile Include="API\Helper\SubmittedForms.cs" />
     <Compile Include="API\Model\SubmittedForm.cs" />
     <Compile Include="API\Response\SubmittedFormPost.cs" />
+    <Compile Include="API\Response\SubmittedForm\Repeatable.cs" />
+    <Compile Include="API\Response\SubmittedForm\Row.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="API\" />
@@ -68,6 +70,7 @@
     <Folder Include="API\Response\" />
     <Folder Include="API\Error\" />
     <Folder Include="API\Helper\" />
+    <Folder Include="API\Response\SubmittedForm\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">

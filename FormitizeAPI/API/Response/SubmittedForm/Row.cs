@@ -4,37 +4,23 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace Formitize.API.Response
+namespace Formitize.API.Response.SubmittedForm
 {
-    
-    public class SubmittedFormContent
+    public class Row
     {
-        [JsonProperty(PropertyName = "content")]
-        public JObject Content
+        public JToken Content
         {
             get; set;
         }
 
-        public List<SubmittedForm.Repeatable> GetRepeatables(string Objectname)
+        public Row(JToken content)
         {
-            var response = new List<SubmittedForm.Repeatable>();
-
-            foreach (JToken token in Content.SelectTokens("*.*.*.*.name"))
-            {
-                if (token.ToString() == Objectname)
-                {
-                    var par = token.Parent.Parent;
-                    response.Add(new SubmittedForm.Repeatable(par));
-                }
-            }
-
-            return response;
-
+            Content = content;
         }
 
-        public string GetTextValue(string index, string Objectname)
+        public string GetTextValue(string Objectname)
         {
-            foreach(JToken token in Content.SelectTokens("*." + index + ".*.*.name"))
+            foreach(JToken token in Content.SelectTokens("*.name"))
             {
                 if (token.ToString() == Objectname)
                 {
@@ -60,5 +46,5 @@ namespace Formitize.API.Response
 
             return "";
         }
-	}
+    }
 }
