@@ -7,6 +7,21 @@ namespace Formitize.API.Response
     public class SubmittedFormRequest : iGetRequest
     {
 
+        public string Query
+        {
+            get
+            {
+
+                var ret = GetHeader("query");
+                if (ret == "") return "";
+                return ret;
+            }
+            set
+            {
+                AddHeader("query", value);
+            }
+        }
+
         public int SubmittedID 
         {
             get

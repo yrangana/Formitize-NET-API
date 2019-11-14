@@ -12,6 +12,19 @@ namespace Formitize.API.Helper
     {
         /**
          * <exception cref="Formitize.API.Error.APIException">On any API errors.</exception>
+         * param name="query" a text
+         */
+        public static async Task<Response<Dictionary<string, SubmittedFormListEntry>>> QueryForSubmittedForm(WebClient client, string query, int profileID = 0)
+        {
+            SubmittedFormRequest jobRequest = new SubmittedFormRequest();
+            jobRequest.Query = query;
+            if(profileID != 0) jobRequest.AddHeader("profileID", profileID.ToString());
+            return JSONMapper.To<Response<Dictionary<string, SubmittedFormListEntry>>>((String)(await client.GetAsync<SubmittedFormRequest>("form/submit/list/", jobRequest)));
+
+        }
+
+        /**
+         * <exception cref="Formitize.API.Error.APIException">On any API errors.</exception>
          */
         public static async Task<Response<SubmittedFormGetEntry>> GetSubmittedForm(WebClient client, int submittedID)
         {

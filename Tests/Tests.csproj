@@ -45,6 +45,7 @@
     <Compile Include="UnitTests\SubmittedForm\Get.cs" />
     <Compile Include="UnitTests\CRM\Client\Create.cs" />
     <Compile Include="UnitTests\SubmittedForm\AddImage.cs" />
+    <Compile Include="UnitTests\SubmittedForm\Query.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

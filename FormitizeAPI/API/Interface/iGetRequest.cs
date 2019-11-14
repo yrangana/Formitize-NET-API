@@ -39,6 +39,7 @@ namespace Formitize.API.Interface
                 foreach (KeyValuePair<String, String> entry in SearchHeaders)
                 {
                     str[c] = entry.Key + "=" + entry.Value;
+                    c++;
                 }
 
                 query = "?" + String.Join("&", str);
