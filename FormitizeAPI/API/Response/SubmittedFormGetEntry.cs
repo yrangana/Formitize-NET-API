@@ -41,6 +41,13 @@ namespace Formitize.API.Response
         get; set;
     }
 
+
+    [JsonProperty(PropertyName = "status")]
+    public String Status
+    {
+        get; set;
+    }
+
     [JsonProperty(PropertyName = "jobID")]
     public int JobID
     {
@@ -137,6 +144,12 @@ namespace Formitize.API.Response
 
         [JsonProperty(PropertyName = "latitude")]
         public String Latitude
+        {
+            get; set;
+        }
+
+        [JsonProperty(PropertyName = "status")]
+        public String Status
         {
             get; set;
         }
