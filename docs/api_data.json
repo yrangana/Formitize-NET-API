@@ -227,7 +227,34 @@
       "examples": [
         {
           "title": "CURL Response",
-          "content": "{\n \"payload\": {\n     \"5555\": {\n         \"id\": \"5555\",\n         \"maintenanceID\": \"0\",\n         \"jobNumber\": \"\",\n         \"orderNumber\": \"\",\n         \"title\": \"Person A\",\n         \"forms\": {\n             \"2932\": {\n                 \"id\": \"2932\",\n                 \"title\": \"Features Test\"\n             }\n         },\n         \"location\": \"123 Street\",\n         \"description\": \"\",\n         \"dueDate\": \"1417139760\",\n         \"assignedTo\": \"2251\",\n         \"priority\": \"0\",\n         \"status\": \"4\",\n         \"duration\": \"3600\",\n         \"statusLabel\": \"Completed\"\n     }\n }\n}",
+          "content": "{\n \"payload\": {\n  ...,\n  \"5555\": {\n   \"id\": \"5555\",\n   \"maintenanceID\": \"0\",\n   \"jobNumber\": \"\",\n   \"orderNumber\": \"\",\n   \"title\": \"Person A\",\n   \"forms\": {\n    \"2932\": {\n     \"id\": \"2932\",\n     \"title\": \"Features Test\"\n    }\n   },\n   \"location\": \"123 Street\",\n   \"description\": \"\",\n   \"dueDate\": \"1417139760\",\n   \"assignedTo\": \"2251\",\n   \"priority\": \"0\",\n   \"status\": \"4\",\n   \"duration\": \"3600\",\n   \"statusLabel\": \"Completed\"\n  },\n  ...\n }\n}",
+          "type": "JSON"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/job/_apidoc.js",
+    "groupTitle": "Job"
+  },
+  {
+    "type": "get",
+    "url": "/job/id",
+    "title": "Get Job",
+    "name": "GetJobID",
+    "group": "Job",
+    "version": "1.0.0",
+    "description": "<p>Get the specified job.</p>",
+    "examples": [
+      {
+        "title": "CURL Sample",
+        "content": "curl -A YourCompany -u admin:password https://service.formitize.com/api/rest/v2/job/5555",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "CURL Response",
+          "content": "{\n \"payload\": {\n   \"id\": \"5555\",\n   \"maintenanceID\": \"0\",\n   \"jobNumber\": \"\",\n   \"orderNumber\": \"\",\n   \"title\": \"Person A\",\n   \"forms\": {\n    \"2932\": {\n     \"id\": \"2932\",\n     \"title\": \"Features Test\"\n    }\n   },\n   \"location\": \"123 Street\",\n   \"description\": \"\",\n   \"dueDate\": \"1417139760\",\n   \"assignedTo\": \"2251\",\n   \"priority\": \"0\",\n   \"status\": \"4\",\n   \"duration\": \"3600\",\n   \"statusLabel\": \"Completed\"\n }\n}",
           "type": "JSON"
         }
       ]
