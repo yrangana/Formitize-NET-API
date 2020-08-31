@@ -58,45 +58,6 @@
   },
   {
     "type": "get",
-    "url": "/crm/client/:id",
-    "title": "Get Form Template",
-    "name": "ClientGetID",
-    "group": "Client",
-    "version": "1.0.0",
-    "parameter": {
-      "fields": {
-        "Arguements": [
-          {
-            "group": "Arguements",
-            "type": "Number",
-            "optional": false,
-            "field": "id",
-            "description": "<p>Returns client, contact and location information.</p>"
-          }
-        ]
-      }
-    },
-    "examples": [
-      {
-        "title": "CURL Sample",
-        "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/crm/client/55",
-        "type": "json"
-      }
-    ],
-    "success": {
-      "examples": [
-        {
-          "title": "CURL Response",
-          "content": "{\n\t\"payload\": {\n\t\t\"formID\": \"35634\",\n\t\t\"title\": \"UPPERCASE_TEST\",\n\t\t\"elements\": {\n\t\t\t\"formSubheader_1\": {\n\t\t\t\t\"name\": \"formSubheader_1\",\n\t\t\t\t\"type\": \"formSubheader\",\n\t\t\t\t\"children\": {\n\t\t\t\t\t\"formText_1\": {\n\t\t\t\t\t\t\"name\": \"formText_1\",\n\t\t\t\t\t\t\"type\": \"formText\"\n\t\t\t\t\t},\n\t\t\t\t\t\"formText_2\": {\n\t\t\t\t\t\t\"name\": \"formText_2\",\n\t\t\t\t\t\t\"type\": \"formText\"\n\t\t\t\t\t},\n\t\t\t\t\t\"formText_3\": {\n\t\t\t\t\t\t\"name\": \"formText_3\",\n\t\t\t\t\t\t\"type\": \"formText\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}",
-          "type": "JSON"
-        }
-      ]
-    },
-    "filename": "app/system/class/api/rest/v1/crm/client/_apidoc.js",
-    "groupTitle": ""
-  },
-  {
-    "type": "get",
     "url": "/form/list",
     "title": "List",
     "name": "FormTemplate",
