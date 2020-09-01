@@ -58,6 +58,119 @@
   },
   {
     "type": "get",
+    "url": "/crm/client/:id",
+    "title": "Get Form Template",
+    "name": "ClientGetID",
+    "group": "Client",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Arguements": [
+          {
+            "group": "Arguements",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Returns client, contact and location information.</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "CURL Sample",
+        "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/crm/client/55",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "CURL Response",
+          "content": "{\n\t\"payload\": {\n\t\t\"formID\": \"35634\",\n\t\t\"title\": \"UPPERCASE_TEST\",\n\t\t\"elements\": {\n\t\t\t\"formSubheader_1\": {\n\t\t\t\t\"name\": \"formSubheader_1\",\n\t\t\t\t\"type\": \"formSubheader\",\n\t\t\t\t\"children\": {\n\t\t\t\t\t\"formText_1\": {\n\t\t\t\t\t\t\"name\": \"formText_1\",\n\t\t\t\t\t\t\"type\": \"formText\"\n\t\t\t\t\t},\n\t\t\t\t\t\"formText_2\": {\n\t\t\t\t\t\t\"name\": \"formText_2\",\n\t\t\t\t\t\t\"type\": \"formText\"\n\t\t\t\t\t},\n\t\t\t\t\t\"formText_3\": {\n\t\t\t\t\t\t\"name\": \"formText_3\",\n\t\t\t\t\t\t\"type\": \"formText\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}",
+          "type": "JSON"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/crm/client/_apidoc.js",
+    "groupTitle": ""
+  },
+  {
+    "type": "get",
+    "url": "/database/list",
+    "title": "List Tables",
+    "name": "DatabaseList",
+    "description": "<p>Retrieve a list of tables and the available columns.</p>",
+    "group": "Database",
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "CURL Sample",
+        "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/database/list/",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "CURL Response",
+          "content": "{\n\t\"payload\": {\n\t\t...,\n\t\t\"128876\": {\n\t\t\t\"id\": \"128876\",\n\t\t\t\"name\": \"database_test\",\n\t\t\t\"title\": \"\",\n\t\t\t\"dateModified\": \"1590392617\",\n\t\t\t\"storeOnPhone\": \"1\",\n\t\t\t\"columns\": [\n\t\t\t\t\"id\",\n\t\t\t\t\"ColumnA\",\n\t\t\t\t\"ColumnB\",\n\t\t\t\t\"ColumnC\"\n\t\t\t],\n\t\t\t\"url\": \"https://service.formitize.com/api/rest/v2/database/example_table\"\t\t\t\n\t\t},\n\t\t...\n\t}\n}",
+          "type": "JSON"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/database/_apidoc.js",
+    "groupTitle": "Database"
+  },
+  {
+    "type": "post",
+    "url": "/database/:tablename",
+    "title": "Post Table Data",
+    "name": "DatabasePost",
+    "description": "<p>Create or Update entries within a table.</p>",
+    "group": "Database",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Body": [
+          {
+            "group": "Body",
+            "type": "json",
+            "optional": false,
+            "field": "payload",
+            "description": "<p>An array of dictionary entries that match up to the available columns of your table.</p>"
+          },
+          {
+            "group": "Body",
+            "type": "json",
+            "optional": false,
+            "field": "pk",
+            "description": "<p>Optional, list of primary keys used to match content when insert/updating values.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Body Example:",
+          "content": "{\n    \"payload\": [\n\t\t{\n        \t\"ColumnA\": \"111\",\n        \t\"ColumnB\": \"222\",\n        \t\"ColumnC\": \"333\"\n\t    },\n    \t{\n        \t\"ColumnA\": \"aaaa\",\n        \t\"ColumnC\": \"cccc\",\n\t\t}\n\t],\n    \"pk\": [\n        \"ColumnA\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Request Body Example Response:",
+          "content": "{\n\t\"payload\": {\n\t\t\"result\": \"success\",\n\t\t\"note\": \"Import service spawned.\",\n\t\t\"serviceID\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n\t}\n}",
+          "type": "JSON"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/database/_apidoc.js",
+    "groupTitle": "Database"
+  },
+  {
+    "type": "get",
     "url": "/form/list",
     "title": "List",
     "name": "FormTemplate",
@@ -188,34 +301,7 @@
       "examples": [
         {
           "title": "CURL Response",
-          "content": "{\n \"payload\": {\n  ...,\n  \"5555\": {\n   \"id\": \"5555\",\n   \"maintenanceID\": \"0\",\n   \"jobNumber\": \"\",\n   \"orderNumber\": \"\",\n   \"title\": \"Person A\",\n   \"forms\": {\n    \"2932\": {\n     \"id\": \"2932\",\n     \"title\": \"Features Test\"\n    }\n   },\n   \"location\": \"123 Street\",\n   \"description\": \"\",\n   \"dueDate\": \"1417139760\",\n   \"assignedTo\": \"2251\",\n   \"priority\": \"0\",\n   \"status\": \"4\",\n   \"duration\": \"3600\",\n   \"statusLabel\": \"Completed\"\n  },\n  ...\n }\n}",
-          "type": "JSON"
-        }
-      ]
-    },
-    "filename": "app/system/class/api/rest/v1/job/_apidoc.js",
-    "groupTitle": "Job"
-  },
-  {
-    "type": "get",
-    "url": "/job/id",
-    "title": "Get Job",
-    "name": "GetJobID",
-    "group": "Job",
-    "version": "1.0.0",
-    "description": "<p>Get the specified job.</p>",
-    "examples": [
-      {
-        "title": "CURL Sample",
-        "content": "curl -A YourCompany -u admin:password https://service.formitize.com/api/rest/v2/job/5555",
-        "type": "json"
-      }
-    ],
-    "success": {
-      "examples": [
-        {
-          "title": "CURL Response",
-          "content": "{\n \"payload\": {\n   \"id\": \"5555\",\n   \"maintenanceID\": \"0\",\n   \"jobNumber\": \"\",\n   \"orderNumber\": \"\",\n   \"title\": \"Person A\",\n   \"forms\": {\n    \"2932\": {\n     \"id\": \"2932\",\n     \"title\": \"Features Test\"\n    }\n   },\n   \"location\": \"123 Street\",\n   \"description\": \"\",\n   \"dueDate\": \"1417139760\",\n   \"assignedTo\": \"2251\",\n   \"priority\": \"0\",\n   \"status\": \"4\",\n   \"duration\": \"3600\",\n   \"statusLabel\": \"Completed\"\n }\n}",
+          "content": "{\n \"payload\": {\n     \"5555\": {\n         \"id\": \"5555\",\n         \"maintenanceID\": \"0\",\n         \"jobNumber\": \"\",\n         \"orderNumber\": \"\",\n         \"title\": \"Person A\",\n         \"forms\": {\n             \"2932\": {\n                 \"id\": \"2932\",\n                 \"title\": \"Features Test\"\n             }\n         },\n         \"location\": \"123 Street\",\n         \"description\": \"\",\n         \"dueDate\": \"1417139760\",\n         \"assignedTo\": \"2251\",\n         \"priority\": \"0\",\n         \"status\": \"4\",\n         \"duration\": \"3600\",\n         \"statusLabel\": \"Completed\"\n     }\n }\n}",
           "type": "JSON"
         }
       ]
