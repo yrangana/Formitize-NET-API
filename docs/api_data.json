@@ -308,7 +308,7 @@
     "version": "1.0.0",
     "examples": [
       {
-        "title": "CURL Sample",
+        "title": "CURL Example",
         "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/asset/schema/list/",
         "type": "json"
       }
@@ -335,7 +335,7 @@
     "version": "1.0.0",
     "examples": [
       {
-        "title": "CURL Sample",
+        "title": "CURL Example",
         "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/asset/schema/list/",
         "type": "json"
       }
@@ -362,7 +362,7 @@
     "version": "1.0.0",
     "examples": [
       {
-        "title": "CURL Sample",
+        "title": "CURL Example",
         "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/asset/schema/list/",
         "type": "json"
       }
@@ -745,9 +745,14 @@
     "version": "1.0.0",
     "examples": [
       {
-        "title": "CURL Sample",
+        "title": "CURL Example",
         "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/database/list/",
         "type": "json"
+      },
+      {
+        "title": "NET Example",
+        "content": "var client = new WebClient(Helper.createCredentials());\nvar job = new Formitize.API.Response.JobRequest();\n\nvar APIResponse = await FormitizeHelper.Database.GetDatabaseList(client);",
+        "type": "CSharp"
       }
     ],
     "success": {
@@ -788,15 +793,20 @@
             "description": "<p>Optional, list of primary keys used to match content when insert/updating values.</p>"
           }
         ]
-      },
-      "examples": [
-        {
-          "title": "Request Body Example:",
-          "content": "{\n    \"payload\": [\n\t\t{\n        \t\"ColumnA\": \"111\",\n        \t\"ColumnB\": \"222\",\n        \t\"ColumnC\": \"333\"\n\t    },\n    \t{\n        \t\"ColumnA\": \"aaaa\",\n        \t\"ColumnC\": \"cccc\",\n\t\t}\n\t],\n    \"pk\": [\n        \"ColumnA\"\n    ]\n}",
-          "type": "json"
-        }
-      ]
+      }
     },
+    "examples": [
+      {
+        "title": "Request Body Example:",
+        "content": "{\n    \"payload\": [\n\t\t{\n        \t\"ColumnA\": \"111\",\n        \t\"ColumnB\": \"222\",\n        \t\"ColumnC\": \"333\"\n\t    },\n    \t{\n        \t\"ColumnA\": \"aaaa\",\n        \t\"ColumnC\": \"cccc\",\n\t\t}\n\t],\n    \"pk\": [\n        \"ColumnA\"\n    ]\n}",
+        "type": "json"
+      },
+      {
+        "title": ".NET Example",
+        "content": "var client = new WebClient(Helper.createCredentials());\nvar job = new Formitize.API.Response.JobRequest();\n\n//Any values matching ColumnA will update, if not found will insert.\nvar primaryKeys = new List<string>() { \"ColumnA\" };\nvar entries = new List<Entry>() {\n\tnew Entry() {\n\t\tContent = {\n\t\t\t[\"ColumnA\"] = \"Value 1\",\n\t\t\t[\"ColumnB\"] = \"Value 2\",\n\t\t\t[\"ColumnC\"] = \"Value 3\"\n\t\t}\n\t},\n\tnew Entry() {\n\t\tContent = {\n\t\t\t[\"ColumnA\"] = \"Person A\",\n\t\t\t[\"ColumnB\"] = \"some description\",\n\t\t\t[\"ColumnC\"] = \"some other value\"\n\t\t}\n\t},\n};\n\nvar APIResponse = await FormitizeHelper.Database.BulkWrite(client, \"database_test\", entries, primaryKeys );",
+        "type": "CSharp"
+      }
+    ],
     "success": {
       "examples": [
         {
@@ -838,7 +848,7 @@
     },
     "examples": [
       {
-        "title": "CURL Sample",
+        "title": "CURL Example",
         "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/form/list",
         "type": "json"
       }
@@ -882,7 +892,7 @@
     },
     "examples": [
       {
-        "title": "CURL Sample",
+        "title": "CURL Example",
         "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/form/55",
         "type": "json"
       }
@@ -909,7 +919,7 @@
     "description": "<p>Delete the job by id.</p>",
     "examples": [
       {
-        "title": "CURL Sample",
+        "title": "CURL Example",
         "content": "curl -A YourCompany -u admin:password -X \"DELETE\" https://service.formitize.com/api/rest/v2/job/1",
         "type": "json"
       },
@@ -932,7 +942,7 @@
     "description": "<p>Get a list of jobs.</p>",
     "examples": [
       {
-        "title": "CURL Sample",
+        "title": "CURL Example",
         "content": "curl -A YourCompany -u admin:password https://service.formitize.com/api/rest/v2/job/",
         "type": "json"
       }
@@ -1358,7 +1368,7 @@
     },
     "examples": [
       {
-        "title": "CURL Sample",
+        "title": "CURL Example",
         "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/form/submit/88",
         "type": "json"
       }
@@ -1410,7 +1420,7 @@
     },
     "examples": [
       {
-        "title": "CURL Sample",
+        "title": "CURL Example",
         "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/form/submit/list/",
         "type": "json"
       }
