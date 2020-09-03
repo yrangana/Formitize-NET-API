@@ -17,7 +17,7 @@ namespace Tests.UnitTests
             var client = new WebClient(Helper.createCredentials());
             var job = new Formitize.API.Response.JobRequest();
 
-            var primaryKeys = new List<string>() { "aa" };
+            var primaryKeys = new List<string>() { "ColumnA" };
             var entries = new List<Entry>() {
                 new Entry() {
                     Content = {
