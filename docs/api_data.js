@@ -278,6 +278,11 @@ define({ "api": [
           "title": "Request Body Example:",
           "content": "{\n    \"name\": \"New Asset\",\n    \"description\": \"New Description\",\n    \"longitude\": 1,\n    \"latitude\": 5556,\n    \"altitude\": 777,\n    \"clientID\": 1,\n    \"locationID\": 1,\n    \"zoneID\": 20,\n    \"char1\": \"QR-6789\",\n    \"char2\": \"Bathroom\",\n    \"int1\": \"15\",\n    \"char3\": \"No\",\n    \"char4\": \"Quick comment.\"\n}",
           "type": "json"
+        },
+        {
+          "title": "Request Body Example with new client",
+          "content": "{\n    \"name\": \"New Asset\",\n    \"description\": \"New Description\",\n    \"longitude\": 1,\n    \"latitude\": 5556,\n    \"altitude\": 777,\n    \"client\": {\n        \"billingName\": \"New Customer\",\n        \"contact\": [{\n            \"firstName\": \"Alex\",\n            \"lastName\": \"Jones\",\n            \"email\": \"alex.jones@company.net\",\n        }],\n        \"location\": [{\n            \"street1\": \"123 Street name\",\n            \"city\": \"Sydney\",\n            \"state\": \"NSW\",\n            \"country\": \"Australia\"\n        }]\n    },\n    \"char1\": \"QR-6789\",\n    \"char2\": \"Bathroom\",\n    \"int1\": \"15\",\n    \"char3\": \"No\",\n    \"char4\": \"Quick comment.\"\n}",
+          "type": "json"
         }
       ]
     },
@@ -652,6 +657,11 @@ define({ "api": [
         {
           "title": "Request Body Example:",
           "content": "{\n    \"name\": \"Updated Asset Name\",\n    \"description\": \"New Description\",\n    \"longitude\": 1,\n    \"latitude\": 5556,\n    \"altitude\": 777,\n    \"clientID\": 1,\n    \"locationID\": 1,\n    \"zoneID\": 20,\n    \"char1\": \"QR-6789\",\n    \"char2\": \"Bathroom\",\n    \"int1\": \"15\",\n    \"char3\": \"No\",\n    \"char4\": \"Quick comment.\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Request Body Example with new client:",
+          "content": "{\n    \"name\": \"Updated Asset Name\",\n    \"description\": \"New Description\",\n    \"longitude\": 1,\n    \"latitude\": 5556,\n    \"altitude\": 777,\n    \"client\": {\n        \"billingName\": \"New Customer\",\n        \"contact\": [{\n            \"firstName\": \"Alex\",\n            \"lastName\": \"Jones\",\n            \"email\": \"alex.jones@company.net\",\n        }],\n        \"location\": [{\n            \"street1\": \"123 Street name\",\n            \"city\": \"Sydney\",\n            \"state\": \"NSW\",\n            \"country\": \"Australia\"\n        }]\n    },\n    \"char1\": \"QR-6789\",\n    \"char2\": \"Bathroom\",\n    \"int1\": \"15\",\n    \"char3\": \"No\",\n    \"char4\": \"Quick comment.\"\n}",
           "type": "json"
         }
       ]
