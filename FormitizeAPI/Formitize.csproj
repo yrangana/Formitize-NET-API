@@ -61,6 +61,13 @@
     <Compile Include="API\Response\SubmittedFormPost.cs" />
     <Compile Include="API\Response\SubmittedForm\Repeatable.cs" />
     <Compile Include="API\Response\SubmittedForm\Row.cs" />
+    <Compile Include="API\Model\Database\Schema.cs" />
+    <Compile Include="API\Helper\Database.cs" />
+    <Compile Include="API\Response\Database\ListRequest.cs" />
+    <Compile Include="API\Response\Database\ListResponse.cs" />
+    <Compile Include="API\Model\Database\Entry.cs" />
+    <Compile Include="API\Response\Database\PostBatchRequest.cs" />
+    <Compile Include="API\Response\Database\PostBatchResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="API\" />
@@ -71,6 +78,8 @@
     <Folder Include="API\Error\" />
     <Folder Include="API\Helper\" />
     <Folder Include="API\Response\SubmittedForm\" />
+    <Folder Include="API\Model\Database\" />
+    <Folder Include="API\Response\Database\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">

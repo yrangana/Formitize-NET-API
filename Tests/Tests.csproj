@@ -46,6 +46,8 @@
     <Compile Include="UnitTests\CRM\Client\Create.cs" />
     <Compile Include="UnitTests\SubmittedForm\AddImage.cs" />
     <Compile Include="UnitTests\SubmittedForm\Query.cs" />
+    <Compile Include="UnitTests\Database\List.cs" />
+    <Compile Include="UnitTests\Database\Put.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -58,6 +60,7 @@
     <Folder Include="UnitTests\SubmittedForm\" />
     <Folder Include="UnitTests\CRM\" />
     <Folder Include="UnitTests\CRM\Client\" />
+    <Folder Include="UnitTests\Database\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FormitizeAPI\Formitize.csproj">
