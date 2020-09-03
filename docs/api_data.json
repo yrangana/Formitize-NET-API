@@ -750,7 +750,7 @@
         "type": "json"
       },
       {
-        "title": "NET Example",
+        "title": "C# Example",
         "content": "var client = new WebClient(Helper.createCredentials());\nvar job = new Formitize.API.Response.JobRequest();\n\nvar APIResponse = await FormitizeHelper.Database.GetDatabaseList(client);",
         "type": "CSharp"
       }
@@ -802,7 +802,7 @@
         "type": "json"
       },
       {
-        "title": ".NET Example",
+        "title": "C# Example",
         "content": "var client = new WebClient(Helper.createCredentials());\nvar job = new Formitize.API.Response.JobRequest();\n\n//Any values matching ColumnA will update, if not found will insert.\nvar primaryKeys = new List<string>() { \"ColumnA\" };\nvar entries = new List<Entry>() {\n\tnew Entry() {\n\t\tContent = {\n\t\t\t[\"ColumnA\"] = \"Value 1\",\n\t\t\t[\"ColumnB\"] = \"Value 2\",\n\t\t\t[\"ColumnC\"] = \"Value 3\"\n\t\t}\n\t},\n\tnew Entry() {\n\t\tContent = {\n\t\t\t[\"ColumnA\"] = \"Person A\",\n\t\t\t[\"ColumnB\"] = \"some description\",\n\t\t\t[\"ColumnC\"] = \"some other value\"\n\t\t}\n\t},\n};\n\nvar APIResponse = await FormitizeHelper.Database.BulkWrite(client, \"database_test\", entries, primaryKeys );",
         "type": "CSharp"
       }
