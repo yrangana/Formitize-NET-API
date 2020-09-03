@@ -2,10 +2,10 @@ define({ "api": [
   {
     "type": "post",
     "url": "/asset/:schemaID/",
-    "title": "Create Asset",
+    "title": "Add Asset",
     "name": "AssetCreate",
     "description": "<p>Create an asset</p>",
-    "group": "Asset",
+    "group": "Asset_Management",
     "version": "1.0.0",
     "parameter": {
       "fields": {
@@ -296,7 +296,7 @@ define({ "api": [
       ]
     },
     "filename": "app/system/class/api/rest/v1/asset/_apidoc.js",
-    "groupTitle": "Asset"
+    "groupTitle": "Asset_Management"
   },
   {
     "type": "get",
@@ -304,7 +304,7 @@ define({ "api": [
     "title": "Get Asset",
     "name": "AssetGet",
     "description": "<p>Get available information about the asset.</p>",
-    "group": "Asset",
+    "group": "Asset_Management",
     "version": "1.0.0",
     "examples": [
       {
@@ -323,15 +323,15 @@ define({ "api": [
       ]
     },
     "filename": "app/system/class/api/rest/v1/asset/_apidoc.js",
-    "groupTitle": "Asset"
+    "groupTitle": "Asset_Management"
   },
   {
     "type": "get",
     "url": "/asset/list",
-    "title": "Asset List",
+    "title": "List Assets",
     "name": "AssetList",
     "description": "<p>Retrieve a list of assets within a schema.</p>",
-    "group": "Asset",
+    "group": "Asset_Management",
     "version": "1.0.0",
     "examples": [
       {
@@ -350,15 +350,15 @@ define({ "api": [
       ]
     },
     "filename": "app/system/class/api/rest/v1/asset/_apidoc.js",
-    "groupTitle": "Asset"
+    "groupTitle": "Asset_Management"
   },
   {
     "type": "get",
     "url": "/asset/schema/list",
-    "title": "Asset List Schemas",
+    "title": "List Asset Types",
     "name": "AssetSchemaList",
     "description": "<p>Retrieve a list of asset schemas available.</p>",
-    "group": "Asset",
+    "group": "Asset_Management",
     "version": "1.0.0",
     "examples": [
       {
@@ -377,15 +377,15 @@ define({ "api": [
       ]
     },
     "filename": "app/system/class/api/rest/v1/asset/schema/_apidoc.js",
-    "groupTitle": "Asset"
+    "groupTitle": "Asset_Management"
   },
   {
     "type": "post",
     "url": "/asset/:schemaID/:assetID",
-    "title": "Update Asset",
+    "title": "Edit Asset",
     "name": "AssetUpdate",
     "description": "<p>Update an existing asset.</p>",
-    "group": "Asset",
+    "group": "Asset_Management",
     "version": "1.0.0",
     "parameter": {
       "fields": {
@@ -676,7 +676,7 @@ define({ "api": [
       ]
     },
     "filename": "app/system/class/api/rest/v1/asset/_apidoc.js",
-    "groupTitle": "Asset"
+    "groupTitle": "Asset_Management"
   },
   {
     "type": "all",
