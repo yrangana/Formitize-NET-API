@@ -17,6 +17,7 @@ namespace Tests.UnitTests
             var client = new WebClient(Helper.createCredentials());
             var job = new Formitize.API.Response.JobRequest();
 
+            //Any values matching ColumnA will update, if not found will insert.
             var primaryKeys = new List<string>() { "ColumnA" };
             var entries = new List<Entry>() {
                 new Entry() {
