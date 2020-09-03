@@ -154,6 +154,13 @@ function init($, _, locale, Handlebars, apiProject, apiData, Prism, sampleReques
         });
     });
     // api overwrite with ordered list
+
+    newList.sort(
+        (a, b) => {
+            return a.order < b.order ? -1 : 1;
+        }
+    )
+
     api = newList;
 
     //

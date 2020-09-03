@@ -4,6 +4,7 @@ define({ "api": [
     "url": "/asset/:schemaID/",
     "title": "Add Asset",
     "name": "AssetCreate",
+    "order": "3",
     "description": "<p>Create an asset</p>",
     "group": "Asset_Management",
     "version": "1.0.0",
@@ -303,6 +304,7 @@ define({ "api": [
     "url": "/asset/:schemaID/:assetID",
     "title": "Get Asset",
     "name": "AssetGet",
+    "order": "5",
     "description": "<p>Get available information about the asset.</p>",
     "group": "Asset_Management",
     "version": "1.0.0",
@@ -330,6 +332,7 @@ define({ "api": [
     "url": "/asset/list",
     "title": "List Assets",
     "name": "AssetList",
+    "order": "2",
     "description": "<p>Retrieve a list of assets within a schema.</p>",
     "group": "Asset_Management",
     "version": "1.0.0",
@@ -357,6 +360,7 @@ define({ "api": [
     "url": "/asset/schema/list",
     "title": "List Asset Types",
     "name": "AssetSchemaList",
+    "order": "1",
     "description": "<p>Retrieve a list of asset schemas available.</p>",
     "group": "Asset_Management",
     "version": "1.0.0",
@@ -384,6 +388,7 @@ define({ "api": [
     "url": "/asset/:schemaID/:assetID",
     "title": "Edit Asset",
     "name": "AssetUpdate",
+    "order": "4",
     "description": "<p>Update an existing asset.</p>",
     "group": "Asset_Management",
     "version": "1.0.0",
@@ -686,6 +691,7 @@ define({ "api": [
     "version": "1.0.0",
     "group": "Authorisation",
     "filename": "app/system/class/api/rest/_apidoc.js",
+    "order": "All",
     "groupTitle": "Authorisation",
     "name": "All",
     "header": {
@@ -738,10 +744,11 @@ define({ "api": [
   {
     "type": "get",
     "url": "/database/list",
-    "title": "List Tables",
+    "title": "List Lookup Databases",
     "name": "DatabaseList",
     "description": "<p>Retrieve a list of tables and the available columns.</p>",
     "group": "Database",
+    "order": "1",
     "version": "1.0.0",
     "examples": [
       {
@@ -770,8 +777,9 @@ define({ "api": [
   {
     "type": "post",
     "url": "/database/:tablename",
-    "title": "Post Table Data",
+    "title": "Bulk Write/Update Data",
     "name": "DatabasePost",
+    "order": "2",
     "description": "<p>Create or Update entries within a table.</p>",
     "group": "Database",
     "version": "1.0.0",
@@ -822,8 +830,9 @@ define({ "api": [
   {
     "type": "get",
     "url": "/form/list",
-    "title": "List",
+    "title": "List Templates",
     "name": "FormTemplate",
+    "order": "1",
     "version": "1.0.0",
     "group": "Form_Templates",
     "parameter": {
@@ -867,7 +876,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "app/system/class/api/rest/v1/form/_apidoc.submit.js",
+    "filename": "app/system/class/api/rest/v1/form/_apidoc.js",
     "groupTitle": "Form_Templates"
   },
   {
@@ -877,6 +886,7 @@ define({ "api": [
     "name": "FormTemplateID",
     "group": "Form_Templates",
     "version": "1.0.0",
+    "order": "2",
     "parameter": {
       "fields": {
         "Arguements": [
@@ -914,6 +924,7 @@ define({ "api": [
     "url": "/job/:id",
     "title": "Delete Job",
     "name": "DeleteJob",
+    "order": "4",
     "group": "Job",
     "version": "1.0.0",
     "description": "<p>Delete the job by id.</p>",
@@ -937,6 +948,7 @@ define({ "api": [
     "url": "/job/",
     "title": "List jobs",
     "name": "GetJob",
+    "order": "1",
     "group": "Job",
     "version": "1.0.0",
     "description": "<p>Get a list of jobs.</p>",
@@ -961,9 +973,10 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/job/",
-    "title": "Create/Update Job",
-    "name": "PostJob",
+    "url": "/job/:id",
+    "title": "Edit Job",
+    "name": "PostEditJob",
+    "order": "3",
     "version": "1.0.0",
     "group": "Job",
     "parameter": {
@@ -971,12 +984,374 @@ define({ "api": [
         "Body": [
           {
             "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "title",
+            "description": "<p>The Job Title.</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "jobNumber",
+            "description": "<p>The Job Number.</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "orderNumber",
+            "description": "<p>The Order Number of the job</p>"
+          },
+          {
+            "group": "Body",
             "type": "Number",
             "optional": true,
-            "field": "id",
-            "defaultValue": "0",
-            "description": "<p>The Job ID. If left as 0 will create a new job.</p>"
+            "field": "dueDate",
+            "description": "<p>The date represented in unix timestamp (no-milliseconds)</p>"
           },
+          {
+            "group": "Body",
+            "type": "Number",
+            "optional": true,
+            "field": "duration",
+            "defaultValue": "60",
+            "description": "<p>The number of minutes a job will run for.</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "notes",
+            "description": "<p>Any notes attached to this job, to be viewed by the Technician.</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": true,
+            "field": "location",
+            "description": "<p>Location this job is at.</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "optional": false,
+            "field": "agent",
+            "description": "<p>The user agent this job will be assigned to. Can either be the User ID or UserNane.</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Boolean",
+            "optional": true,
+            "field": "sendNotification",
+            "defaultValue": "true",
+            "description": "<p>Sends a ping to the users mobile device if notifications are available.</p>"
+          },
+          {
+            "group": "Body",
+            "type": "String",
+            "allowedValues": [
+              "Low",
+              "Normal",
+              "Medium",
+              "High",
+              "Urgent"
+            ],
+            "optional": true,
+            "field": "priority",
+            "description": "<p>The priority or 'importance' of this job.</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Number[]",
+            "optional": true,
+            "field": "form",
+            "description": "<p>The form IDs attached to this job.</p>"
+          },
+          {
+            "group": "Body",
+            "type": "Object[]",
+            "optional": true,
+            "field": "formData",
+            "description": "<p>The content of the form.</p>"
+          }
+        ],
+        "Delivery Fields": [
+          {
+            "group": "Delivery Fields",
+            "type": "String",
+            "optional": true,
+            "field": "deliveryLocation",
+            "description": "<p>If this is a delivery job, where is the drop-off location.</p>"
+          },
+          {
+            "group": "Delivery Fields",
+            "type": "String",
+            "optional": true,
+            "field": "siteName",
+            "description": "<p>The delivery location site name.</p>"
+          },
+          {
+            "group": "Delivery Fields",
+            "type": "String",
+            "optional": true,
+            "field": "deliveryContact",
+            "description": "<p>The contact person to be delivered to.</p>"
+          },
+          {
+            "group": "Delivery Fields",
+            "type": "String",
+            "optional": true,
+            "field": "deliveryPhone",
+            "description": "<p>The contact's phone number.</p>"
+          },
+          {
+            "group": "Delivery Fields",
+            "type": "String",
+            "optional": true,
+            "field": "deliveryNotes",
+            "description": "<p>Any notes specific to the delivery.</p>"
+          },
+          {
+            "group": "Delivery Fields",
+            "type": "Number",
+            "optional": true,
+            "field": "deliveryDate",
+            "description": "<p>Unixtimestamp(no-ms) of the delivery date/time.</p>"
+          }
+        ],
+        "Client Fields": [
+          {
+            "group": "Client Fields",
+            "type": "Object",
+            "optional": false,
+            "field": "client",
+            "description": "<p>The Client Object</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Number",
+            "optional": true,
+            "field": "client.id",
+            "description": "<p>ID of the client.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": false,
+            "field": "client.billingName",
+            "description": "<p>The Billing Name of the client</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Object[]",
+            "optional": true,
+            "field": "client.contact",
+            "description": "<p>An array of contacts</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Number",
+            "optional": true,
+            "field": "client.contact.id",
+            "description": "<p>The ID of the client's contact.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.contact.firstName",
+            "description": "<p>First name of contact.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.contact.lastName",
+            "description": "<p>Last name of contact.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.contact.email",
+            "description": "<p>First name of contact.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.contact.mobile",
+            "description": "<p>Mobile number.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.contact.mobileAreaCode",
+            "description": "<p>Mobile number area code.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.contact.workPhone",
+            "description": "<p>Work phone number.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.contact.workPhoneAreaCode",
+            "description": "<p>Work phone number area code.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.contact.homePhone",
+            "description": "<p>Home phone number.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.contact.homePhoneAreaCode",
+            "description": "<p>Home phone number area code.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Object",
+            "optional": true,
+            "field": "client.contact.custom",
+            "description": "<p>Object of custom variables.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Object",
+            "optional": true,
+            "field": "client.contact.custom.OBJECT_1",
+            "description": "<p>Custom variable of a client. To set values requires an Object of {&quot;value&quot;: &quot;Example&quot;, &quot;type&quot;: &quot;String&quot;}</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Object[]",
+            "optional": true,
+            "field": "client.location",
+            "description": "<p>An array of locations</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Number",
+            "optional": true,
+            "field": "client.location.id",
+            "description": "<p>The ID of the client's location.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.location.street1",
+            "description": "<p>Street 1 address.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.location.street2",
+            "description": "<p>Street 2 address.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.location.city",
+            "description": "<p>City address.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.location.state",
+            "description": "<p>State address.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.location.postcode",
+            "description": "<p>Postcode address.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.location.country",
+            "description": "<p>Country address.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Body Example:",
+          "content": "{\n\t\"id\": 0,\n\t\"title\": \"Job Title\",\n\t\"agent\": \"YourUser\",\n\t\"location\": \"123 Fake St, Suburb, Country\",\n\t\"client\": {\n\t\t\"id\": 0,\n\t\t\"billingName\": \"Test client\",\n\t\t\"contact\": [{\n\t\t\t\"firstName\": \"John\",\n\t\t\t\"lastName\": \"Doe\",\n\t\t\t\"email\": \"john@site.com\",\n\t\t\t\"mobile\": \"0000 000 000\",\n\t\t\t\"mobileAreaCode\": \"+61\",\n\t\t\t\"custom\": {\n\t\t\t\t\"Instagram\": {\"value\": \"@john.doe\", \"type\": \"Text\"},\n\t\t\t\t\"Facebook\": {\"value\": \"@john.doe\", \"type\": \"Text\"},\n\t\t\t}\n\t\t}, \n\t\t{ ... }],\n\t\t\"location\": [{\n\t\t\t\"street1\": \"123 Fake St\",\n\t\t\t\"street2\": \"\",\n\t\t\t\"city\": \"Some city\",\n\t\t\t\"state\": \"Some state\",\n\t\t\t\"postcode\": \"Some postcode\",\n\t\t\t\"country\": \"Some country\"\n\t\t}, \n\t\t{ ... }]\n\t},\n\t\"formData\": {\n\t\t444: {\n\t\t\t\"formText\": \"Test\"\n\t\t\t\"formMultiple\": [ \"Answer1\", \"Answer2\", \"Answer3\" ],\n\t\t\t\"aRepeatedText\": [\"Value1\", \"Value2\", \"Value3\"],\n\t\t\t\"formTextInARepeatableTableRow\": { \"0_1\": \"Test1\", \"0_2\": \"Test2\" ,\"1_1\": \"Test3\", \"1_2\": \"Test4\" }\n\t\t}\n\t}\n}",
+          "type": "json"
+        },
+        {
+          "title": "C# Example",
+          "content": "var job = new Formitize.API.Model.Job();\n\njob.Title = \"Test\";\njob.Agent = \"-1\"; //Assign to Queue (Taxi-Rank style) - Job is free-for-all to pick up by any agent.\njob.Client.BillingName = \"Test\";\n\nvar contact = new Formitize.API.Model.Contact();\ncontact.FirstName = \"FIRST_NAME\";\ncontact.LastName = \"LAST_NAME\";\ncontact.Mobile = \"0000 000 000\";\ncontact.Email = \"test@test.com\";\njob.Client.ContactList.Add(contact);\n\nvar form = new Formitize.API.Model.JobFormData();\nform.FormID = 10355;\nform.SetValue(\"0\", \"clientName\", \"Test Client\")\n  .SetValue(\"0\", \"clientEmail\", \"test@test.com\")\n  .SetValue(\"0\", \"businessType\", \"Option A\");\n\njob.AttachJobForm(form);\n\ntask = FormitizeHelper.Jobs.PostJob(client, job);\nvar APIResponse =  task.Result;",
+          "type": "CSharp"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "payload",
+            "description": "<p>Payload object.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "payload.jobID",
+            "description": "<p>ID of the new created/updaetd job.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "payload.agentID",
+            "description": "<p>ID of the agent assigned to the job.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n \"payload\": {\n     \"jobID\": 7,\n     \"agentID\": 1,\n }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/job/_apidoc.job.edit.js",
+    "groupTitle": "Job"
+  },
+  {
+    "type": "post",
+    "url": "/job/",
+    "title": "Add Job",
+    "name": "PostJob",
+    "order": "2",
+    "version": "1.0.0",
+    "group": "Job",
+    "parameter": {
+      "fields": {
+        "Body": [
           {
             "group": "Body",
             "type": "String",
@@ -1339,9 +1714,10 @@ define({ "api": [
   {
     "type": "get",
     "url": "/form/submit/:id",
-    "title": "Get the specified submitted form",
+    "title": "Get Submitted Form",
     "name": "SubmittedGetID",
     "group": "Submitted_Forms",
+    "order": "2",
     "version": "1.0.0",
     "description": "<p>Returns the submitted form.</p>",
     "parameter": {
@@ -1393,8 +1769,9 @@ define({ "api": [
   {
     "type": "get",
     "url": "/form/submit/list",
-    "title": "Get list of submitted forms",
+    "title": "List Submitted Forms",
     "name": "SubmittedList",
+    "order": "1",
     "group": "Submitted_Forms",
     "version": "1.0.0",
     "description": "<p>Returns a list of submitted forms. Limited to 200 per page.</p>",
