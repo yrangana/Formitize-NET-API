@@ -48,6 +48,11 @@
     <Compile Include="UnitTests\SubmittedForm\Query.cs" />
     <Compile Include="UnitTests\Database\List.cs" />
     <Compile Include="UnitTests\Database\Put.cs" />
+    <Compile Include="UnitTests\Asset\GetSchemaList.cs" />
+    <Compile Include="UnitTests\Asset\GetSchema.cs" />
+    <Compile Include="UnitTests\Asset\GetAssetList.cs" />
+    <Compile Include="UnitTests\Asset\GetAsset.cs" />
+    <Compile Include="UnitTests\Asset\PutAsset.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -61,6 +66,7 @@
     <Folder Include="UnitTests\CRM\" />
     <Folder Include="UnitTests\CRM\Client\" />
     <Folder Include="UnitTests\Database\" />
+    <Folder Include="UnitTests\Asset\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FormitizeAPI\Formitize.csproj">
