@@ -782,7 +782,7 @@
       },
       {
         "title": "C# Example",
-        "content": "var client = new WebClient(Helper.createCredentials());\nvar job = new Formitize.API.Response.JobRequest();\n\nvar APIResponse = await FormitizeHelper.Database.GetDatabaseList(client);",
+        "content": "using FormitizeHelper = Formitize.API.Helper;\n...\n\nvar client = new WebClient(new Credentials(\"APIDemo\", \"APIDemo\", \"apidemo123\"));\nvar job = new Formitize.API.Response.JobRequest();\n\nvar APIResponse = await FormitizeHelper.Database.GetDatabaseList(client);",
         "type": "CSharp"
       }
     ],
@@ -835,7 +835,7 @@
       },
       {
         "title": "C# Example",
-        "content": "var client = new WebClient(Helper.createCredentials());\nvar job = new Formitize.API.Response.JobRequest();\n\n//Any values matching ColumnA will update, if not found will insert.\nvar primaryKeys = new List<string>() { \"ColumnA\" };\nvar entries = new List<Entry>() {\n\tnew Entry() {\n\t\tContent = {\n\t\t\t[\"ColumnA\"] = \"Value 1\",\n\t\t\t[\"ColumnB\"] = \"Value 2\",\n\t\t\t[\"ColumnC\"] = \"Value 3\"\n\t\t}\n\t},\n\tnew Entry() {\n\t\tContent = {\n\t\t\t[\"ColumnA\"] = \"Person A\",\n\t\t\t[\"ColumnB\"] = \"some description\",\n\t\t\t[\"ColumnC\"] = \"some other value\"\n\t\t}\n\t},\n};\n\nvar APIResponse = await FormitizeHelper.Database.BulkWrite(client, \"database_test\", entries, primaryKeys );",
+        "content": " \tusing FormitizeHelper = Formitize.API.Helper;\n\t...\n\n\tvar client = new WebClient(new Credentials(\"APIDemo\", \"APIDemo\", \"apidemo123\"));\n\tvar job = new Formitize.API.Response.JobRequest();\n\n\t//Any values matching ColumnA will update, if not found will insert.\n\tvar primaryKeys = new List<string>() { \"ColumnA\" };\n\tvar entries = new List<Entry>() {\n\t\tnew Entry() {\n\t\t\tContent = {\n\t\t\t\t[\"ColumnA\"] = \"Value 1\",\n\t\t\t\t[\"ColumnB\"] = \"Value 2\",\n\t\t\t\t[\"ColumnC\"] = \"Value 3\"\n\t\t\t}\n\t\t},\n\t\tnew Entry() {\n\t\t\tContent = {\n\t\t\t\t[\"ColumnA\"] = \"Person A\",\n\t\t\t\t[\"ColumnB\"] = \"some description\",\n\t\t\t\t[\"ColumnC\"] = \"some other value\"\n\t\t\t}\n\t\t},\n\t};\n\n\tvar APIResponse = await FormitizeHelper.Database.BulkWrite(client, \"database_test\", entries, primaryKeys );",
         "type": "CSharp"
       }
     ],
@@ -1323,7 +1323,7 @@
         },
         {
           "title": "C# Example",
-          "content": "var job = new Formitize.API.Model.Job();\n\njob.Title = \"Test\";\njob.Agent = \"-1\"; //Assign to Queue (Taxi-Rank style) - Job is free-for-all to pick up by any agent.\njob.Client.BillingName = \"Test\";\n\nvar contact = new Formitize.API.Model.Contact();\ncontact.FirstName = \"FIRST_NAME\";\ncontact.LastName = \"LAST_NAME\";\ncontact.Mobile = \"0000 000 000\";\ncontact.Email = \"test@test.com\";\njob.Client.ContactList.Add(contact);\n\nvar form = new Formitize.API.Model.JobFormData();\nform.FormID = 10355;\nform.SetValue(\"0\", \"clientName\", \"Test Client\")\n  .SetValue(\"0\", \"clientEmail\", \"test@test.com\")\n  .SetValue(\"0\", \"businessType\", \"Option A\");\n\njob.AttachJobForm(form);\n\ntask = FormitizeHelper.Jobs.PostJob(client, job);\nvar APIResponse =  task.Result;",
+          "content": "using FormitizeHelper = Formitize.API.Helper;\n...\n\nvar job = new Formitize.API.Model.Job();\n\njob.Title = \"Test\";\njob.Agent = \"-1\"; //Assign to Queue (Taxi-Rank style) - Job is free-for-all to pick up by any agent.\njob.Client.BillingName = \"Test\";\n\nvar contact = new Formitize.API.Model.Contact();\ncontact.FirstName = \"FIRST_NAME\";\ncontact.LastName = \"LAST_NAME\";\ncontact.Mobile = \"0000 000 000\";\ncontact.Email = \"test@test.com\";\njob.Client.ContactList.Add(contact);\n\nvar form = new Formitize.API.Model.JobFormData();\nform.FormID = 10355;\nform.SetValue(\"0\", \"clientName\", \"Test Client\")\n  .SetValue(\"0\", \"clientEmail\", \"test@test.com\")\n  .SetValue(\"0\", \"businessType\", \"Option A\");\n\njob.AttachJobForm(form);\n\ntask = FormitizeHelper.Jobs.PostJob(client, job);\nvar APIResponse =  task.Result;",
           "type": "CSharp"
         }
       ]
@@ -1693,7 +1693,7 @@
         },
         {
           "title": "C# Example",
-          "content": "var job = new Formitize.API.Model.Job();\n\njob.Title = \"Test\";\njob.Agent = \"-1\"; //Assign to Queue (Taxi-Rank style) - Job is free-for-all to pick up by any agent.\njob.Client.BillingName = \"Test\";\n\nvar contact = new Formitize.API.Model.Contact();\ncontact.FirstName = \"FIRST_NAME\";\ncontact.LastName = \"LAST_NAME\";\ncontact.Mobile = \"0000 000 000\";\ncontact.Email = \"test@test.com\";\njob.Client.ContactList.Add(contact);\n\nvar form = new Formitize.API.Model.JobFormData();\nform.FormID = 10355;\nform.SetValue(\"0\", \"clientName\", \"Test Client\")\n  .SetValue(\"0\", \"clientEmail\", \"test@test.com\")\n  .SetValue(\"0\", \"businessType\", \"Option A\");\n\njob.AttachJobForm(form);\n\ntask = FormitizeHelper.Jobs.PostJob(client, job);\nvar APIResponse =  task.Result;",
+          "content": "using FormitizeHelper = Formitize.API.Helper;\n...\n\nvar job = new Formitize.API.Model.Job();\n\njob.Title = \"Test\";\njob.Agent = \"-1\"; //Assign to Queue (Taxi-Rank style) - Job is free-for-all to pick up by any agent.\njob.Client.BillingName = \"Test\";\n\nvar contact = new Formitize.API.Model.Contact();\ncontact.FirstName = \"FIRST_NAME\";\ncontact.LastName = \"LAST_NAME\";\ncontact.Mobile = \"0000 000 000\";\ncontact.Email = \"test@test.com\";\njob.Client.ContactList.Add(contact);\n\nvar form = new Formitize.API.Model.JobFormData();\nform.FormID = 10355;\nform.SetValue(\"0\", \"clientName\", \"Test Client\")\n  .SetValue(\"0\", \"clientEmail\", \"test@test.com\")\n  .SetValue(\"0\", \"businessType\", \"Option A\");\n\njob.AttachJobForm(form);\n\ntask = FormitizeHelper.Jobs.PostJob(client, job);\nvar APIResponse =  task.Result;",
           "type": "CSharp"
         }
       ]
