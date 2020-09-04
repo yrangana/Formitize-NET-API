@@ -19,7 +19,7 @@ namespace Tests.UnitTests
 
             var APIResponse = await FormitizeHelper.Asset.GetSchema(client, 360);
 
-            Assert.IsInstanceOf(typeof(Response<Response<Schema>>), APIResponse);
+            Assert.IsInstanceOf(typeof(Response<Schema>), APIResponse);
         }
 
 

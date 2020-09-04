@@ -18,7 +18,7 @@ namespace Tests.UnitTests
 
             var APIResponse = await FormitizeHelper.Asset.GetAssetList(client, 360);
         
-            Assert.IsInstanceOf(typeof(Response<Response<AssetListResponse>>), APIResponse);
+            Assert.IsInstanceOf(typeof(Response<AssetListResponse>), APIResponse);
         }
 
 

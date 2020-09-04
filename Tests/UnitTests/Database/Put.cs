@@ -38,7 +38,7 @@ namespace Tests.UnitTests
 
             var APIResponse = await FormitizeHelper.Database.BulkWrite(client, "database_test", entries, primaryKeys );
 
-            Assert.IsInstanceOf(typeof(Response<Formitize.API.Response.Database.ListResponse>), APIResponse);
+            Assert.IsInstanceOf(typeof(Response<Formitize.API.Response.Database.PostBatchResponse>), APIResponse);
         }
 
 

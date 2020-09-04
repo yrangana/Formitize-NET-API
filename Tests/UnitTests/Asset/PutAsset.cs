@@ -65,7 +65,7 @@ namespace Tests.UnitTests
 
 
 
-            Assert.IsInstanceOf(typeof(Response<Response<AssetListResponse>>), APIResponse);
+            Assert.IsInstanceOf(typeof(Response<PostAssetResponse>), APIResponse);
         }
 
 
