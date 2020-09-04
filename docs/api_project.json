@@ -6,7 +6,7 @@
     "title": "SDKs",
     "content": "<h1>Available SDKs</h1>\n<ul>\n<li>PHP SDK: <a href=\"https://github.com/MITechnologies/Formitize-PHP-API\">https://github.com/MITechnologies/Formitize-PHP-API</a></li>\n<li>.NET SDK: <a href=\"https://github.com/MITechnologies/Formitize-NET-API\">https://github.com/MITechnologies/Formitize-NET-API</a></li>\n</ul>\n"
   },
-  "title": "Formitize REST API",
+  "title": "Formitize API",
   "url": "https://service.formitize.com/api/rest/v2",
   "order": [
     "Authorisation"
@@ -16,7 +16,7 @@
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2020-09-04T00:02:40.376Z",
+    "time": "2020-09-04T00:57:33.849Z",
     "url": "https://apidocjs.com",
     "version": "0.25.0"
   }
