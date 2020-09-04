@@ -83,6 +83,13 @@
           },
           {
             "group": "Body",
+            "type": "json",
+            "optional": true,
+            "field": "content",
+            "description": "<p>If the column names are known before the request, you can pass a dictionary of values with the column name as the key.</p>"
+          },
+          {
+            "group": "Body",
             "type": "string[200]",
             "optional": true,
             "field": "char1-30",
@@ -281,6 +288,11 @@
           "type": "json"
         },
         {
+          "title": "Request Body Example using schema-columns:",
+          "content": "{\n    \"name\": \"New Asset\",\n    \"description\": \"New Description\",\n    \"longitude\": 1,\n    \"latitude\": 5556,\n    \"altitude\": 777,\n    \"clientID\": 1,\n    \"locationID\": 1,\n    \"zoneID\": 20,\n    \"content\": {\n        \"Barcode ID\": \"QR-6789\",\n        \"Area\": \"Bathroom\",\n        \"Activity Level\": \"15\",\n        \"Replenished (Yes/No)\": \"No\",\n        \"Comments\": \"Quick comment.\"\n    }\n}",
+          "type": "json"
+        },
+        {
           "title": "Request Body Example with new client",
           "content": "{\n    \"name\": \"New Asset\",\n    \"description\": \"New Description\",\n    \"longitude\": 1,\n    \"latitude\": 5556,\n    \"altitude\": 777,\n    \"client\": {\n        \"billingName\": \"New Customer\",\n        \"contact\": [{\n            \"firstName\": \"Alex\",\n            \"lastName\": \"Jones\",\n            \"email\": \"alex.jones@company.net\",\n        }],\n        \"location\": [{\n            \"street1\": \"123 Street name\",\n            \"city\": \"Sydney\",\n            \"state\": \"NSW\",\n            \"country\": \"Australia\"\n        }]\n    },\n    \"char1\": \"QR-6789\",\n    \"char2\": \"Bathroom\",\n    \"int1\": \"15\",\n    \"char3\": \"No\",\n    \"char4\": \"Quick comment.\"\n}",
           "type": "json"
@@ -291,7 +303,7 @@
       "examples": [
         {
           "title": "CURL Response",
-          "content": "{\n    \"payload\": {\n        \"assetID\": \"520427\",\n        \"schemaID\": \"3\",\n        \"schema\": [\n            {\n                \"title\": \"Barcode ID\",\n                \"col\": \"char1\"\n            },\n            {\n                \"title\": \"Area\",\n                \"col\": \"char2\"\n            },\n            {\n                \"title\": \"Activity Level\",\n                \"col\": \"int1\"\n            },\n            {\n                \"title\": \"Replenished (Yes/No)\",\n                \"col\": \"char3\"\n            },\n            {\n                \"title\": \"Comments\",\n                \"col\": \"char4\"\n            }\n        ],\n        \"asset\": {\n            \"id\": 520427,\n            \"name\": \"Asset Name.\",\n            \"number\": 520427,\n            \"description\": \"Description of asset.\",\n            \"longitude\": 6666,\n            \"latitude\": 5556,\n            \"altitude\": 777,\n            \"clientID\": 1,\n            \"locationID\": 1,\n            \"zoneID\": 20,\n            \"clientName\": \"Client Name\",\n            \"location\": \"123 Street Adadress Sydney 2000\",\n            \"zoneValue\": \"Kitchen\",\n            \"char1\": \"QR-12345\",\n            \"char2\": \"Sink\",\n            \"int1\": \"10\",\n            \"char3\": \"Yes\",\n            \"char4\": \"The comment of this asset.\"\n        }\n    }\n}",
+          "content": "{\n    \"payload\": {\n        \"asset\": {\n            \"id\": 520427,\n            \"name\": \"Asset Name.\",\n            \"number\": 520427,\n            \"description\": \"Description of asset.\",\n            \"longitude\": 6666,\n            \"latitude\": 5556,\n            \"altitude\": 777,\n            \"clientID\": 1,\n            \"locationID\": 1,\n            \"zoneID\": 20,\n            \"clientName\": \"Client Name\",\n            \"location\": \"123 Street Adadress Sydney 2000\",\n            \"zoneValue\": \"Kitchen\",\n            \"char1\": \"QR-12345\",\n            \"char2\": \"Sink\",\n            \"int1\": \"10\",\n            \"char3\": \"Yes\",\n            \"char4\": \"The comment of this asset.\"\n        }\n    }\n}",
           "type": "JSON"
         }
       ]
@@ -347,7 +359,7 @@
       "examples": [
         {
           "title": "CURL Response",
-          "content": "{\n    \"payload\": [\n        {\n            \"assetID\": \"520427\",\n            \"name\": \"Name of asset\",\n            \"description\": \"Description of asset.\",\n            \"number\": \"520427\",\n            \"schemaID\": \"3\",\n            \"date\": \"1599094442\",\n            \"latitude\": \"5556\",\n            \"longitude\": \"6666\",\n            \"clientID\": \"1\",\n            \"altitude\": \"777\",\n            \"companyName\": \"Client Name\",\n            \"address1\": \"123 Street Address\",\n            \"address2\": \"\",\n            \"city\": \"Sydney\",\n            \"postcode\": \"2000\",\n            \"zoneValue\": \"Kitchen\",\n            \"char1\": \"QR-12345\",\n            \"char2\": \"Sink\",\n            \"int1\": \"10\",\n            \"char3\": \"Yes\",\n            \"char4\": \"The comment of this asset.\"\n        }\n    ]\n}",
+          "content": "{\n    \"payload\": {\n        \"schema\": {\n            \"id\": 3,\n            \"title\": \"Bait Station\",            \n            \"columns\": [\n                {\n                    \"title\": \"Barcode ID\",\n                    \"col\": \"char1\"\n                },\n                {\n                    \"title\": \"Area\",\n                    \"col\": \"char2\"\n                },\n                {\n                    \"title\": \"Activity Level\",\n                    \"col\": \"int1\"\n                },\n                {\n                    \"title\": \"Replenished (Yes/No)\",\n                    \"col\": \"char3\"\n                },\n                {\n                    \"title\": \"Comments\",\n                    \"col\": \"char4\"\n                }            \n            ]\n        },\n        \"results\": [\n            {\n                \"assetID\": \"520427\",\n                \"name\": \"Name of asset\",\n                \"description\": \"Description of asset.\",\n                \"number\": \"520427\",\n                \"schemaID\": \"3\",\n                \"date\": \"1599094442\",\n                \"latitude\": \"5556\",\n                \"longitude\": \"6666\",\n                \"clientID\": \"1\",\n                \"altitude\": \"777\",\n                \"companyName\": \"Client Name\",\n                \"address1\": \"123 Street Address\",\n                \"address2\": \"\",\n                \"city\": \"Sydney\",\n                \"postcode\": \"2000\",\n                \"zoneValue\": \"Kitchen\",\n                \"char1\": \"QR-12345\",\n                \"char2\": \"Sink\",\n                \"int1\": \"10\",\n                \"char3\": \"Yes\",\n                \"char4\": \"The comment of this asset.\"\n            }\n        ]\n    }\n}",
           "type": "JSON"
         }
       ]
@@ -464,6 +476,13 @@
             "optional": true,
             "field": "client",
             "description": "<p>Optional client body for new clients</p>"
+          },
+          {
+            "group": "Body",
+            "type": "json",
+            "optional": true,
+            "field": "content",
+            "description": "<p>If the column names are known before the request, you can pass a dictionary of values with the column name as the key.</p>"
           },
           {
             "group": "Body",
@@ -665,6 +684,11 @@
           "type": "json"
         },
         {
+          "title": "Request Body Example using schema-columns:",
+          "content": "{\n    \"name\": \"New Asset\",\n    \"description\": \"New Description\",\n    \"longitude\": 1,\n    \"latitude\": 5556,\n    \"altitude\": 777,\n    \"clientID\": 1,\n    \"locationID\": 1,\n    \"zoneID\": 20,\n    \"content\": {\n        \"Barcode ID\": \"QR-6789\",\n        \"Area\": \"Bathroom\",\n        \"Activity Level\": \"15\",\n        \"Replenished (Yes/No)\": \"No\",\n        \"Comments\": \"Quick comment.\"\n    }\n}",
+          "type": "json"
+        },
+        {
           "title": "Request Body Example with new client:",
           "content": "{\n    \"name\": \"Updated Asset Name\",\n    \"description\": \"New Description\",\n    \"longitude\": 1,\n    \"latitude\": 5556,\n    \"altitude\": 777,\n    \"client\": {\n        \"billingName\": \"New Customer\",\n        \"contact\": [{\n            \"firstName\": \"Alex\",\n            \"lastName\": \"Jones\",\n            \"email\": \"alex.jones@company.net\",\n        }],\n        \"location\": [{\n            \"street1\": \"123 Street name\",\n            \"city\": \"Sydney\",\n            \"state\": \"NSW\",\n            \"country\": \"Australia\"\n        }]\n    },\n    \"char1\": \"QR-6789\",\n    \"char2\": \"Bathroom\",\n    \"int1\": \"15\",\n    \"char3\": \"No\",\n    \"char4\": \"Quick comment.\"\n}",
           "type": "json"
@@ -675,7 +699,7 @@
       "examples": [
         {
           "title": "CURL Response",
-          "content": "{\n    \"payload\": {\n        \"assetID\": \"520427\",\n        \"schemaID\": \"3\",\n        \"schema\": [\n            {\n                \"title\": \"Barcode ID\",\n                \"col\": \"char1\"\n            },\n            {\n                \"title\": \"Area\",\n                \"col\": \"char2\"\n            },\n            {\n                \"title\": \"Activity Level\",\n                \"col\": \"int1\"\n            },\n            {\n                \"title\": \"Replenished (Yes/No)\",\n                \"col\": \"char3\"\n            },\n            {\n                \"title\": \"Comments\",\n                \"col\": \"char4\"\n            }\n        ],\n        \"asset\": {\n            \"id\": 520427,\n            \"name\": \"Updated Asset Name\",\n            \"number\": 520427,\n            \"description\": \"Description of asset.\",\n            \"longitude\": 6666,\n            \"latitude\": 5556,\n            \"altitude\": 777,\n            \"clientID\": 1,\n            \"locationID\": 1,\n            \"zoneID\": 20,\n            \"clientName\": \"Client Name\",\n            \"location\": \"123 Street Adadress Sydney 2000\",\n            \"zoneValue\": \"Kitchen\",\n            \"char1\": \"QR-12345\",\n            \"char2\": \"Sink\",\n            \"int1\": \"10\",\n            \"char3\": \"Yes\",\n            \"char4\": \"The comment of this asset.\"\n        },\n        \"fieldsUpdated\": {\n            \"name\": \"Updated Asset Name\",\n            \"description\": \"desc\",\n            \"longitude\": \"6666\"\n        },\n    }\n}",
+          "content": "{\n    \"payload\": {\n        \"assetID\": \"520427\",\n        \"schemaID\": \"3\",\n        \"asset\": {\n            \"id\": 520427,\n            \"name\": \"Updated Asset Name\",\n            \"number\": 520427,\n            \"description\": \"Description of asset.\",\n            \"longitude\": 6666,\n            \"latitude\": 5556,\n            \"altitude\": 777,\n            \"clientID\": 1,\n            \"locationID\": 1,\n            \"zoneID\": 20,\n            \"clientName\": \"Client Name\",\n            \"location\": \"123 Street Adadress Sydney 2000\",\n            \"zoneValue\": \"Kitchen\",\n            \"char1\": \"QR-12345\",\n            \"char2\": \"Sink\",\n            \"int1\": \"10\",\n            \"char3\": \"Yes\",\n            \"char4\": \"The comment of this asset.\"\n        },\n        \"fieldsUpdated\": {\n            \"name\": \"Updated Asset Name\",\n            \"description\": \"desc\",\n            \"longitude\": \"6666\"\n        },\n    }\n}",
           "type": "JSON"
         }
       ]
