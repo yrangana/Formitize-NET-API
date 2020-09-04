@@ -48,13 +48,6 @@
           },
           {
             "group": "Body",
-            "type": "number",
-            "optional": true,
-            "field": "clientID",
-            "description": "<p>client ID for existing clients</p>"
-          },
-          {
-            "group": "Body",
             "type": "client",
             "optional": true,
             "field": "client",
@@ -80,6 +73,13 @@
             "optional": true,
             "field": "zone",
             "description": "<p>Creates a new zone and attaches it to the existing client location id. If there is no location, no zone will be created.</p>"
+          },
+          {
+            "group": "Body",
+            "type": "number",
+            "optional": true,
+            "field": "clientID",
+            "description": "<p>client ID for existing clients</p>"
           },
           {
             "group": "Body",
@@ -331,7 +331,7 @@
       "examples": [
         {
           "title": "CURL Response",
-          "content": "{\n    \"payload\": {\n        \"assetID\": \"520427\",\n        \"schemaID\": \"3\",\n        \"schema\": [\n            {\n                \"title\": \"Barcode ID\",\n                \"col\": \"char1\"\n            },\n            {\n                \"title\": \"Area\",\n                \"col\": \"char2\"\n            },\n            {\n                \"title\": \"Activity Level\",\n                \"col\": \"int1\"\n            },\n            {\n                \"title\": \"Replenished (Yes/No)\",\n                \"col\": \"char3\"\n            },\n            {\n                \"title\": \"Comments\",\n                \"col\": \"char4\"\n            }\n        ],\n        \"asset\": {\n            \"id\": 520427,\n            \"name\": \"Asset Name.\",\n            \"number\": 520427,\n            \"description\": \"Description of asset.\",\n            \"longitude\": 6666,\n            \"latitude\": 5556,\n            \"altitude\": 777,\n            \"clientID\": 1,\n            \"locationID\": 1,\n            \"zoneID\": 20,\n            \"clientName\": \"Client Name\",\n            \"location\": \"123 Street Adadress Sydney 2000\",\n            \"zoneValue\": \"Kitchen\",\n            \"char1\": \"QR-12345\",\n            \"char2\": \"Sink\",\n            \"int1\": \"10\",\n            \"char3\": \"Yes\",\n            \"char4\": \"The comment of this asset.\"\n        }\n    }\n}",
+          "content": "{\n    \"payload\": {\n        \"assetID\": \"520427\",\n        \"schemaID\": \"3\",\n        \"schema\": {\n            \"id\": 3,\n            \"title\": \"Bait Station\",            \n            \"columns\": [\n                {\n                    \"title\": \"Barcode ID\",\n                    \"col\": \"char1\"\n                },\n                {\n                    \"title\": \"Area\",\n                    \"col\": \"char2\"\n                },\n                {\n                    \"title\": \"Activity Level\",\n                    \"col\": \"int1\"\n                },\n                {\n                    \"title\": \"Replenished (Yes/No)\",\n                    \"col\": \"char3\"\n                },\n                {\n                    \"title\": \"Comments\",\n                    \"col\": \"char4\"\n                }            \n            ]\n        },\n        \"asset\": {\n            \"id\": 520427,\n            \"name\": \"Asset Name.\",\n            \"number\": 520427,\n            \"description\": \"Description of asset.\",\n            \"longitude\": 6666,\n            \"latitude\": 5556,\n            \"altitude\": 777,\n            \"clientID\": 1,\n            \"locationID\": 1,\n            \"zoneID\": 20,\n            \"clientName\": \"Client Name\",\n            \"location\": \"123 Street Adadress Sydney 2000\",\n            \"zoneValue\": \"Kitchen\",\n            \"char1\": \"QR-12345\",\n            \"char2\": \"Sink\",\n            \"int1\": \"10\",\n            \"char3\": \"Yes\",\n            \"char4\": \"The comment of this asset.\"\n        }\n    }\n}",
           "type": "JSON"
         }
       ]
