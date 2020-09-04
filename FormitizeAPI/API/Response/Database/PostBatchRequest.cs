@@ -22,6 +22,7 @@ namespace Formitize.API.Response.Database
         public PostBatchRequest()
         {
             Payload = new List<Dictionary<string, string>>();
+            PrimaryKeys = new List<string>();
         }
     }
 }

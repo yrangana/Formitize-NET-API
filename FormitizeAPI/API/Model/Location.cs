@@ -41,6 +41,12 @@ namespace Formitize.API.Model
             get; set;
         }
 
+        [JsonProperty(PropertyName = "postcode")]
+        public string Postcode
+        {
+            get; set;
+        }
+
         [JsonProperty(PropertyName = "country")]
         public string Country
         {

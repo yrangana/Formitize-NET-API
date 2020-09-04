@@ -68,6 +68,15 @@
     <Compile Include="API\Model\Database\Entry.cs" />
     <Compile Include="API\Response\Database\PostBatchRequest.cs" />
     <Compile Include="API\Response\Database\PostBatchResponse.cs" />
+    <Compile Include="API\Model\Asset\Schema\Schema.cs" />
+    <Compile Include="API\Model\Asset\Schema\SchemaColumn.cs" />
+    <Compile Include="API\Model\Asset\Entity.cs" />
+    <Compile Include="API\Model\Asset\Asset.cs" />
+    <Compile Include="API\Helper\Asset.cs" />
+    <Compile Include="API\Response\Asset\Schemas.cs" />
+    <Compile Include="API\Response\Asset\AssetList.cs" />
+    <Compile Include="API\Response\Asset\Asset.cs" />
+    <Compile Include="API\Response\Asset\PostAssetResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="API\" />
@@ -80,20 +89,12 @@
     <Folder Include="API\Response\SubmittedForm\" />
     <Folder Include="API\Model\Database\" />
     <Folder Include="API\Response\Database\" />
+    <Folder Include="API\Model\Asset\" />
+    <Folder Include="API\Model\Asset\Schema\" />
+    <Folder Include="API\Response\Asset\" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http.Extensions">
-      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net45+win8+wpa81\System.Net.Http.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http.Primitives">
-      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net45+win8+wpa81\System.Net.Http.Primitives.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="project.json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>
