@@ -312,6 +312,201 @@ define({ "api": [
     "groupTitle": "Asset_Management"
   },
   {
+    "type": "delete",
+    "url": "/asset/:schemaID/:assetID",
+    "title": "Delete Asset",
+    "name": "AssetDelete",
+    "order": "5",
+    "description": "<p>Delete an existing asset.</p>",
+    "group": "Asset_Management",
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "CURL Response",
+          "content": "{\n    \"payload\": {\n        \"result\": \"deleted\"\n    }\n}",
+          "type": "JSON"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/asset/_apidoc.js",
+    "groupTitle": "Asset_Management",
+    "parameter": {
+      "fields": {
+        "Client Fields": [
+          {
+            "group": "Client Fields",
+            "type": "Object",
+            "optional": false,
+            "field": "client",
+            "description": "<p>The Client Object</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Number",
+            "optional": true,
+            "field": "client.id",
+            "description": "<p>ID of the client.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": false,
+            "field": "client.billingName",
+            "description": "<p>The Billing Name of the client</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Object[]",
+            "optional": true,
+            "field": "client.contact",
+            "description": "<p>An array of contacts</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Number",
+            "optional": true,
+            "field": "client.contact.id",
+            "description": "<p>The ID of the client's contact.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.contact.firstName",
+            "description": "<p>First name of contact.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.contact.lastName",
+            "description": "<p>Last name of contact.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.contact.email",
+            "description": "<p>First name of contact.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.contact.mobile",
+            "description": "<p>Mobile number.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.contact.mobileAreaCode",
+            "description": "<p>Mobile number area code.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.contact.workPhone",
+            "description": "<p>Work phone number.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.contact.workPhoneAreaCode",
+            "description": "<p>Work phone number area code.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.contact.homePhone",
+            "description": "<p>Home phone number.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.contact.homePhoneAreaCode",
+            "description": "<p>Home phone number area code.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Object",
+            "optional": true,
+            "field": "client.contact.custom",
+            "description": "<p>Object of custom variables.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Object",
+            "optional": true,
+            "field": "client.contact.custom.OBJECT_1",
+            "description": "<p>Custom variable of a client. To set values requires an Object of {&quot;value&quot;: &quot;Example&quot;, &quot;type&quot;: &quot;String&quot;}</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Object[]",
+            "optional": true,
+            "field": "client.location",
+            "description": "<p>An array of locations</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Number",
+            "optional": true,
+            "field": "client.location.id",
+            "description": "<p>The ID of the client's location.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.location.street1",
+            "description": "<p>Street 1 address.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.location.street2",
+            "description": "<p>Street 2 address.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.location.city",
+            "description": "<p>City address.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.location.state",
+            "description": "<p>State address.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.location.postcode",
+            "description": "<p>Postcode address.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "client.location.country",
+            "description": "<p>Country address.</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "get",
     "url": "/asset/:schemaID/:assetID",
     "title": "Get Asset",
@@ -969,9 +1164,37 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/job/:id",
+    "title": "Get Job",
+    "name": "GetJob",
+    "order": "5",
+    "group": "Job",
+    "version": "1.0.0",
+    "description": "<p>Get a job.</p>",
+    "examples": [
+      {
+        "title": "CURL Example",
+        "content": "curl -A YourCompany -u admin:password https://service.formitize.com/api/rest/v2/job/245",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "CURL Response",
+          "content": "{\n    \"payload\": {\n        \"id\": \"245\",\n        \"maintenanceID\": \"0\",\n        \"jobNumber\": \"245\",\n        \"orderNumber\": \"\",\n        \"title\": \"Test B\",\n        \"forms\": {\n            \"2932\": {\n                \"id\": \"2932\",\n                \"title\": \"Features Test\"\n            }\n        },\n        \"location\": \"\",\n        \"description\": \"\",\n        \"dueDate\": \"1599688800\",\n        \"assignedTo\": \"0\",\n        \"priority\": \"0\",\n        \"status\": \"1\",\n        \"duration\": \"136800\",\n        \"statusLabel\": \"Created\"\n    }\n}",
+          "type": "JSON"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/job/_apidoc.js",
+    "groupTitle": "Job"
+  },
+  {
+    "type": "get",
     "url": "/job/",
     "title": "List jobs",
-    "name": "GetJob",
+    "name": "ListJob",
     "order": "1",
     "group": "Job",
     "version": "1.0.0",
@@ -1370,7 +1593,7 @@ define({ "api": [
     "url": "/job/",
     "title": "Add Job",
     "name": "PostJob",
-    "order": "2",
+    "order": "3",
     "version": "1.0.0",
     "group": "Job",
     "parameter": {
