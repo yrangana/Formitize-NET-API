@@ -1193,7 +1193,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/job/",
-    "title": "List jobs",
+    "title": "List Jobs",
     "name": "ListJob",
     "order": "1",
     "group": "Job",
