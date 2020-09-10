@@ -38,6 +38,21 @@ namespace Formitize.API.Helper
 
         }
 
+
+        /**
+         * <exception cref="Formitize.API.Error.APIException">On any API errors.</exception>
+         */
+        public static async Task<Response<DeleteAssetResponse>> DeleteAsset(WebClient client, int schemaID, int assetID)
+        {
+            var response = (String)(await client.DeleteAsync(
+                "asset/" + schemaID.ToString() + "/" + assetID.ToString(),
+                new Formitize.API.Response.Database.ListRequest()
+            ));
+
+            return JSONMapper.To<Response<DeleteAssetResponse>>(response);
+
+        }
+
         /**
          * <exception cref="Formitize.API.Error.APIException">On any API errors.</exception>
          */

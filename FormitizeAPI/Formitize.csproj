@@ -76,6 +76,7 @@
     <Compile Include="API\Response\Asset\Schemas.cs" />
     <Compile Include="API\Response\Asset\AssetList.cs" />
     <Compile Include="API\Response\Asset\Asset.cs" />
+    <Compile Include="API\Response\Asset\DeleteAssetResponse.cs" />
     <Compile Include="API\Response\Asset\PostAssetResponse.cs" />
   </ItemGroup>
   <ItemGroup>
