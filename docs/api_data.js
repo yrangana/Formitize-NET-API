@@ -536,7 +536,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/asset/list",
+    "url": "/asset/list/:schemaID/",
     "title": "List Assets",
     "name": "AssetList",
     "order": "2",
@@ -546,7 +546,7 @@ define({ "api": [
     "examples": [
       {
         "title": "CURL Example",
-        "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/asset/schema/list/",
+        "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/asset/schema/list/:schemaID",
         "type": "json"
       }
     ],
@@ -955,6 +955,462 @@ define({ "api": [
         {
           "title": "Authorisation Errors",
           "content": "{\"payload\":{\"error\": {\"message\": \"Username does not exist.\", \"timestamp\": 1521691072, \"code\": 401}}}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "Get",
+    "url": "/crm/client/:id",
+    "title": "Get Client",
+    "name": "GetClient",
+    "order": "2",
+    "group": "CRM",
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "CURL Example",
+        "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/crm/client/77",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Response Body Example:",
+          "content": "{\n    \"payload\": {\n        \"id\": \"77\",\n        \"billingName\": \"Business Name\",\n        \"primaryContactName\": \"Jane Doe\",\n        \"primaryContactPhone\": \"0000 000 000\",\n        \"primaryContactEmail\": \"jane.doe@example.com\",\n        \"primaryAddress\": \"STREET_1 STREET_2, CITY STATE, AUSTRALIA\",\n        \"contact\": {\n            \"80\": {\n                \"id\": \"80\",\n                \"firstName\": \"Jane\",\n                \"lastName\": \"Doe\",\n                \"homePhone\": \"\",\n                \"homePhoneAreaCode\": \"\",\n                \"mobile\": \"0000 000 000\",\n                \"mobileAreaCode\": \"+61\",\n                \"workPhone\": \"\",\n                \"workPhoneAreaCode\": \"\",\n                \"email\": \"\",\n                \"custom\": {}\n            },\n            \"81\": {\n                \"id\": \"81\",\n                \"firstName\": \"John\",\n                \"lastName\": \"Doe\",\n                \"homePhone\": \"\",\n                \"homePhoneAreaCode\": \"\",\n                \"mobile\": \"0000 000 000\",\n                \"mobileAreaCode\": \"+61\",\n                \"workPhone\": \"\",\n                \"workPhoneAreaCode\": \"\",\n                \"email\": \"\",\n                \"custom\": {}\n            }\n        },\n        \"location\": {\n            \"79\": {\n                \"id\": 79,\n                \"stret1\": \"STREET_1\",\n                \"stret2\": \"STREET_2\",\n                \"city\": \"CITY\",\n                \"state\": \"STATE\",\n                \"postcode\": \"\",\n                \"country\": \"AUSTRALIA\",\n                \"custom\": \"[]\"\n            }\n        }\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/crm/client/_apidoc.js",
+    "groupTitle": "CRM"
+  },
+  {
+    "type": "post",
+    "url": "/crm/client/list/?page=1",
+    "title": "List Clients",
+    "description": "<p>List all the contacts and clients available, returns 500 at a time.</p>",
+    "name": "ListContactsClient",
+    "order": "0",
+    "group": "CRM",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Optional": [
+          {
+            "group": "Optional",
+            "type": "number",
+            "optional": false,
+            "field": "page",
+            "description": "<p>The page number, starting from 1.</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "CURL Example",
+        "content": "\ncurl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/crm/client/list/?page=1",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Response Body Example:",
+          "content": "{\n    \"payload\": [\n        {\n            \"id\": \"87\",\n            \"clientID\": \"87\",\n            \"contactID\": \"93\",\n            \"billingName\": \"Business Name\",\n            \"name\": \"Jane Doe\",\n            \"firstName\": \"Jane\",\n            \"lastName\": \"Doe\",\n            \"status\": \"Active\",\n            \"clientType\": \"Customer\",\n            \"primaryAddress\": \"STREET_1 STREET_2, CITY STATE, AUSTRALIA\",\n            \"cachedata\": {\n                \"110\": {\n                    \"id\": \"110\",\n                    \"type\": \"Mobile\",\n                    \"extra\": \"+61\",\n                    \"value\": \"0000 000 000\",\n                    \"datatype\": \"\"\n                }\n            },\n            \"latestNote\": \"\",\n            \"dateCreated\": \"1603943584\",\n            \"dateModified\": \"1603943584\"\n        },\n        {\n            \"id\": \"87\",\n            \"clientID\": \"87\",\n            \"contactID\": \"94\",\n            \"billingName\": \"Business Name\",\n            \"name\": \"John Doe\",\n            \"firstName\": \"John\",\n            \"lastName\": \"Doe\",\n            \"status\": \"Active\",\n            \"clientType\": \"Customer\",\n            \"primaryAddress\": \"STREET_1 STREET_2, CITY STATE, AUSTRALIA\",\n            \"cachedata\": {\n                \"111\": {\n                    \"id\": \"111\",\n                    \"type\": \"Mobile\",\n                    \"extra\": \"+61\",\n                    \"value\": \"0000 000 000\",\n                    \"datatype\": \"\"\n                }\n            },\n            \"latestNote\": \"\",\n            \"dateCreated\": \"1603943584\",\n            \"dateModified\": \"1603943584\"\n        },\n        {\n            \"id\": \"67\",\n            \"clientID\": \"67\",\n            \"contactID\": \"67\",\n            \"billingName\": \"Formitize\",\n            \"name\": \"SUPPORT\",\n            \"firstName\": \"SUPPORT\",\n            \"lastName\": \"\",\n            \"status\": \"Active\",\n            \"clientType\": \"\",\n            \"primaryAddress\": \"Rodeo Rd, Gregory Hills\",\n            \"cachedata\": {\n                \"84\": {\n                    \"id\": \"84\",\n                    \"type\": \"Email\",\n                    \"extra\": \"\",\n                    \"value\": \"support@formitize.com\",\n                    \"datatype\": \"\"\n                },\n                \"85\": {\n                    \"id\": \"85\",\n                    \"type\": \"Mobile\",\n                    \"extra\": \"+61\",\n                    \"value\": \"0400 000 000\",\n                    \"datatype\": \"\"\n                },\n                \"86\": {\n                    \"id\": \"86\",\n                    \"type\": \"Work Phone\",\n                    \"extra\": \"\",\n                    \"value\": \"1300 552 008\",\n                    \"datatype\": \"\"\n                }\n            },\n            \"latestNote\": \"\",\n            \"dateCreated\": \"1603943584\",\n            \"dateModified\": \"1603943584\"\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/crm/client/list/_apidoc.js",
+    "groupTitle": "CRM"
+  },
+  {
+    "type": "post",
+    "url": "/crm/client/",
+    "title": "Add Client",
+    "name": "PostAddClient",
+    "order": "1",
+    "group": "CRM",
+    "version": "1.0.0",
+    "filename": "app/system/class/api/rest/v1/crm/client/_apidoc.js",
+    "groupTitle": "CRM",
+    "parameter": {
+      "fields": {
+        "Client Fields": [
+          {
+            "group": "Client Fields",
+            "type": "Number",
+            "optional": true,
+            "field": "id",
+            "description": "<p>ID of the client.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": false,
+            "field": "billingName",
+            "description": "<p>The Billing Name of the client</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Object[]",
+            "optional": true,
+            "field": "contact",
+            "description": "<p>An array of contacts</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Number",
+            "optional": true,
+            "field": "contact.id",
+            "description": "<p>The ID of the client's contact.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "contact.firstName",
+            "description": "<p>First name of contact.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "contact.lastName",
+            "description": "<p>Last name of contact.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "contact.email",
+            "description": "<p>First name of contact.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "contact.mobile",
+            "description": "<p>Mobile number.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "contact.mobileAreaCode",
+            "description": "<p>Mobile number area code.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "contact.workPhone",
+            "description": "<p>Work phone number.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "contact.workPhoneAreaCode",
+            "description": "<p>Work phone number area code.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "contact.homePhone",
+            "description": "<p>Home phone number.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "contact.homePhoneAreaCode",
+            "description": "<p>Home phone number area code.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Object",
+            "optional": true,
+            "field": "contact.custom",
+            "description": "<p>Object of custom variables.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Object",
+            "optional": true,
+            "field": "contact.custom.OBJECT_1",
+            "description": "<p>Custom variable of a client. To set values requires an Object of {&quot;value&quot;: &quot;Example&quot;, &quot;type&quot;: &quot;String&quot;}</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Object[]",
+            "optional": true,
+            "field": "location",
+            "description": "<p>An array of locations</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Number",
+            "optional": true,
+            "field": "location.id",
+            "description": "<p>The ID of the client's location.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "location.street1",
+            "description": "<p>Street 1 address.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "location.street2",
+            "description": "<p>Street 2 address.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "location.city",
+            "description": "<p>City address.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "location.state",
+            "description": "<p>State address.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "location.postcode",
+            "description": "<p>Postcode address.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "location.country",
+            "description": "<p>Country address.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Body Example:",
+          "content": "{\n\t\"billingName\": \"Business Name\",\n\t\"contact\": [{\n\t\t\"firstName\": \"Jane\",\n\t\t\"lastName\": \"Doe\",\n\t\t\"mobile\": \"0000 000 000\",\n\t\t\"mobileAreaCode\": \"+61\"\n\t},{\n\t\t\"firstName\": \"John\",\n\t\t\"lastName\": \"Doe\",\n\t\t\"mobile\": \"0000 000 000\",\n\t\t\"mobileAreaCode\": \"+61\"\n\t}],\n\t\"location\": [{\n\t\t\"street1\": \"STREET_1\",\n\t\t\"street2\": \"STREET_2\",\n\t\t\"city\": \"CITY\",\n\t\t\"state\": \"STATE\",\n\t\t\"country\": \"AUSTRALIA\"\n\t}]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response Body Example:",
+          "content": "{\n  \"payload\": {\n    \"id\": \"77\",\n    \"billingName\": \"Business Name\",\n    \"primaryContactName\": \"Jane Doe\",\n    \"primaryAddress\": \"STREET_1 STREET_2, CITY STATE, AUSTRALIA\",\n    \"primaryContactID\": 80,\n    \"primaryAddressID\": 79,\n    \"contactIDs\": [\n      80,\n      81\n    ],\n    \"locationIDs\": [\n      79\n    ]\n  }\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "/crm/client/:id",
+    "title": "Edit Client",
+    "name": "PostEditClient",
+    "order": "2",
+    "group": "CRM",
+    "version": "1.0.0",
+    "filename": "app/system/class/api/rest/v1/crm/client/_apidoc.js",
+    "groupTitle": "CRM",
+    "parameter": {
+      "fields": {
+        "Client Fields": [
+          {
+            "group": "Client Fields",
+            "type": "Number",
+            "optional": true,
+            "field": "id",
+            "description": "<p>ID of the client.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": false,
+            "field": "billingName",
+            "description": "<p>The Billing Name of the client</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Object[]",
+            "optional": true,
+            "field": "contact",
+            "description": "<p>An array of contacts</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Number",
+            "optional": true,
+            "field": "contact.id",
+            "description": "<p>The ID of the client's contact.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "contact.firstName",
+            "description": "<p>First name of contact.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "contact.lastName",
+            "description": "<p>Last name of contact.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "contact.email",
+            "description": "<p>First name of contact.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "contact.mobile",
+            "description": "<p>Mobile number.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "contact.mobileAreaCode",
+            "description": "<p>Mobile number area code.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "contact.workPhone",
+            "description": "<p>Work phone number.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "contact.workPhoneAreaCode",
+            "description": "<p>Work phone number area code.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "contact.homePhone",
+            "description": "<p>Home phone number.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "contact.homePhoneAreaCode",
+            "description": "<p>Home phone number area code.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Object",
+            "optional": true,
+            "field": "contact.custom",
+            "description": "<p>Object of custom variables.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Object",
+            "optional": true,
+            "field": "contact.custom.OBJECT_1",
+            "description": "<p>Custom variable of a client. To set values requires an Object of {&quot;value&quot;: &quot;Example&quot;, &quot;type&quot;: &quot;String&quot;}</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Object[]",
+            "optional": true,
+            "field": "location",
+            "description": "<p>An array of locations</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "Number",
+            "optional": true,
+            "field": "location.id",
+            "description": "<p>The ID of the client's location.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "location.street1",
+            "description": "<p>Street 1 address.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "location.street2",
+            "description": "<p>Street 2 address.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "location.city",
+            "description": "<p>City address.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "location.state",
+            "description": "<p>State address.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "location.postcode",
+            "description": "<p>Postcode address.</p>"
+          },
+          {
+            "group": "Client Fields",
+            "type": "String",
+            "optional": true,
+            "field": "location.country",
+            "description": "<p>Country address.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Body Example:",
+          "content": "{\n\t\"billingName\": \"Business Name\",\n\t\"contact\": [{\n\t\t\"firstName\": \"Jane\",\n\t\t\"lastName\": \"Doe\",\n\t\t\"mobile\": \"0000 000 000\",\n\t\t\"mobileAreaCode\": \"+61\"\n\t},{\n\t\t\"firstName\": \"John\",\n\t\t\"lastName\": \"Doe\",\n\t\t\"mobile\": \"0000 000 000\",\n\t\t\"mobileAreaCode\": \"+61\"\n\t}],\n\t\"location\": [{\n\t\t\"street1\": \"STREET_1\",\n\t\t\"street2\": \"STREET_2\",\n\t\t\"city\": \"CITY\",\n\t\t\"state\": \"STATE\",\n\t\t\"country\": \"AUSTRALIA\"\n\t}]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response Body Example:",
+          "content": "{\n  \"payload\": {\n    \"id\": \"77\",\n    \"billingName\": \"Business Name\",\n    \"primaryContactName\": \"Jane Doe\",\n    \"primaryAddress\": \"STREET_1 STREET_2, CITY STATE, AUSTRALIA\",\n    \"primaryContactID\": 80,\n    \"primaryAddressID\": 79,\n    \"contactIDs\": [\n      80,\n      81\n    ],\n    \"locationIDs\": [\n      79\n    ]\n  }\n}",
           "type": "json"
         }
       ]
