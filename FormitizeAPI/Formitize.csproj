@@ -78,6 +78,9 @@
     <Compile Include="API\Response\Asset\Asset.cs" />
     <Compile Include="API\Response\Asset\DeleteAssetResponse.cs" />
     <Compile Include="API\Response\Asset\PostAssetResponse.cs" />
+    <Compile Include="API\Helper\CRM.cs" />
+    <Compile Include="API\Response\CRM\PostCRMClientResponse.cs" />
+    <Compile Include="API\Response\CRM\ClientListResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="API\" />
@@ -93,6 +96,7 @@
     <Folder Include="API\Model\Asset\" />
     <Folder Include="API\Model\Asset\Schema\" />
     <Folder Include="API\Response\Asset\" />
+    <Folder Include="API\Response\CRM\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />

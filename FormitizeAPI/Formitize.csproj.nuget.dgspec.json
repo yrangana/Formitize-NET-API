@@ -5,7 +5,6 @@
   },
   "projects": {
     "/Users/dimitriadamou/Documents/GitHub/Formitize-NET-API/FormitizeAPI/Formitize.csproj": {
-      "version": "1.0.0",
       "restore": {
         "projectUniqueName": "/Users/dimitriadamou/Documents/GitHub/Formitize-NET-API/FormitizeAPI/Formitize.csproj",
         "projectName": "Formitize",
