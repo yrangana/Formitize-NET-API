@@ -54,6 +54,7 @@
     <Compile Include="UnitTests\Asset\GetAsset.cs" />
     <Compile Include="UnitTests\Asset\PutAsset.cs" />
     <Compile Include="UnitTests\Asset\DeleteAsset.cs" />
+    <Compile Include="UnitTests\CRM\Client\List.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
