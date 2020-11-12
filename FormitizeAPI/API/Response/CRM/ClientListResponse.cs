@@ -18,7 +18,9 @@ namespace Formitize.API.Response.CRM
         public string Value { get; private set; }
     }
 
-    public class ClientListResponse
+
+
+    public class Client
     {
         [JsonProperty(PropertyName = "clientID")]
         public int ClientID
@@ -98,10 +100,16 @@ namespace Formitize.API.Response.CRM
             get; private set;
         }
 
-        public ClientListResponse()
+        public Client()
         {
             CustomFields = new List<ClientListCustomData>();
         }
 
     }
+
+    public class ClientListResponse : List<Client>
+    {
+
+    }
+
 }
