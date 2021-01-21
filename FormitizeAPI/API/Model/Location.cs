@@ -54,6 +54,11 @@ namespace Formitize.API.Model
         }
 
 
+        [JsonProperty(PropertyName = "zones")]
+        public List<Zone> Zones
+        {
+            get; set;
+        }
 
         [JsonProperty(PropertyName = "custom")]
         public Dictionary<string, CRMVariableField> CustomFields
@@ -65,6 +70,7 @@ namespace Formitize.API.Model
         public Location()
         {
             CustomFields = new Dictionary<string, CRMVariableField>();
+            Zones = new List<Zone>();
         }
 
 

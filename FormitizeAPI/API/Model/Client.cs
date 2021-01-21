@@ -3,6 +3,9 @@ using System.Runtime.Serialization;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
+
+using System.Threading.Tasks;
+
 namespace Formitize.API.Model
 {
     [DataContract(Namespace = "")]
@@ -45,7 +48,6 @@ namespace Formitize.API.Model
             get; private set;
         }
 
-        [JsonProperty(PropertyName = "contact")]
         public List<Contact> ContactList;
 
 
@@ -56,6 +58,22 @@ namespace Formitize.API.Model
         {
             ContactList = new List<Contact>();
             LocationList = new List<Location>();
+        }
+
+        public async Task<List<Location>> GetLocations(WebClient webClient)
+        {
+            if(this.LocationList.Count != 0)
+            {
+                
+                return this.LocationList;
+            }
+
+            var client = await Formitize.API.Helper.CRM.GetClient(webClient, ID);
+
+            this.LocationList = client.Payload.LocationList;
+
+            return this.LocationList;
+
         }
     }
 }

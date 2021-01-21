@@ -36,5 +36,18 @@ namespace Formitize.API.Helper
             return JSONMapper.To<Response<ClientListResponse>>(response);
         }
 
+        /**
+         * <exception cref="Formitize.API.Error.APIException">On any API errors.</exception>
+         */
+        public static async Task<Response<Formitize.API.Model.Client>> GetClient(WebClient client, int id)
+        {
+            var response = (String)(await client.GetAsync(
+                    "crm/client/" + id.ToString(),
+                    new Formitize.API.Response.Database.ListRequest()
+            ));
+
+            return JSONMapper.To<Response<Formitize.API.Model.Client>>(response);
+        }
+
     }
 }

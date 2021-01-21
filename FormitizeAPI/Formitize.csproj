@@ -81,6 +81,7 @@
     <Compile Include="API\Helper\CRM.cs" />
     <Compile Include="API\Response\CRM\PostCRMClientResponse.cs" />
     <Compile Include="API\Response\CRM\ClientListResponse.cs" />
+    <Compile Include="API\Model\Zone.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="API\" />

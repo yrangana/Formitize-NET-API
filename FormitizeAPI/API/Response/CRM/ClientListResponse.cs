@@ -4,6 +4,10 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using AssetSchema = Formitize.API.Model.Asset.Schema;
 
+
+using System.Threading.Tasks;
+using Formitize.API.Model;
+
 namespace Formitize.API.Response.CRM
 {
     public class ClientListCustomData
@@ -100,9 +104,31 @@ namespace Formitize.API.Response.CRM
             get; private set;
         }
 
+
+        [JsonProperty(PropertyName = "location")]
+        public List<Location> LocationList;
+
+
         public Client()
         {
             CustomFields = new List<ClientListCustomData>();
+            LocationList = new List<Location>();
+        }
+
+        public async Task<List<Location>> GetLocations(WebClient webClient)
+        {
+            if (this.LocationList.Count != 0)
+            {
+
+                return this.LocationList;
+            }
+
+            var client = await Formitize.API.Helper.CRM.GetClient(webClient, ClientID);
+
+            this.LocationList = client.Payload.LocationList;
+
+            return this.LocationList;
+
         }
 
     }
