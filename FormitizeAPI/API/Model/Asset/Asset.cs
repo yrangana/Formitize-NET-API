@@ -81,6 +81,14 @@ namespace Formitize.API.Model.Asset
             get; private set;
         }
 
+
+        [JsonProperty(PropertyName = "siteName")]
+        public string SiteName
+        {
+            get; private set;
+        }
+
+
         [JsonProperty(PropertyName = "address1")]
         public string Address1
         {
