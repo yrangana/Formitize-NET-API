@@ -921,7 +921,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "--user-agent",
-            "description": "<p>This is the company login name used on Formiitze e.g. &quot;Formitize&quot;</p>"
+            "description": "<p>This is the company login name used on Formitize e.g. &quot;Formitize&quot;</p>"
           },
           {
             "group": "CURL Authorisation",
@@ -959,6 +959,33 @@ define({ "api": [
         }
       ]
     }
+  },
+  {
+    "type": "Delete",
+    "url": "/crm/client/:id",
+    "title": "Delete Client",
+    "name": "DeleteClient",
+    "order": "2",
+    "group": "CRM",
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "CURL Example",
+        "content": "curl -A YourCompany -u admin:password -X \"DELETE\" https://service.formitize.com/api/rest/v2/crm/client/77",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Response Body Example:",
+          "content": "{\n    \"payload\": {\n        \"id\": \"77\",\n        \"billingName\": \"Business Name\",\n        \"status\": \"Inactive\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/crm/client/_apidoc.js",
+    "groupTitle": "CRM"
   },
   {
     "type": "Get",
@@ -2494,6 +2521,13 @@ define({ "api": [
             "optional": false,
             "field": "page",
             "description": "<p>Returns the results for x page. Defaults to 1.</p>"
+          },
+          {
+            "group": "Optional",
+            "type": "Number",
+            "optional": false,
+            "field": "jobID",
+            "description": "<p>Returns the list of submitted forms attached to a Job ID.</p>"
           }
         ]
       }
