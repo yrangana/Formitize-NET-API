@@ -965,7 +965,7 @@ define({ "api": [
     "url": "/crm/client/:id",
     "title": "Delete Client",
     "name": "DeleteClient",
-    "order": "2",
+    "order": "5",
     "group": "CRM",
     "version": "1.0.0",
     "examples": [
