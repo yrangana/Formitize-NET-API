@@ -961,6 +961,123 @@ define({ "api": [
     }
   },
   {
+    "type": "Post",
+    "url": "/crm/client/:id/contact/",
+    "title": "Add Contact",
+    "name": "AddContact",
+    "order": "7",
+    "group": "CRM",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Contact Fields": [
+          {
+            "group": "Contact Fields",
+            "type": "Number",
+            "optional": true,
+            "field": "id",
+            "description": "<p>The ID of the client's contact.</p>"
+          },
+          {
+            "group": "Contact Fields",
+            "type": "String",
+            "optional": true,
+            "field": "firstName",
+            "description": "<p>First name of contact.</p>"
+          },
+          {
+            "group": "Contact Fields",
+            "type": "String",
+            "optional": true,
+            "field": "lastName",
+            "description": "<p>Last name of contact.</p>"
+          },
+          {
+            "group": "Contact Fields",
+            "type": "String",
+            "optional": true,
+            "field": "email",
+            "description": "<p>First name of contact.</p>"
+          },
+          {
+            "group": "Contact Fields",
+            "type": "String",
+            "optional": true,
+            "field": "mobile",
+            "description": "<p>Mobile number.</p>"
+          },
+          {
+            "group": "Contact Fields",
+            "type": "String",
+            "optional": true,
+            "field": "mobileAreaCode",
+            "description": "<p>Mobile number area code.</p>"
+          },
+          {
+            "group": "Contact Fields",
+            "type": "String",
+            "optional": true,
+            "field": "workPhone",
+            "description": "<p>Work phone number.</p>"
+          },
+          {
+            "group": "Contact Fields",
+            "type": "String",
+            "optional": true,
+            "field": "workPhoneAreaCode",
+            "description": "<p>Work phone number area code.</p>"
+          },
+          {
+            "group": "Contact Fields",
+            "type": "String",
+            "optional": true,
+            "field": "homePhone",
+            "description": "<p>Home phone number.</p>"
+          },
+          {
+            "group": "Contact Fields",
+            "type": "String",
+            "optional": true,
+            "field": "homePhoneAreaCode",
+            "description": "<p>Home phone number area code.</p>"
+          },
+          {
+            "group": "Contact Fields",
+            "type": "Object",
+            "optional": true,
+            "field": "custom",
+            "description": "<p>Object of custom variables.</p>"
+          },
+          {
+            "group": "Contact Fields",
+            "type": "Object",
+            "optional": true,
+            "field": "custom.OBJECT_1",
+            "description": "<p>Custom variable of a client. To set values requires an Object of {&quot;value&quot;: &quot;Example&quot;, &quot;type&quot;: &quot;String&quot;}</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "CURL Example",
+        "content": "curl -A YourCompany -u admin:password -X \"POST\" https://service.formitize.com/api/rest/v2/crm/client/77/contact/ {POSTFIELDS}",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Response Body Example:",
+          "content": "{\n    \"payload\": [\n        {\n            \"id\": \"78\",\n            \"firstName\": \"John\",\n            \"lastName\": \"Doe\",\n            \"homePhone\": \"\",\n            \"homePhoneAreaCode\": \"\",\n            \"mobile\": \"\",\n            \"mobileAreaCode\": \"\",\n            \"workPhone\": \"\",\n            \"workPhoneAreaCode\": \"\",\n            \"email\": \"john.doe@example.com\",\n            \"custom\": [\n                {\n                    \"type\": \"Email\",\n                    \"value\": \"john.doe@example.com\"\n                }\n            ]\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/crm/client/_apidoc.js",
+    "groupTitle": "CRM"
+  },
+  {
     "type": "Delete",
     "url": "/crm/client/:id",
     "title": "Delete Client",
@@ -980,6 +1097,143 @@ define({ "api": [
         {
           "title": "Response Body Example:",
           "content": "{\n    \"payload\": {\n        \"id\": \"77\",\n        \"billingName\": \"Business Name\",\n        \"status\": \"Inactive\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/crm/client/_apidoc.js",
+    "groupTitle": "CRM"
+  },
+  {
+    "type": "Delete",
+    "url": "/crm/client/:id/contact/:contactID",
+    "title": "Delete Contact",
+    "name": "DeleteContact",
+    "order": "9",
+    "group": "CRM",
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "CURL Example",
+        "content": "curl -A YourCompany -u admin:password -X \"DELETE\" https://service.formitize.com/api/rest/v2/crm/client/77/contact/78",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Response Body Example:",
+          "content": "{\n    \"payload\": [\n        {\n            \"id\": \"78\",\n            \"firstName\": \"John\",\n            \"lastName\": \"Doe\",\n            \"status\": \"Deleted\"\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/crm/client/_apidoc.js",
+    "groupTitle": "CRM"
+  },
+  {
+    "type": "Post",
+    "url": "/crm/client/:id/contact/:contactID",
+    "title": "Edit Contact",
+    "name": "EditContact",
+    "order": "8",
+    "group": "CRM",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Contact Fields": [
+          {
+            "group": "Contact Fields",
+            "type": "String",
+            "optional": true,
+            "field": "firstName",
+            "description": "<p>First name of contact.</p>"
+          },
+          {
+            "group": "Contact Fields",
+            "type": "String",
+            "optional": true,
+            "field": "lastName",
+            "description": "<p>Last name of contact.</p>"
+          },
+          {
+            "group": "Contact Fields",
+            "type": "String",
+            "optional": true,
+            "field": "email",
+            "description": "<p>First name of contact.</p>"
+          },
+          {
+            "group": "Contact Fields",
+            "type": "String",
+            "optional": true,
+            "field": "mobile",
+            "description": "<p>Mobile number.</p>"
+          },
+          {
+            "group": "Contact Fields",
+            "type": "String",
+            "optional": true,
+            "field": "mobileAreaCode",
+            "description": "<p>Mobile number area code.</p>"
+          },
+          {
+            "group": "Contact Fields",
+            "type": "String",
+            "optional": true,
+            "field": "workPhone",
+            "description": "<p>Work phone number.</p>"
+          },
+          {
+            "group": "Contact Fields",
+            "type": "String",
+            "optional": true,
+            "field": "workPhoneAreaCode",
+            "description": "<p>Work phone number area code.</p>"
+          },
+          {
+            "group": "Contact Fields",
+            "type": "String",
+            "optional": true,
+            "field": "homePhone",
+            "description": "<p>Home phone number.</p>"
+          },
+          {
+            "group": "Contact Fields",
+            "type": "String",
+            "optional": true,
+            "field": "homePhoneAreaCode",
+            "description": "<p>Home phone number area code.</p>"
+          },
+          {
+            "group": "Contact Fields",
+            "type": "Object",
+            "optional": true,
+            "field": "custom",
+            "description": "<p>Object of custom variables.</p>"
+          },
+          {
+            "group": "Contact Fields",
+            "type": "Object",
+            "optional": true,
+            "field": "custom.OBJECT_1",
+            "description": "<p>Custom variable of a client. To set values requires an Object of {&quot;value&quot;: &quot;Example&quot;, &quot;type&quot;: &quot;String&quot;}</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "CURL Example",
+        "content": "curl -A YourCompany -u admin:password -X \"POST\" https://service.formitize.com/api/rest/v2/crm/client/77/contact/78 {POSTFIELDS}",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Response Body Example:",
+          "content": "{\n    \"payload\": [\n        {\n            \"id\": \"78\",\n            \"firstName\": \"John\",\n            \"lastName\": \"Doe\",\n            \"homePhone\": \"\",\n            \"homePhoneAreaCode\": \"\",\n            \"mobile\": \"\",\n            \"mobileAreaCode\": \"\",\n            \"workPhone\": \"\",\n            \"workPhoneAreaCode\": \"\",\n            \"email\": \"john.doe@example.com\",\n            \"custom\": [\n                {\n                    \"type\": \"Email\",\n                    \"value\": \"john.doe@example.com\"\n                }\n            ]\n        }\n    ]\n}",
           "type": "json"
         }
       ]
@@ -1015,7 +1269,34 @@ define({ "api": [
     "groupTitle": "CRM"
   },
   {
-    "type": "post",
+    "type": "Get",
+    "url": "/crm/client/:id/contact/",
+    "title": "Get Contacts",
+    "name": "GetContact",
+    "order": "6",
+    "group": "CRM",
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "CURL Example",
+        "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/crm/client/77/contact/",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Response Body Example:",
+          "content": "{\n    \"payload\": [\n        {\n            \"id\": \"78\",\n            \"firstName\": \"John\",\n            \"lastName\": \"Doe\",\n            \"homePhone\": \"\",\n            \"homePhoneAreaCode\": \"\",\n            \"mobile\": \"\",\n            \"mobileAreaCode\": \"\",\n            \"workPhone\": \"\",\n            \"workPhoneAreaCode\": \"\",\n            \"email\": \"john.doe@example.com\",\n            \"custom\": [\n                {\n                    \"type\": \"Email\",\n                    \"value\": \"john.doe@example.com\"\n                }\n            ]\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/crm/client/_apidoc.js",
+    "groupTitle": "CRM"
+  },
+  {
+    "type": "Get",
     "url": "/crm/client/list/?page=1",
     "title": "List Clients",
     "description": "<p>List all the contacts and clients available, returns 500 at a time.</p>",
