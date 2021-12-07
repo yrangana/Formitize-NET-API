@@ -1725,6 +1725,250 @@ define({ "api": [
     }
   },
   {
+    "type": "Delete",
+    "url": "/crm/client/:clientid/location/:locationid",
+    "title": "Delete Location",
+    "name": "DeleteClientLocation",
+    "order": "5",
+    "group": "CRM_Location",
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "CURL Example",
+        "content": "curl -A YourCompany -u admin:password -X \"DELETE\" https://service.formitize.com/api/rest/v2/crm/client/77/location/80",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Response Body Example:",
+          "content": "{\n    \"payload\": {\n        \"deleted\": [\"80\"]\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/crm/client/_apidoc.location.js",
+    "groupTitle": "CRM_Location"
+  },
+  {
+    "type": "Delete",
+    "url": "/crm/client/:clientid/location/all",
+    "title": "Delete All Locations",
+    "name": "DeleteClientLocationAll",
+    "order": "5",
+    "group": "CRM_Location",
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "CURL Example",
+        "content": "curl -A YourCompany -u admin:password -X \"DELETE\" https://service.formitize.com/api/rest/v2/crm/client/77/location/all",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Response Body Example:",
+          "content": "{\n    \"payload\": {\n        \"deleted\": [\"80\", \"81\", \"82\", \"83\"]\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/crm/client/_apidoc.location.js",
+    "groupTitle": "CRM_Location"
+  },
+  {
+    "type": "Get",
+    "url": "/crm/client/:clientid/location/:locationid",
+    "title": "Get Location",
+    "name": "GetClientLocation",
+    "order": "2",
+    "group": "CRM_Location",
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "CURL Example",
+        "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/crm/client/77/location/80",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Response Body Example:",
+          "content": "{\n    \"payload\": {\n        \"id\": \"80\",\n        \"street1\": \"123 Homer Street\",\n        \"street2\": \"\",\n        \"city\": \"Sydney\",\n        \"state\": \"NSW\",\n        \"country\": \"Australia\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/crm/client/_apidoc.location.js",
+    "groupTitle": "CRM_Location"
+  },
+  {
+    "type": "Get",
+    "url": "/crm/client/:clientid/location/",
+    "title": "Get Locations",
+    "name": "GetClientLocations",
+    "order": "2",
+    "group": "CRM_Location",
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "CURL Example",
+        "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/crm/client/77/locations",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Response Body Example:",
+          "content": "{\n    \"payload\": [{\n        \"id\": \"80\",\n        \"street1\": \"123 Homer Street\",\n        \"street2\": \"\",\n        \"city\": \"Sydney\",\n        \"state\": \"NSW\",\n        \"country\": \"Australia\"\n    },\n    {\n        \"id\": \"84\",\n        \"street1\": \"456 Homer Street\",\n        \"street2\": \"\",\n        \"city\": \"Sydney\",\n        \"state\": \"NSW\",\n        \"country\": \"Australia\"\n    },\n    ...]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/crm/client/_apidoc.location.js",
+    "groupTitle": "CRM_Location"
+  },
+  {
+    "type": "post",
+    "url": "/crm/client/:clientid/location",
+    "title": "Add Location",
+    "name": "PostAddClientLocation",
+    "order": "1",
+    "group": "CRM_Location",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Location Fields": [
+          {
+            "group": "Location Fields",
+            "type": "String",
+            "optional": true,
+            "field": "street1",
+            "description": "<p>Street 1 address.</p>"
+          },
+          {
+            "group": "Location Fields",
+            "type": "String",
+            "optional": true,
+            "field": "street2",
+            "description": "<p>Street 2 address.</p>"
+          },
+          {
+            "group": "Location Fields",
+            "type": "String",
+            "optional": true,
+            "field": "city",
+            "description": "<p>City address.</p>"
+          },
+          {
+            "group": "Location Fields",
+            "type": "String",
+            "optional": true,
+            "field": "state",
+            "description": "<p>State address.</p>"
+          },
+          {
+            "group": "Location Fields",
+            "type": "String",
+            "optional": true,
+            "field": "postcode",
+            "description": "<p>Postcode address.</p>"
+          },
+          {
+            "group": "Location Fields",
+            "type": "String",
+            "optional": true,
+            "field": "country",
+            "description": "<p>Country address.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response Body Example:",
+          "content": "{\n    \"payload\": {\n        \"id\": \"80\",\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/crm/client/_apidoc.location.js",
+    "groupTitle": "CRM_Location"
+  },
+  {
+    "type": "post",
+    "url": "/crm/client/:clientid/location/:locationid",
+    "title": "Edit Location",
+    "name": "PostEditClientLocation",
+    "order": "2",
+    "group": "CRM_Location",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Location Fields": [
+          {
+            "group": "Location Fields",
+            "type": "String",
+            "optional": true,
+            "field": "street1",
+            "description": "<p>Street 1 address.</p>"
+          },
+          {
+            "group": "Location Fields",
+            "type": "String",
+            "optional": true,
+            "field": "street2",
+            "description": "<p>Street 2 address.</p>"
+          },
+          {
+            "group": "Location Fields",
+            "type": "String",
+            "optional": true,
+            "field": "city",
+            "description": "<p>City address.</p>"
+          },
+          {
+            "group": "Location Fields",
+            "type": "String",
+            "optional": true,
+            "field": "state",
+            "description": "<p>State address.</p>"
+          },
+          {
+            "group": "Location Fields",
+            "type": "String",
+            "optional": true,
+            "field": "postcode",
+            "description": "<p>Postcode address.</p>"
+          },
+          {
+            "group": "Location Fields",
+            "type": "String",
+            "optional": true,
+            "field": "country",
+            "description": "<p>Country address.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response Body Example:",
+          "content": "{\n    \"payload\": {\n        \"id\": \"80\",\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/crm/client/_apidoc.location.js",
+    "groupTitle": "CRM_Location"
+  },
+  {
     "type": "get",
     "url": "/database/list",
     "title": "List Lookup Databases",
@@ -1946,12 +2190,39 @@ define({ "api": [
       "examples": [
         {
           "title": "CURL Response",
-          "content": "{\n    \"payload\": {\n        \"id\": \"245\",\n        \"maintenanceID\": \"0\",\n        \"jobNumber\": \"245\",\n        \"orderNumber\": \"\",\n        \"title\": \"Test B\",\n        \"forms\": {\n            \"2932\": {\n                \"id\": \"2932\",\n                \"title\": \"Features Test\"\n            }\n        },\n        \"location\": \"\",\n        \"description\": \"\",\n        \"dueDate\": \"1599688800\",\n        \"assignedTo\": \"0\",\n        \"priority\": \"0\",\n        \"status\": \"1\",\n        \"duration\": \"136800\",\n        \"statusLabel\": \"Created\"\n    }\n}",
+          "content": "{\n    \"payload\": {\n        \"id\": \"245\",\n        \"maintenanceID\": \"0\",\n        \"jobNumber\": \"245\",\n        \"orderNumber\": \"\",\n        \"invoiceID\": \"0\",\n        \"invoiceNumber\": \"\",\n        \"title\": \"Test B\",\n        \"forms\": {\n            \"2932\": {\n                \"id\": \"2932\",\n                \"title\": \"Features Test\"\n            }\n        },\n        \"location\": \"\",\n        \"description\": \"\",\n        \"dueDate\": \"1599688800\",\n        \"assignedTo\": \"0\",\n        \"priority\": \"0\",\n        \"status\": \"1\",\n        \"duration\": \"136800\",\n        \"statusLabel\": \"Created\"\n    }\n}",
           "type": "JSON"
         }
       ]
     },
     "filename": "app/system/class/api/rest/v1/job/_apidoc.js",
+    "groupTitle": "Job"
+  },
+  {
+    "type": "get",
+    "url": "/job/:id/history",
+    "title": "Get Job History",
+    "name": "GetJobHistory",
+    "group": "Job",
+    "order": "6_",
+    "examples": [
+      {
+        "title": "CURL Example",
+        "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/job/:id/history/",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n \"payload\": [{\n        \"text\": \"Created Job.\",\n        \"startDate\": \"2021-04-28T15:57:46+10:00\",\n        \"endDate\": \"2021-04-28T15:57:46+10:00\",\n }]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "app/system/class/api/rest/v1/job/_apidoc.job.history.js",
     "groupTitle": "Job"
   },
   {
@@ -1974,7 +2245,7 @@ define({ "api": [
       "examples": [
         {
           "title": "CURL Response",
-          "content": "{\n \"payload\": {\n     \"5555\": {\n         \"id\": \"5555\",\n         \"maintenanceID\": \"0\",\n         \"jobNumber\": \"\",\n         \"orderNumber\": \"\",\n         \"title\": \"Person A\",\n         \"forms\": {\n             \"2932\": {\n                 \"id\": \"2932\",\n                 \"title\": \"Features Test\"\n             }\n         },\n         \"location\": \"123 Street\",\n         \"description\": \"\",\n         \"dueDate\": \"1417139760\",\n         \"assignedTo\": \"2251\",\n         \"priority\": \"0\",\n         \"status\": \"4\",\n         \"duration\": \"3600\",\n         \"statusLabel\": \"Completed\"\n     }\n }\n}",
+          "content": "{\n \"payload\": {\n     \"5555\": {\n         \"id\": \"5555\",\n         \"maintenanceID\": \"0\",\n         \"jobNumber\": \"\",\n         \"orderNumber\": \"\",\n         \"invoiceID\": \"0\",\n         \"invoiceNumber\": \"\",\n         \"title\": \"Person A\",\n         \"forms\": {\n             \"2932\": {\n                 \"id\": \"2932\",\n                 \"title\": \"Features Test\"\n             }\n         },\n         \"location\": \"123 Street\",\n         \"description\": \"\",\n         \"dueDate\": \"1417139760\",\n         \"assignedTo\": \"2251\",\n         \"priority\": \"0\",\n         \"status\": \"4\",\n         \"duration\": \"3600\",\n         \"statusLabel\": \"Completed\"\n     }\n }\n}",
           "type": "JSON"
         }
       ]
