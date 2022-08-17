@@ -1725,6 +1725,60 @@
     }
   },
   {
+    "type": "Get",
+    "url": "/crm/accounts/invoice/:id",
+    "title": "Get Invoice",
+    "name": "GetInvoice",
+    "order": "1",
+    "group": "CRM_Accounts",
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "CURL Example",
+        "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/crm/accounts/invoice/77",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Response Body Example:",
+          "content": "{\n    \"payload\": {\n        \"id\": 226,\n        \"invoiceNumber\": \"INVF-05932\",\n        \"invoiceDate\": \"04th Jun 2020\",\n        \"client\": {\n            \"id\": 103,\n            \"billingName\": \"My Contact\"\n        },\n        \"orderNumber\": \"\",\n        \"referenceNumber\": \"\",\n        \"addressTo\": \"\",\n        \"currency\": \"AUD\",\n        \"status\": \"Open\",\n        \"type\": \"ACCREC\",\n        \"lineItems\": [\n            {\n                \"id\": \"274\",\n                \"code\": \"\",\n                \"description\": \"3333\",\n                \"quantity\": \"1\",\n                \"unitAmount\": \"44\",\n                \"discountPercentage\": \"0\",\n                \"lineSubtotal\": 40,\n                \"taxAmount\": 4,\n                \"lineTotal\": 44\n            }\n        ],\n        \"taxType\": \"INCLUSIVE\",\n        \"tax\": 4,\n        \"subtotal\": 40,\n        \"total\": 44,\n        \"amountPaid\": 0,\n        \"payments\": [],\n        \"history\": [\n            {\n                \"by\": \"User\",\n                \"userName\": \"Sam John\",\n                \"note\": \"Added 1 row.\",\n                \"date\": \"11th Aug 2022 11:26am\",\n                \"dateTimestamp\": \"1660181216\"\n            }\n        ]\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/crm/accounts/invoice/_apidoc.js",
+    "groupTitle": "CRM_Accounts"
+  },
+  {
+    "type": "Get",
+    "url": "/crm/accounts/invoice/list",
+    "title": "List Invoice",
+    "name": "ListInvoice",
+    "order": "0",
+    "group": "CRM_Accounts",
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "CURL Example",
+        "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/crm/accounts/invoice/list",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Response Body Example:",
+          "content": "{\n    \"payload\": [\n        {\n            \"id\": \"485\",\n            \"addressTo\": \"5553 New Canterbury Road, Dulwich Hill New South Wales 2203, Australia\",\n            \"clientID\": \"103\",\n            \"total\": \"0\",\n            \"subtotal\": \"0\",\n            \"tax\": \"0\",\n            \"type\": \"0\",\n            \"amountPaid\": \"0\",\n            \"invoiceNumber\": \"INV-00115\",\n            \"orderNumber\": \"\",\n            \"reference\": \"\",\n            \"statusValue\": \"0\",\n            \"status\": \"Draft\",\n            \"currency\": \"AUD\",\n            \"taxTypeValue\": \"1\",\n            \"taxType\": \"INCLUSIVE\",\n            \"paid\": \"0\",\n            \"title\": \"\",\n            \"summary\": \"\",\n            \"terms\": \"\",\n            \"attachedTo\": [],\n            \"payDate\": \"0\",\n            \"payDateFormatted\": \"\",\n            \"expectedPayDate\": \"1661090400\",\n            \"expectedPayDateFormatted\": \"22nd Aug 2022\",\n            \"invoiceDate\": \"1660831200\",\n            \"invoiceDateFormatted\": \"19th Aug 2022\",\n            \"lastEmailed\": \"0\",\n            \"lastEmailedFormatted\": \"\",\n            \"companyname\": \"Made on Xero\",\n            \"primaryAddress\": \"11 Rodeo Rd, Gregory Hills NSW 2557\",\n            \"primaryContact\": \"103\",\n            \"primaryContactName\": \"Support\",\n            \"primaryContactPhone\": \"1300 552 008\",\n            \"primaryContactEmail\": \"support@formitize.com\"\n        },\n        {\n            \"id\": \"483\",\n            \"addressTo\": \"\",\n            \"clientID\": \"80\",\n            \"total\": \"5\",\n            \"subtotal\": \"5\",\n            \"tax\": \"0\",\n            \"type\": \"0\",\n            \"amountPaid\": \"0\",\n            \"invoiceNumber\": \"INV-0343\",\n            \"orderNumber\": \"\",\n            \"reference\": \"\",\n            \"statusValue\": \"1\",\n            \"status\": \"Open\",\n            \"currency\": \"AUD\",\n            \"taxTypeValue\": \"2\",\n            \"taxType\": \"EXCLUSIVE\",\n            \"paid\": \"0\",\n            \"title\": \"\",\n            \"summary\": \"\",\n            \"terms\": \"\",\n            \"attachedTo\": [],\n            \"payDate\": \"0\",\n            \"payDateFormatted\": \"\",\n            \"expectedPayDate\": \"1661263200\",\n            \"expectedPayDateFormatted\": \"24th Aug 2022\",\n            \"invoiceDate\": \"1660053600\",\n            \"invoiceDateFormatted\": \"10th Aug 2022\",\n            \"lastEmailed\": \"0\",\n            \"lastEmailedFormatted\": \"\",\n            \"companyname\": \"Test\",\n            \"primaryAddress\": \"George Street, Sydney, NSW 2000\",\n            \"primaryContact\": \"80\",\n            \"primaryContactName\": \"Support\",\n            \"primaryContactPhone\": \"1300 552 008\",\n            \"primaryContactEmail\": \"support@formitize.com\"\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/crm/accounts/invoice/_apidoc.js",
+    "groupTitle": "CRM_Accounts"
+  },
+  {
     "type": "Delete",
     "url": "/crm/client/:clientid/location/:locationid",
     "title": "Delete Location",
