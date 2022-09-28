@@ -48,6 +48,7 @@ namespace Formitize.API.Model
             get; private set;
         }
 
+        [JsonProperty(PropertyName = "contact")]
         public List<Contact> ContactList;
 
 
