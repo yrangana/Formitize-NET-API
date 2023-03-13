@@ -962,10 +962,10 @@ define({ "api": [
   },
   {
     "type": "Post",
-    "url": "/crm/client/:id/contact/",
+    "url": "/crm/client/:clientID/contact/",
     "title": "Add Contact",
     "name": "AddContact",
-    "order": "7",
+    "order": "6",
     "group": "CRM",
     "version": "1.0.0",
     "parameter": {
@@ -1069,7 +1069,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response Body Example:",
-          "content": "{\n    \"payload\": [\n        {\n            \"id\": \"78\",\n            \"firstName\": \"John\",\n            \"lastName\": \"Doe\",\n            \"homePhone\": \"\",\n            \"homePhoneAreaCode\": \"\",\n            \"mobile\": \"\",\n            \"mobileAreaCode\": \"\",\n            \"workPhone\": \"\",\n            \"workPhoneAreaCode\": \"\",\n            \"email\": \"john.doe@example.com\",\n            \"custom\": [\n                {\n                    \"type\": \"Email\",\n                    \"value\": \"john.doe@example.com\"\n                }\n            ]\n        }\n    ]\n}",
+          "content": "{\n    \"payload\": [\n        {\n            \"id\": \"78\",\n            \"firstName\": \"John\",\n            \"lastName\": \"Doe\",\n            \"homePhone\": \"\",\n            \"homePhoneAreaCode\": \"\",\n            \"mobile\": \"\",\n            \"mobileAreaCode\": \"\",\n            \"workPhone\": \"\",\n            \"workPhoneAreaCode\": \"\",\n            \"email\": \"john.doe@example.com\",\n            \"custom\": [\n                {\n                    \"id\": \"24\",\n                    \"type\": \"Mobile\",\n                    \"value\": \"0000 000 000\",\n                    \"extra\": \"+61\",\n                    \"datatype\": \"\"\n                }\n            ]\n        }\n    ]\n}",
           "type": "json"
         }
       ]
@@ -1079,10 +1079,10 @@ define({ "api": [
   },
   {
     "type": "Delete",
-    "url": "/crm/client/:id",
+    "url": "/crm/client/:clientID",
     "title": "Delete Client",
     "name": "DeleteClient",
-    "order": "5",
+    "order": "4",
     "group": "CRM",
     "version": "1.0.0",
     "examples": [
@@ -1123,7 +1123,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response Body Example:",
-          "content": "{\n    \"payload\": [\n        {\n            \"id\": \"78\",\n            \"firstName\": \"John\",\n            \"lastName\": \"Doe\",\n            \"status\": \"Deleted\"\n        }\n    ]\n}",
+          "content": "{\n    \"payload\": [\n        \"id\": \"78\",\n        \"firstName\": \"John\",\n        \"lastName\": \"Doe\",\n        \"status\": \"Deleted\"\n    ]\n}",
           "type": "json"
         }
       ]
@@ -1220,7 +1220,14 @@ define({ "api": [
             "description": "<p>Custom variable of a client. To set values requires an Object of {&quot;value&quot;: &quot;Example&quot;, &quot;type&quot;: &quot;String&quot;}</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Request Body Example:",
+          "content": " {\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"mobile\": \"0123 456 789\",\n    \"mobileAreaCode\": \"+61\"\n}",
+          "type": "json"
+        }
+      ]
     },
     "examples": [
       {
@@ -1233,7 +1240,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response Body Example:",
-          "content": "{\n    \"payload\": [\n        {\n            \"id\": \"78\",\n            \"firstName\": \"John\",\n            \"lastName\": \"Doe\",\n            \"homePhone\": \"\",\n            \"homePhoneAreaCode\": \"\",\n            \"mobile\": \"\",\n            \"mobileAreaCode\": \"\",\n            \"workPhone\": \"\",\n            \"workPhoneAreaCode\": \"\",\n            \"email\": \"john.doe@example.com\",\n            \"custom\": [\n                {\n                    \"type\": \"Email\",\n                    \"value\": \"john.doe@example.com\"\n                }\n            ]\n        }\n    ]\n}",
+          "content": "{\n    \"payload\": {\n        \"id\": \"78\",\n        \"firstName\": \"John\",\n        \"lastName\": \"Doe\",\n        \"homePhone\": \"\",\n        \"homePhoneAreaCode\": \"\",\n        \"mobile\": \"0123 456 789\",\n        \"mobileAreaCode\": \"+61\"\n        \"workPhone\": \"\",\n        \"workPhoneAreaCode\": \"\",\n        \"email\": \"john.doe@example.com\",\n        \"custom\": [\n            {\n                \"id\": \"24\",\n                \"type\": \"Mobile\",\n                \"value\": \"0000 000 000\",\n                \"extra\": \"+61\",\n                \"datatype\": \"\"\n            }\n        ]\n    }\n}",
           "type": "json"
         }
       ]
@@ -1243,7 +1250,7 @@ define({ "api": [
   },
   {
     "type": "Get",
-    "url": "/crm/client/:id",
+    "url": "/crm/client/:clientID",
     "title": "Get Client",
     "name": "GetClient",
     "order": "2",
@@ -1260,7 +1267,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response Body Example:",
-          "content": "{\n    \"payload\": {\n        \"id\": \"77\",\n        \"billingName\": \"Business Name\",\n        \"primaryContactName\": \"Jane Doe\",\n        \"primaryContactPhone\": \"0000 000 000\",\n        \"primaryContactEmail\": \"jane.doe@example.com\",\n        \"primaryAddress\": \"STREET_1 STREET_2, CITY STATE, AUSTRALIA\",\n        \"contact\": {\n            \"80\": {\n                \"id\": \"80\",\n                \"firstName\": \"Jane\",\n                \"lastName\": \"Doe\",\n                \"homePhone\": \"\",\n                \"homePhoneAreaCode\": \"\",\n                \"mobile\": \"0000 000 000\",\n                \"mobileAreaCode\": \"+61\",\n                \"workPhone\": \"\",\n                \"workPhoneAreaCode\": \"\",\n                \"email\": \"\",\n                \"custom\": {}\n            },\n            \"81\": {\n                \"id\": \"81\",\n                \"firstName\": \"John\",\n                \"lastName\": \"Doe\",\n                \"homePhone\": \"\",\n                \"homePhoneAreaCode\": \"\",\n                \"mobile\": \"0000 000 000\",\n                \"mobileAreaCode\": \"+61\",\n                \"workPhone\": \"\",\n                \"workPhoneAreaCode\": \"\",\n                \"email\": \"\",\n                \"custom\": {}\n            }\n        },\n        \"location\": {\n            \"79\": {\n                \"id\": 79,\n                \"street1\": \"STREET_1\",\n                \"street2\": \"STREET_2\",\n                \"city\": \"CITY\",\n                \"state\": \"STATE\",\n                \"postcode\": \"\",\n                \"country\": \"AUSTRALIA\",\n                \"zones\": [\n                    {\n                        \"id\": \"1\",\n                        \"value\": \"Zone A\"\n                    },\n                    {\n                        \"id\": \"2\",\n                        \"value\": \"Zone B\"\n                    }\n                ],\n                \"custom\": \"[]\"\n            }\n        }\n    }\n}",
+          "content": " {\n    \"payload\": {\n        \"id\": \"77\",\n        \"billingName\": \"Business Name\",\n        \"primaryContactID\": \"80\",\n        \"primaryAddressID\": \"79\",\n        \"primaryContactName\": \"Jane Doe\",\n        \"primaryContactPhone\": \"0000 000 000\",\n        \"primaryContactEmail\": \"jane.doe@example.com\",\n        \"primaryAddress\": \"STREET_1 STREET_2, CITY STATE, AUSTRALIA\",\n        \"contact\": [\n            {\n                \"id\": \"80\",\n                \"firstName\": \"Jane\",\n                \"lastName\": \"Doe\",\n                \"homePhone\": \"\",\n                \"homePhoneAreaCode\": \"\",\n                \"mobile\": \"0000 000 000\",\n                \"mobileAreaCode\": \"+61\",\n                \"workPhone\": \"\",\n                \"workPhoneAreaCode\": \"\",\n                \"email\": \"\",\n                \"custom\": {}\n            },\n            {\n                \"id\": \"81\",\n                \"firstName\": \"John\",\n                \"lastName\": \"Doe\",\n                \"homePhone\": \"\",\n                \"homePhoneAreaCode\": \"\",\n                \"mobile\": \"0000 000 000\",\n                \"mobileAreaCode\": \"+61\",\n                \"workPhone\": \"\",\n                \"workPhoneAreaCode\": \"\",\n                \"email\": \"\",\n                \"custom\": {\n                    \"24\": {\n                        \"id\": \"24\",\n                        \"type\": \"Mobile\",\n                        \"value\": \"0000 000 000\",\n                        \"extra\": \"+61\",\n                        \"datatype\": \"\"\n                    }\n                }\n            }\n        ],\n        \"location\": [\n            {\n                \"id\": 79,\n                \"sitename\": false,\n                \"street1\": \"STREET_1\",\n                \"street2\": \"STREET_2\",\n                \"city\": \"CITY\",\n                \"state\": \"STATE\",\n                \"postcode\": \"\",\n                \"country\": \"AUSTRALIA\",\n                \"zones\": [\n                    {\n                        \"id\": \"1\",\n                        \"value\": \"Zone A\"\n                    },\n                    {\n                        \"id\": \"2\",\n                        \"value\": \"Zone B\"\n                    }\n                ],\n                \"custom\": {}\n            }\n        ]\n    }\n}",
           "type": "json"
         }
       ]
@@ -1270,10 +1277,37 @@ define({ "api": [
   },
   {
     "type": "Get",
-    "url": "/crm/client/:id/contact/",
-    "title": "Get Contacts",
+    "url": "/crm/client/:clientID/contact/:contactID",
+    "title": "Get Contact",
     "name": "GetContact",
-    "order": "6",
+    "order": "7",
+    "group": "CRM",
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "CURL Example",
+        "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/crm/client/77/contact/78",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Response Body Example:",
+          "content": " {\n    \"payload\": {\n        \"id\": \"78\",\n        \"firstName\": \"John\",\n        \"lastName\": \"Doe\",\n        \"homePhone\": \"\",\n        \"homePhoneAreaCode\": \"\",\n        \"mobile\": \"\",\n        \"mobileAreaCode\": \"\",\n        \"workPhone\": \"\",\n        \"workPhoneAreaCode\": \"\",\n        \"email\": \"john.doe@example.com\",\n        \"custom\": [\n            {\n                \"id\": \"24\",\n                \"type\": \"Mobile\",\n                \"value\": \"0000 000 000\",\n                \"extra\": \"+61\",\n                \"datatype\": \"\"\n            }\n        ]\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/crm/client/_apidoc.js",
+    "groupTitle": "CRM"
+  },
+  {
+    "type": "Get",
+    "url": "/crm/client/:clientID/contact/",
+    "title": "List Contacts",
+    "name": "ListContact",
+    "order": "5",
     "group": "CRM",
     "version": "1.0.0",
     "examples": [
@@ -1287,7 +1321,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response Body Example:",
-          "content": "{\n    \"payload\": [\n        {\n            \"id\": \"78\",\n            \"firstName\": \"John\",\n            \"lastName\": \"Doe\",\n            \"homePhone\": \"\",\n            \"homePhoneAreaCode\": \"\",\n            \"mobile\": \"\",\n            \"mobileAreaCode\": \"\",\n            \"workPhone\": \"\",\n            \"workPhoneAreaCode\": \"\",\n            \"email\": \"john.doe@example.com\",\n            \"custom\": [\n                {\n                    \"type\": \"Email\",\n                    \"value\": \"john.doe@example.com\"\n                }\n            ]\n        }\n    ]\n}",
+          "content": "{\n    \"payload\": [\n        {\n            \"id\": \"80\",\n            \"firstName\": \"Jane\",\n            \"lastName\": \"Doe\",\n            \"homePhone\": \"\",\n            \"homePhoneAreaCode\": \"\",\n            \"mobile\": \"0000 000 000\",\n            \"mobileAreaCode\": \"+61\",\n            \"workPhone\": \"\",\n            \"workPhoneAreaCode\": \"\",\n            \"email\": \"\",\n            \"custom\": []\n        },\n        {\n            \"id\": \"81\",\n            \"firstName\": \"John\",\n            \"lastName\": \"Doe\",\n            \"homePhone\": \"\",\n            \"homePhoneAreaCode\": \"\",\n            \"mobile\": \"0000 000 000\",\n            \"mobileAreaCode\": \"+61\",\n            \"workPhone\": \"\",\n            \"workPhoneAreaCode\": \"\",\n            \"email\": \"\",\n            \"custom\": [\n                {\n                    \"id\": \"24\",\n                    \"type\": \"Mobile\",\n                    \"value\": \"0000 000 000\",\n                    \"extra\": \"+61\",\n                    \"datatype\": \"\"\n                }\n            ]\n        }\n    ]\n}",
           "type": "json"
         }
       ]
@@ -1328,7 +1362,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response Body Example:",
-          "content": "{\n    \"payload\": [\n        {\n            \"id\": \"87\",\n            \"clientID\": \"87\",\n            \"contactID\": \"93\",\n            \"billingName\": \"Business Name\",\n            \"name\": \"Jane Doe\",\n            \"firstName\": \"Jane\",\n            \"lastName\": \"Doe\",\n            \"status\": \"Active\",\n            \"clientType\": \"Customer\",\n            \"primaryAddress\": \"STREET_1 STREET_2, CITY STATE, AUSTRALIA\",\n            \"cachedata\": {\n                \"110\": {\n                    \"id\": \"110\",\n                    \"type\": \"Mobile\",\n                    \"extra\": \"+61\",\n                    \"value\": \"0000 000 000\",\n                    \"datatype\": \"\"\n                }\n            },\n            \"latestNote\": \"\",\n            \"dateCreated\": \"1603943584\",\n            \"dateModified\": \"1603943584\"\n        },\n        {\n            \"id\": \"87\",\n            \"clientID\": \"87\",\n            \"contactID\": \"94\",\n            \"billingName\": \"Business Name\",\n            \"name\": \"John Doe\",\n            \"firstName\": \"John\",\n            \"lastName\": \"Doe\",\n            \"status\": \"Active\",\n            \"clientType\": \"Customer\",\n            \"primaryAddress\": \"STREET_1 STREET_2, CITY STATE, AUSTRALIA\",\n            \"cachedata\": {\n                \"111\": {\n                    \"id\": \"111\",\n                    \"type\": \"Mobile\",\n                    \"extra\": \"+61\",\n                    \"value\": \"0000 000 000\",\n                    \"datatype\": \"\"\n                }\n            },\n            \"latestNote\": \"\",\n            \"dateCreated\": \"1603943584\",\n            \"dateModified\": \"1603943584\"\n        },\n        {\n            \"id\": \"67\",\n            \"clientID\": \"67\",\n            \"contactID\": \"67\",\n            \"billingName\": \"Formitize\",\n            \"name\": \"SUPPORT\",\n            \"firstName\": \"SUPPORT\",\n            \"lastName\": \"\",\n            \"status\": \"Active\",\n            \"clientType\": \"\",\n            \"primaryAddress\": \"Rodeo Rd, Gregory Hills\",\n            \"cachedata\": {\n                \"84\": {\n                    \"id\": \"84\",\n                    \"type\": \"Email\",\n                    \"extra\": \"\",\n                    \"value\": \"support@formitize.com\",\n                    \"datatype\": \"\"\n                },\n                \"85\": {\n                    \"id\": \"85\",\n                    \"type\": \"Mobile\",\n                    \"extra\": \"+61\",\n                    \"value\": \"0400 000 000\",\n                    \"datatype\": \"\"\n                },\n                \"86\": {\n                    \"id\": \"86\",\n                    \"type\": \"Work Phone\",\n                    \"extra\": \"\",\n                    \"value\": \"1300 552 008\",\n                    \"datatype\": \"\"\n                }\n            },\n            \"latestNote\": \"\",\n            \"dateCreated\": \"1603943584\",\n            \"dateModified\": \"1603943584\"\n        }\n    ]\n}",
+          "content": "{\n    \"payload\": [\n        {\n            \"id\": \"87\",\n            \"clientID\": \"87\",\n            \"contactID\": \"93\",\n            \"billingName\": \"Business Name\",\n            \"name\": \"Jane Doe\",\n            \"firstName\": \"Jane\",\n            \"lastName\": \"Doe\",\n            \"status\": \"Active\",\n            \"clientType\": \"Customer\",\n            \"primaryAddress\": \"STREET_1 STREET_2, CITY STATE, AUSTRALIA\",\n            \"cachedata\": [\n                {\n                    \"id\": \"110\",\n                    \"type\": \"Mobile\",\n                    \"extra\": \"+61\",\n                    \"value\": \"0000 000 000\",\n                    \"datatype\": \"\"\n                }\n            ],\n            \"latestNote\": \"\",\n            \"dateCreated\": \"1603943584\",\n            \"dateModified\": \"1603943584\"\n        },\n        {\n            \"id\": \"87\",\n            \"clientID\": \"87\",\n            \"contactID\": \"94\",\n            \"billingName\": \"Business Name\",\n            \"name\": \"John Doe\",\n            \"firstName\": \"John\",\n            \"lastName\": \"Doe\",\n            \"status\": \"Active\",\n            \"clientType\": \"Customer\",\n            \"primaryAddress\": \"STREET_1 STREET_2, CITY STATE, AUSTRALIA\",\n            \"cachedata\": [\n                {\n                    \"id\": \"111\",\n                    \"type\": \"Mobile\",\n                    \"extra\": \"+61\",\n                    \"value\": \"0000 000 000\",\n                    \"datatype\": \"\"\n                }\n            ],\n            \"latestNote\": \"\",\n            \"dateCreated\": \"1603943584\",\n            \"dateModified\": \"1603943584\"\n        },\n        {\n            \"id\": \"67\",\n            \"clientID\": \"67\",\n            \"contactID\": \"67\",\n            \"billingName\": \"Formitize\",\n            \"name\": \"SUPPORT\",\n            \"firstName\": \"SUPPORT\",\n            \"lastName\": \"\",\n            \"status\": \"Active\",\n            \"clientType\": \"\",\n            \"primaryAddress\": \"Rodeo Rd, Gregory Hills\",\n            \"cachedata\": [\n                {\n                    \"id\": \"84\",\n                    \"type\": \"Email\",\n                    \"extra\": \"\",\n                    \"value\": \"support@formitize.com\",\n                    \"datatype\": \"\"\n                },\n                {\n                    \"id\": \"85\",\n                    \"type\": \"Mobile\",\n                    \"extra\": \"+61\",\n                    \"value\": \"0400 000 000\",\n                    \"datatype\": \"\"\n                },\n                {\n                    \"id\": \"86\",\n                    \"type\": \"Work Phone\",\n                    \"extra\": \"\",\n                    \"value\": \"1300 552 008\",\n                    \"datatype\": \"\"\n                }\n            ],\n            \"latestNote\": \"\",\n            \"dateCreated\": \"1603943584\",\n            \"dateModified\": \"1603943584\"\n        }\n    ]\n}",
           "type": "json"
         }
       ]
@@ -1524,7 +1558,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response Body Example:",
-          "content": "{\n  \"payload\": {\n    \"id\": \"77\",\n    \"billingName\": \"Business Name\",\n    \"primaryContactName\": \"Jane Doe\",\n    \"primaryAddress\": \"STREET_1 STREET_2, CITY STATE, AUSTRALIA\",\n    \"primaryContactID\": 80,\n    \"primaryAddressID\": 79,\n    \"contactIDs\": [\n      80,\n      81\n    ],\n    \"locationIDs\": [\n      79\n    ]\n  }\n}",
+          "content": "{\n  \"payload\": {\n    \"id\": \"77\",\n    \"billingName\": \"Business Name\",\n    \"primaryContactID\": 80,\n    \"primaryAddressID\": 79,\n    \"primaryContactName\": \"Jane Doe\",\n    \"primaryAddress\": \"STREET_1 STREET_2, CITY STATE, AUSTRALIA\",\n    \"contactIDs\": [\n      80,\n      81\n    ],\n    \"locationIDs\": [\n      79\n    ]\n  }\n}",
           "type": "json"
         }
       ]
@@ -1532,10 +1566,10 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/crm/client/:id",
+    "url": "/crm/client/:clientID",
     "title": "Edit Client",
     "name": "PostEditClient",
-    "order": "2",
+    "order": "3",
     "group": "CRM",
     "version": "1.0.0",
     "filename": "app/system/class/api/rest/v1/crm/client/_apidoc.js",
@@ -1718,7 +1752,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response Body Example:",
-          "content": "{\n  \"payload\": {\n    \"id\": \"77\",\n    \"billingName\": \"Business Name\",\n    \"primaryContactName\": \"Jane Doe\",\n    \"primaryAddress\": \"STREET_1 STREET_2, CITY STATE, AUSTRALIA\",\n    \"primaryContactID\": 80,\n    \"primaryAddressID\": 79,\n    \"contactIDs\": [\n      80,\n      81\n    ],\n    \"locationIDs\": [\n      79\n    ]\n  }\n}",
+          "content": "{\n  \"payload\": {\n    \"id\": \"77\",\n    \"billingName\": \"Business Name\",\n    \"primaryContactID\": 80,\n    \"primaryAddressID\": 79,\n    \"primaryContactName\": \"Jane Doe\",\n    \"primaryAddress\": \"STREET_1 STREET_2, CITY STATE, AUSTRALIA\",\n    \"contactIDs\": [\n      80,\n      81\n    ],\n    \"locationIDs\": [\n      79\n    ]\n  }\n}",
           "type": "json"
         }
       ]
@@ -1861,7 +1895,7 @@ define({ "api": [
   },
   {
     "type": "Get",
-    "url": "/crm/client/:clientid/location/",
+    "url": "/crm/client/:clientid/locations/",
     "title": "Get Locations",
     "name": "GetClientLocations",
     "order": "2",
