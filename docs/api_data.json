@@ -1817,7 +1817,7 @@
     "url": "/crm/client/:clientid/location/:locationid",
     "title": "Delete Location",
     "name": "DeleteClientLocation",
-    "order": "5",
+    "order": "4",
     "group": "CRM_Location",
     "version": "1.0.0",
     "examples": [
@@ -1885,7 +1885,7 @@
       "examples": [
         {
           "title": "Response Body Example:",
-          "content": "{\n    \"payload\": {\n        \"id\": \"80\",\n        \"street1\": \"123 Homer Street\",\n        \"street2\": \"\",\n        \"city\": \"Sydney\",\n        \"state\": \"NSW\",\n        \"country\": \"Australia\"\n    }\n}",
+          "content": " {\n    \"payload\": {\n        \"id\": \"80\",\n        \"siteName\": \"\",\n        \"street1\": \"123 Homer Street\",\n        \"street2\": \"\",\n        \"city\": \"Sydney\",\n        \"postcode\": \"\",\n        \"state\": \"NSW\",\n        \"country\": \"Australia\"\n    }\n}",
           "type": "json"
         }
       ]
@@ -1895,16 +1895,16 @@
   },
   {
     "type": "Get",
-    "url": "/crm/client/:clientid/locations/",
-    "title": "Get Locations",
-    "name": "GetClientLocations",
-    "order": "2",
+    "url": "/crm/client/:clientid/location/",
+    "title": "List Locations",
+    "name": "ListClientLocations",
+    "order": "0",
     "group": "CRM_Location",
     "version": "1.0.0",
     "examples": [
       {
         "title": "CURL Example",
-        "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/crm/client/77/locations",
+        "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/crm/client/77/location",
         "type": "json"
       }
     ],
@@ -1912,7 +1912,7 @@
       "examples": [
         {
           "title": "Response Body Example:",
-          "content": "{\n    \"payload\": [{\n        \"id\": \"80\",\n        \"street1\": \"123 Homer Street\",\n        \"street2\": \"\",\n        \"city\": \"Sydney\",\n        \"state\": \"NSW\",\n        \"country\": \"Australia\"\n    },\n    {\n        \"id\": \"84\",\n        \"street1\": \"456 Homer Street\",\n        \"street2\": \"\",\n        \"city\": \"Sydney\",\n        \"state\": \"NSW\",\n        \"country\": \"Australia\"\n    },\n    ...]\n}",
+          "content": " {\n    \"payload\": [\n        {\n            \"id\": \"80\",\n            \"siteName\": \"\",\n            \"street1\": \"123 Homer Street\",\n            \"street2\": \"\",\n            \"city\": \"Sydney\",\n            \"postcode\": \"\",\n            \"state\": \"NSW\",\n            \"country\": \"Australia\"\n        },\n        {\n            \"id\": \"84\",\n            \"siteName\": \"\",\n            \"street1\": \"456 Homer Street\",\n            \"street2\": \"\",\n            \"city\": \"Sydney\",\n            \"postcode\": \"\",\n            \"state\": \"NSW\",\n            \"country\": \"Australia\"\n        }\n    ]\n}",
           "type": "json"
         }
       ]
@@ -1931,6 +1931,13 @@
     "parameter": {
       "fields": {
         "Location Fields": [
+          {
+            "group": "Location Fields",
+            "type": "String",
+            "optional": true,
+            "field": "siteName",
+            "description": "<p>Site name.</p>"
+          },
           {
             "group": "Location Fields",
             "type": "String",
@@ -1993,12 +2000,19 @@
     "url": "/crm/client/:clientid/location/:locationid",
     "title": "Edit Location",
     "name": "PostEditClientLocation",
-    "order": "2",
+    "order": "3",
     "group": "CRM_Location",
     "version": "1.0.0",
     "parameter": {
       "fields": {
         "Location Fields": [
+          {
+            "group": "Location Fields",
+            "type": "String",
+            "optional": true,
+            "field": "siteName",
+            "description": "<p>Site name.</p>"
+          },
           {
             "group": "Location Fields",
             "type": "String",
