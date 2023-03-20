@@ -1,10 +1,31 @@
 [
   {
+    "type": "delete",
+    "url": "/asset/:schemaID/:assetID",
+    "title": "Delete Asset",
+    "name": "AssetDelete",
+    "order": "5",
+    "description": "<p>Delete an existing asset.</p>",
+    "group": "Asset_Management",
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "CURL Response",
+          "content": "{\n    \"payload\": {\n        \"result\": \"deleted\"\n    }\n}",
+          "type": "JSON"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/asset/_apidoc.js",
+    "groupTitle": "Asset_Management"
+  },
+  {
     "type": "post",
     "url": "/asset/:schemaID/",
     "title": "Add Asset",
-    "name": "AssetCreate",
-    "order": "3",
+    "name": "CreateAsset",
+    "order": "2",
     "description": "<p>Create an asset</p>",
     "group": "Asset_Management",
     "version": "1.0.0",
@@ -17,6 +38,13 @@
             "optional": false,
             "field": "name",
             "description": "<p>Name of the asset.</p>"
+          },
+          {
+            "group": "Body",
+            "type": "string",
+            "optional": false,
+            "field": "number",
+            "description": "<p>Asset number.</p>"
           },
           {
             "group": "Body",
@@ -48,6 +76,13 @@
           },
           {
             "group": "Body",
+            "type": "number",
+            "optional": true,
+            "field": "clientID",
+            "description": "<p>Client ID for existing client.</p>"
+          },
+          {
+            "group": "Body",
             "type": "client",
             "optional": true,
             "field": "client",
@@ -58,14 +93,14 @@
             "type": "number",
             "optional": true,
             "field": "locationID",
-            "description": "<p>location ID for existing client locations.</p>"
+            "description": "<p>location ID for existing client location.</p>"
           },
           {
             "group": "Body",
             "type": "number",
             "optional": true,
             "field": "zoneID",
-            "description": "<p>zone ID for existing client locations.</p>"
+            "description": "<p>zone ID for existing client location zone.</p>"
           },
           {
             "group": "Body",
@@ -73,13 +108,6 @@
             "optional": true,
             "field": "zone",
             "description": "<p>Creates a new zone and attaches it to the existing client location id. If there is no location, no zone will be created.</p>"
-          },
-          {
-            "group": "Body",
-            "type": "number",
-            "optional": true,
-            "field": "clientID",
-            "description": "<p>client ID for existing clients</p>"
           },
           {
             "group": "Body",
@@ -284,17 +312,17 @@
       "examples": [
         {
           "title": "Request Body Example:",
-          "content": "{\n    \"name\": \"New Asset\",\n    \"description\": \"New Description\",\n    \"longitude\": 1,\n    \"latitude\": 5556,\n    \"altitude\": 777,\n    \"clientID\": 1,\n    \"locationID\": 1,\n    \"zoneID\": 20,\n    \"char1\": \"QR-6789\",\n    \"char2\": \"Bathroom\",\n    \"int1\": \"15\",\n    \"char3\": \"No\",\n    \"char4\": \"Quick comment.\"\n}",
+          "content": " {\n    \"name\": \"New Asset\",\n    \"number\": \"ASSET01\",\n    \"description\": \"New Description\",\n    \"longitude\": 1,\n    \"latitude\": 5556,\n    \"altitude\": 777,\n    \"clientID\": 1,\n    \"locationID\": 1,\n    \"zoneID\": 20,\n    \"char1\": \"QR-6789\",\n    \"char2\": \"Bathroom\",\n    \"int1\": \"15\",\n    \"char3\": \"No\",\n    \"char4\": \"Quick comment.\"\n}",
           "type": "json"
         },
         {
           "title": "Request Body Example using schema-columns:",
-          "content": "{\n    \"name\": \"New Asset\",\n    \"description\": \"New Description\",\n    \"longitude\": 1,\n    \"latitude\": 5556,\n    \"altitude\": 777,\n    \"clientID\": 1,\n    \"locationID\": 1,\n    \"zoneID\": 20,\n    \"content\": {\n        \"Barcode ID\": \"QR-6789\",\n        \"Area\": \"Bathroom\",\n        \"Activity Level\": \"15\",\n        \"Replenished (Yes/No)\": \"No\",\n        \"Comments\": \"Quick comment.\"\n    }\n}",
+          "content": " {\n    \"name\": \"New Asset\",\n    \"description\": \"New Description\",\n    \"longitude\": 1,\n    \"latitude\": 5556,\n    \"altitude\": 777,\n    \"clientID\": 1,\n    \"locationID\": 1,\n    \"zoneID\": 20,\n    \"content\": {\n        \"Barcode ID\": \"QR-6789\",\n        \"Area\": \"Bathroom\",\n        \"Activity Level\": \"15\",\n        \"Replenished (Yes/No)\": \"No\",\n        \"Comments\": \"Quick comment.\"\n    }\n}",
           "type": "json"
         },
         {
           "title": "Request Body Example with new client",
-          "content": "{\n    \"name\": \"New Asset\",\n    \"description\": \"New Description\",\n    \"longitude\": 1,\n    \"latitude\": 5556,\n    \"altitude\": 777,\n    \"client\": {\n        \"billingName\": \"New Customer\",\n        \"contact\": [{\n            \"firstName\": \"Alex\",\n            \"lastName\": \"Jones\",\n            \"email\": \"alex.jones@company.net\",\n        }],\n        \"location\": [{\n            \"street1\": \"123 Street name\",\n            \"city\": \"Sydney\",\n            \"state\": \"NSW\",\n            \"country\": \"Australia\"\n        }]\n    },\n    \"char1\": \"QR-6789\",\n    \"char2\": \"Bathroom\",\n    \"int1\": \"15\",\n    \"char3\": \"No\",\n    \"char4\": \"Quick comment.\"\n}",
+          "content": " {\n    \"name\": \"New Asset\",\n    \"description\": \"New Description\",\n    \"longitude\": 1,\n    \"latitude\": 5556,\n    \"altitude\": 777,\n    \"client\": {\n        \"billingName\": \"New Customer\",\n        \"contact\": [{\n            \"firstName\": \"Alex\",\n            \"lastName\": \"Jones\",\n            \"email\": \"alex.jones@company.net\",\n        }],\n        \"location\": [{\n            \"street1\": \"123 Street name\",\n            \"city\": \"Sydney\",\n            \"state\": \"NSW\",\n            \"country\": \"Australia\"\n        }]\n    },\n    \"char1\": \"QR-6789\",\n    \"char2\": \"Bathroom\",\n    \"int1\": \"15\",\n    \"char3\": \"No\",\n    \"char4\": \"Quick comment.\"\n}",
           "type": "json"
         }
       ]
@@ -303,7 +331,7 @@
       "examples": [
         {
           "title": "CURL Response",
-          "content": "{\n    \"payload\": {\n        \"asset\": {\n            \"id\": 520427,\n            \"name\": \"Asset Name.\",\n            \"number\": 520427,\n            \"description\": \"Description of asset.\",\n            \"longitude\": 6666,\n            \"latitude\": 5556,\n            \"altitude\": 777,\n            \"clientID\": 1,\n            \"locationID\": 1,\n            \"zoneID\": 20,\n            \"clientName\": \"Client Name\",\n            \"location\": \"123 Street Adadress Sydney 2000\",\n            \"zoneValue\": \"Kitchen\",\n            \"char1\": \"QR-12345\",\n            \"char2\": \"Sink\",\n            \"int1\": \"10\",\n            \"char3\": \"Yes\",\n            \"char4\": \"The comment of this asset.\"\n        }\n    }\n}",
+          "content": " {\n    \"payload\": {\n        \"asset\": {\n            \"id\": 520427,\n            \"name\": \"Asset Name.\",\n            \"number\": 520427,\n            \"description\": \"Description of asset.\",\n            \"longitude\": 6666,\n            \"latitude\": 5556,\n            \"altitude\": 777,\n            \"clientID\": 1,\n            \"locationID\": 1,\n            \"zoneID\": 20,\n            \"clientName\": \"Client Name\",\n            \"location\": \"123 Street Address Sydney NSW 2000\",\n            \"address1\": \"123 Street Address\",\n            \"city\": \"Sydney\",\n            \"state\": \"NSW\",\n            \"postcode\": \"2000\",\n            \"zoneValue\": \"Kitchen\",\n            \"char1\": \"QR-12345\",\n            \"char2\": \"Sink\",\n            \"int1\": \"10\",\n            \"char3\": \"Yes\",\n            \"char4\": \"The comment of this asset.\",\n            \"content\": {\n                \"ID\": \"520427\",\n                \"Barcode ID\": \"QR-12345\",\n                \"Area\": \"Sink\",\n                \"Activity Level\": \"10\",\n                \"Replenished (Yes/No)\": \"Yes\",\n                \"Comments\": \"The comment of this asset.\"\n            }\n        }\n    }\n}",
           "type": "JSON"
         }
       ]
@@ -312,213 +340,18 @@
     "groupTitle": "Asset_Management"
   },
   {
-    "type": "delete",
-    "url": "/asset/:schemaID/:assetID",
-    "title": "Delete Asset",
-    "name": "AssetDelete",
-    "order": "5",
-    "description": "<p>Delete an existing asset.</p>",
-    "group": "Asset_Management",
-    "version": "1.0.0",
-    "success": {
-      "examples": [
-        {
-          "title": "CURL Response",
-          "content": "{\n    \"payload\": {\n        \"result\": \"deleted\"\n    }\n}",
-          "type": "JSON"
-        }
-      ]
-    },
-    "filename": "app/system/class/api/rest/v1/asset/_apidoc.js",
-    "groupTitle": "Asset_Management",
-    "parameter": {
-      "fields": {
-        "Client Fields": [
-          {
-            "group": "Client Fields",
-            "type": "Object",
-            "optional": false,
-            "field": "client",
-            "description": "<p>The Client Object</p>"
-          },
-          {
-            "group": "Client Fields",
-            "type": "Number",
-            "optional": true,
-            "field": "client.id",
-            "description": "<p>ID of the client.</p>"
-          },
-          {
-            "group": "Client Fields",
-            "type": "String",
-            "optional": false,
-            "field": "client.billingName",
-            "description": "<p>The Billing Name of the client</p>"
-          },
-          {
-            "group": "Client Fields",
-            "type": "Object[]",
-            "optional": true,
-            "field": "client.contact",
-            "description": "<p>An array of contacts</p>"
-          },
-          {
-            "group": "Client Fields",
-            "type": "Number",
-            "optional": true,
-            "field": "client.contact.id",
-            "description": "<p>The ID of the client's contact.</p>"
-          },
-          {
-            "group": "Client Fields",
-            "type": "String",
-            "optional": true,
-            "field": "client.contact.firstName",
-            "description": "<p>First name of contact.</p>"
-          },
-          {
-            "group": "Client Fields",
-            "type": "String",
-            "optional": true,
-            "field": "client.contact.lastName",
-            "description": "<p>Last name of contact.</p>"
-          },
-          {
-            "group": "Client Fields",
-            "type": "String",
-            "optional": true,
-            "field": "client.contact.email",
-            "description": "<p>First name of contact.</p>"
-          },
-          {
-            "group": "Client Fields",
-            "type": "String",
-            "optional": true,
-            "field": "client.contact.mobile",
-            "description": "<p>Mobile number.</p>"
-          },
-          {
-            "group": "Client Fields",
-            "type": "String",
-            "optional": true,
-            "field": "client.contact.mobileAreaCode",
-            "description": "<p>Mobile number area code.</p>"
-          },
-          {
-            "group": "Client Fields",
-            "type": "String",
-            "optional": true,
-            "field": "client.contact.workPhone",
-            "description": "<p>Work phone number.</p>"
-          },
-          {
-            "group": "Client Fields",
-            "type": "String",
-            "optional": true,
-            "field": "client.contact.workPhoneAreaCode",
-            "description": "<p>Work phone number area code.</p>"
-          },
-          {
-            "group": "Client Fields",
-            "type": "String",
-            "optional": true,
-            "field": "client.contact.homePhone",
-            "description": "<p>Home phone number.</p>"
-          },
-          {
-            "group": "Client Fields",
-            "type": "String",
-            "optional": true,
-            "field": "client.contact.homePhoneAreaCode",
-            "description": "<p>Home phone number area code.</p>"
-          },
-          {
-            "group": "Client Fields",
-            "type": "Object",
-            "optional": true,
-            "field": "client.contact.custom",
-            "description": "<p>Object of custom variables.</p>"
-          },
-          {
-            "group": "Client Fields",
-            "type": "Object",
-            "optional": true,
-            "field": "client.contact.custom.OBJECT_1",
-            "description": "<p>Custom variable of a client. To set values requires an Object of {&quot;value&quot;: &quot;Example&quot;, &quot;type&quot;: &quot;String&quot;}</p>"
-          },
-          {
-            "group": "Client Fields",
-            "type": "Object[]",
-            "optional": true,
-            "field": "client.location",
-            "description": "<p>An array of locations</p>"
-          },
-          {
-            "group": "Client Fields",
-            "type": "Number",
-            "optional": true,
-            "field": "client.location.id",
-            "description": "<p>The ID of the client's location.</p>"
-          },
-          {
-            "group": "Client Fields",
-            "type": "String",
-            "optional": true,
-            "field": "client.location.street1",
-            "description": "<p>Street 1 address.</p>"
-          },
-          {
-            "group": "Client Fields",
-            "type": "String",
-            "optional": true,
-            "field": "client.location.street2",
-            "description": "<p>Street 2 address.</p>"
-          },
-          {
-            "group": "Client Fields",
-            "type": "String",
-            "optional": true,
-            "field": "client.location.city",
-            "description": "<p>City address.</p>"
-          },
-          {
-            "group": "Client Fields",
-            "type": "String",
-            "optional": true,
-            "field": "client.location.state",
-            "description": "<p>State address.</p>"
-          },
-          {
-            "group": "Client Fields",
-            "type": "String",
-            "optional": true,
-            "field": "client.location.postcode",
-            "description": "<p>Postcode address.</p>"
-          },
-          {
-            "group": "Client Fields",
-            "type": "String",
-            "optional": true,
-            "field": "client.location.country",
-            "description": "<p>Country address.</p>"
-          }
-        ]
-      }
-    }
-  },
-  {
     "type": "get",
     "url": "/asset/:schemaID/:assetID",
     "title": "Get Asset",
-    "name": "AssetGet",
-    "order": "5",
+    "name": "GetAsset",
+    "order": "3",
     "description": "<p>Get available information about the asset.</p>",
     "group": "Asset_Management",
     "version": "1.0.0",
     "examples": [
       {
         "title": "CURL Example",
-        "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/asset/schema/list/",
+        "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/asset/3/520427",
         "type": "json"
       }
     ],
@@ -526,35 +359,7 @@
       "examples": [
         {
           "title": "CURL Response",
-          "content": "{\n    \"payload\": {\n        \"assetID\": \"520427\",\n        \"schemaID\": \"3\",\n        \"schema\": {\n            \"id\": 3,\n            \"title\": \"Bait Station\",            \n            \"columns\": [\n                {\n                    \"title\": \"Barcode ID\",\n                    \"col\": \"char1\"\n                },\n                {\n                    \"title\": \"Area\",\n                    \"col\": \"char2\"\n                },\n                {\n                    \"title\": \"Activity Level\",\n                    \"col\": \"int1\"\n                },\n                {\n                    \"title\": \"Replenished (Yes/No)\",\n                    \"col\": \"char3\"\n                },\n                {\n                    \"title\": \"Comments\",\n                    \"col\": \"char4\"\n                }            \n            ]\n        },\n        \"asset\": {\n            \"id\": 520427,\n            \"name\": \"Asset Name.\",\n            \"number\": 520427,\n            \"description\": \"Description of asset.\",\n            \"longitude\": 6666,\n            \"latitude\": 5556,\n            \"altitude\": 777,\n            \"clientID\": 1,\n            \"locationID\": 1,\n            \"zoneID\": 20,\n            \"clientName\": \"Client Name\",\n            \"location\": \"123 Street Adadress Sydney 2000\",\n            \"zoneValue\": \"Kitchen\",\n            \"char1\": \"QR-12345\",\n            \"char2\": \"Sink\",\n            \"int1\": \"10\",\n            \"char3\": \"Yes\",\n            \"char4\": \"The comment of this asset.\"\n        }\n    }\n}",
-          "type": "JSON"
-        }
-      ]
-    },
-    "filename": "app/system/class/api/rest/v1/asset/_apidoc.js",
-    "groupTitle": "Asset_Management"
-  },
-  {
-    "type": "get",
-    "url": "/asset/list/:schemaID/",
-    "title": "List Assets",
-    "name": "AssetList",
-    "order": "2",
-    "description": "<p>Retrieve a list of assets within a schema.</p>",
-    "group": "Asset_Management",
-    "version": "1.0.0",
-    "examples": [
-      {
-        "title": "CURL Example",
-        "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/asset/schema/list/:schemaID",
-        "type": "json"
-      }
-    ],
-    "success": {
-      "examples": [
-        {
-          "title": "CURL Response",
-          "content": "{\n    \"payload\": {\n        \"schema\": {\n            \"id\": 3,\n            \"title\": \"Bait Station\",            \n            \"columns\": [\n                {\n                    \"title\": \"Barcode ID\",\n                    \"col\": \"char1\"\n                },\n                {\n                    \"title\": \"Area\",\n                    \"col\": \"char2\"\n                },\n                {\n                    \"title\": \"Activity Level\",\n                    \"col\": \"int1\"\n                },\n                {\n                    \"title\": \"Replenished (Yes/No)\",\n                    \"col\": \"char3\"\n                },\n                {\n                    \"title\": \"Comments\",\n                    \"col\": \"char4\"\n                }            \n            ]\n        },\n        \"results\": [\n            {\n                \"assetID\": \"520427\",\n                \"name\": \"Name of asset\",\n                \"description\": \"Description of asset.\",\n                \"number\": \"520427\",\n                \"schemaID\": \"3\",\n                \"date\": \"1599094442\",\n                \"latitude\": \"5556\",\n                \"longitude\": \"6666\",\n                \"clientID\": \"1\",\n                \"altitude\": \"777\",\n                \"companyName\": \"Client Name\",\n                \"address1\": \"123 Street Address\",\n                \"address2\": \"\",\n                \"city\": \"Sydney\",\n                \"postcode\": \"2000\",\n                \"zoneValue\": \"Kitchen\",\n                \"char1\": \"QR-12345\",\n                \"char2\": \"Sink\",\n                \"int1\": \"10\",\n                \"char3\": \"Yes\",\n                \"char4\": \"The comment of this asset.\"\n            }\n        ]\n    }\n}",
+          "content": "{\n    \"payload\": {\n        \"assetID\": \"520427\",\n        \"schemaID\": \"3\",\n        \"schema\": {\n            \"id\": 3,\n            \"title\": \"Bait Station\",\n            \"columns\": [\n                {\n                    \"title\": \"Barcode ID\",\n                    \"col\": \"char1\"\n                },\n                {\n                    \"title\": \"Area\",\n                    \"col\": \"char2\"\n                },\n                {\n                    \"title\": \"Activity Level\",\n                    \"col\": \"int1\"\n                },\n                {\n                    \"title\": \"Replenished (Yes/No)\",\n                    \"col\": \"char3\"\n                },\n                {\n                    \"title\": \"Comments\",\n                    \"col\": \"char4\"\n                }\n            ],\n            \"actions\": {\n                \"list\": \"GET https://service.formitize.com/api/rest/v2/asset/3/list\",\n                \"getAsset\": \"GET https://service.formitize.com/api/rest/v2/asset/3/:assetid\",\n                \"updateAsset\": \"POST https://service.formitize.com/api/rest/v2/asset/3/:assetid\",\n                \"createAsset\": \"POST https://service.formitize.com/api/rest/v2/asset/3/\"\n            }\n        },\n        \"asset\": {\n            \"id\": 520427,\n            \"name\": \"Asset Name.\",\n            \"number\": \"520427\",\n            \"description\": \"Description of asset.\",\n            \"longitude\": 6666,\n            \"latitude\": 5556,\n            \"altitude\": 777,\n            \"clientID\": 1,\n            \"locationID\": 1,\n            \"zoneID\": 20,\n            \"clientName\": \"Client Name\",\n            \"location\": \"123 Street Address Sydney NSW 2000\",\n            \"address1\": \"123 Street Address\",\n            \"city\": \"Sydney\",\n            \"state\": \"NSW\",\n            \"postcode\": \"2000\",\n            \"zoneValue\": \"Kitchen\",\n            \"char1\": \"QR-12345\",\n            \"char2\": \"Sink\",\n            \"int1\": \"10\",\n            \"char3\": \"Yes\",\n            \"char4\": \"The comment of this asset.\",\n            \"content\": {\n                \"ID\": \"520427\",\n                \"Barcode ID\": \"QR-12345\",\n                \"Area\": \"Sink\",\n                \"Activity Level\": \"10\",\n                \"Replenished (Yes/No)\": \"Yes\",\n                \"Comments\": \"The comment of this asset.\"\n            }\n        }\n    }\n}",
           "type": "JSON"
         }
       ]
@@ -566,8 +371,8 @@
     "type": "get",
     "url": "/asset/schema/list",
     "title": "List Asset Types",
-    "name": "AssetSchemaList",
-    "order": "1",
+    "name": "ListAssetSchema",
+    "order": "0",
     "description": "<p>Retrieve a list of asset schemas available.</p>",
     "group": "Asset_Management",
     "version": "1.0.0",
@@ -591,10 +396,38 @@
     "groupTitle": "Asset_Management"
   },
   {
+    "type": "get",
+    "url": "/asset/list/:schemaID/",
+    "title": "List Assets",
+    "name": "ListAssets",
+    "order": "1",
+    "description": "<p>Retrieve a list of assets within a schema.</p>",
+    "group": "Asset_Management",
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "CURL Example",
+        "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/asset/schema/list/:schemaID",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "CURL Response",
+          "content": "{\n    \"payload\": {\n        \"schema\": {\n            \"id\": 3,\n            \"title\": \"Bait Station\",\n            \"columns\": [\n                {\n                    \"title\": \"Barcode ID\",\n                    \"col\": \"char1\"\n                },\n                {\n                    \"title\": \"Area\",\n                    \"col\": \"char2\"\n                },\n                {\n                    \"title\": \"Activity Level\",\n                    \"col\": \"int1\"\n                },\n                {\n                    \"title\": \"Replenished (Yes/No)\",\n                    \"col\": \"char3\"\n                },\n                {\n                    \"title\": \"Comments\",\n                    \"col\": \"char4\"\n                }\n            ],\n            \"actions\": {\n                \"list\": \"GET https://service.formitize.com/api/rest/v2/asset/3/list\",\n                \"getAsset\": \"GET https://service.formitize.com/api/rest/v2/asset/3/:assetid\",\n\t\t\t\t\"updateAsset\": \"POST https://service.formitize.com/api/rest/v2/asset/3/:assetid\",\n                \"createAsset\": \"POST https://service.formitize.com/api/rest/v2/asset/3/\"\n            }\n        },\n        \"results\": [\n            {\n                \"id\": \"520427\",\n                \"companyID\": \"1\",\n                \"name\": \"Name of asset\",\n                \"description\": \"Description of asset.\",\n                \"number\": \"520427\",\n                \"schemaID\": \"3\",\n                \"date\": \"1599094442\",\n                \"latitude\": \"5556\",\n                \"longitude\": \"6666\",\n                \"clientID\": \"1\",\n                \"locationID\": \"5\",\n                \"altitude\": \"777\",\n                \"companyName\": \"Client Name\",\n                \"siteName\": \"\",\n                \"address1\": \"123 Street Address\",\n                \"address2\": \"\",\n                \"city\": \"Sydney\",\n                \"postcode\": \"2000\",\n                \"state\": \"NSW\",\n                \"country\": \"\",\n                \"zoneValue\": \"Kitchen\",\n                \"char1\": \"QR-12345\",\n                \"char2\": \"Sink\",\n                \"int1\": \"10\",\n                \"char3\": \"Yes\",\n                \"char4\": \"The comment of this asset.\",\n                \"content\": {\n                    \"ID\": \"520427\",\n                    \"Barcode ID\": \"QR-12345\",\n                    \"Area\": \"Sink\",\n                    \"Activity Level\": \"10\",\n                    \"Replenished (Yes/No)\": \"Yes\",\n                    \"Comments\": \"The comment of this asset.\"\n                }\n            }\n        ]\n    }\n}",
+          "type": "JSON"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/asset/_apidoc.js",
+    "groupTitle": "Asset_Management"
+  },
+  {
     "type": "post",
     "url": "/asset/:schemaID/:assetID",
     "title": "Edit Asset",
-    "name": "AssetUpdate",
+    "name": "UpdateAsset",
     "order": "4",
     "description": "<p>Update an existing asset.</p>",
     "group": "Asset_Management",
@@ -605,14 +438,21 @@
           {
             "group": "Body",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "name",
             "description": "<p>Name of the asset.</p>"
           },
           {
             "group": "Body",
             "type": "string",
-            "optional": true,
+            "optional": false,
+            "field": "number",
+            "description": "<p>Asset number.</p>"
+          },
+          {
+            "group": "Body",
+            "type": "string",
+            "optional": false,
             "field": "description",
             "description": "<p>description of the asset.</p>"
           },
@@ -642,28 +482,7 @@
             "type": "number",
             "optional": true,
             "field": "clientID",
-            "description": "<p>client ID for existing clients</p>"
-          },
-          {
-            "group": "Body",
-            "type": "number",
-            "optional": true,
-            "field": "locationID",
-            "description": "<p>location ID for existing client locations.</p>"
-          },
-          {
-            "group": "Body",
-            "type": "number",
-            "optional": true,
-            "field": "zoneID",
-            "description": "<p>zone ID for existing client locations.</p>"
-          },
-          {
-            "group": "Body",
-            "type": "string",
-            "optional": true,
-            "field": "zone",
-            "description": "<p>Creates a new zone and attaches it to the existing client location id. If there is no location, no zone will be created.</p>"
+            "description": "<p>Client ID for existing client.</p>"
           },
           {
             "group": "Body",
@@ -671,6 +490,27 @@
             "optional": true,
             "field": "client",
             "description": "<p>Optional client body for new clients</p>"
+          },
+          {
+            "group": "Body",
+            "type": "number",
+            "optional": true,
+            "field": "locationID",
+            "description": "<p>location ID for existing client location.</p>"
+          },
+          {
+            "group": "Body",
+            "type": "number",
+            "optional": true,
+            "field": "zoneID",
+            "description": "<p>zone ID for existing client location zone.</p>"
+          },
+          {
+            "group": "Body",
+            "type": "string",
+            "optional": true,
+            "field": "zone",
+            "description": "<p>Creates a new zone and attaches it to the existing client location id. If there is no location, no zone will be created.</p>"
           },
           {
             "group": "Body",
@@ -894,7 +734,7 @@
       "examples": [
         {
           "title": "CURL Response",
-          "content": "{\n    \"payload\": {\n        \"assetID\": \"520427\",\n        \"schemaID\": \"3\",\n        \"asset\": {\n            \"id\": 520427,\n            \"name\": \"Updated Asset Name\",\n            \"number\": 520427,\n            \"description\": \"Description of asset.\",\n            \"longitude\": 6666,\n            \"latitude\": 5556,\n            \"altitude\": 777,\n            \"clientID\": 1,\n            \"locationID\": 1,\n            \"zoneID\": 20,\n            \"clientName\": \"Client Name\",\n            \"location\": \"123 Street Adadress Sydney 2000\",\n            \"zoneValue\": \"Kitchen\",\n            \"char1\": \"QR-12345\",\n            \"char2\": \"Sink\",\n            \"int1\": \"10\",\n            \"char3\": \"Yes\",\n            \"char4\": \"The comment of this asset.\"\n        },\n        \"fieldsUpdated\": {\n            \"name\": \"Updated Asset Name\",\n            \"description\": \"desc\",\n            \"longitude\": \"6666\"\n        },\n    }\n}",
+          "content": "{\n    \"payload\": {\n        \"status\": \"success\",\n        \"fieldsUpdated\": {\n            \"name\": \"Updated Asset Name\",\n            \"description\": \"New Description\",\n            \"longitude\": \"1\"\n        },\n        \"assetID\": \"520427\",\n        \"schemaID\": \"3\",\n        \"schema\": {\n            \"id\": 3,\n            \"title\": \"Bait Station\",\n            \"columns\": [\n                {\n                    \"title\": \"Barcode ID\",\n                    \"col\": \"char1\"\n                },\n                {\n                    \"title\": \"Area\",\n                    \"col\": \"char2\"\n                },\n                {\n                    \"title\": \"Activity Level\",\n                    \"col\": \"int1\"\n                },\n                {\n                    \"title\": \"Replenished (Yes/No)\",\n                    \"col\": \"char3\"\n                },\n                {\n                    \"title\": \"Comments\",\n                    \"col\": \"char4\"\n                }\n            ],\n            \"actions\": {\n                \"list\": \"GET https://service.formitize.com/api/rest/v2/asset/3/list\",\n                \"getAsset\": \"GET https://service.formitize.com/api/rest/v2/asset/3/:assetid\",\n                \"updateAsset\": \"POST https://service.formitize.com/api/rest/v2/asset/3/:assetid\",\n                \"createAsset\": \"POST https://service.formitize.com/api/rest/v2/asset/3/\"\n            }\n        },\n        \"asset\": {\n            \"id\": 520427,\n            \"name\": \"Updated Asset Name\",\n            \"number\": 520427,\n            \"description\": \"New Description\",\n            \"longitude\": 1,\n            \"latitude\": 5556,\n            \"altitude\": 777,\n            \"clientID\": 1,\n            \"locationID\": 1,\n            \"zoneID\": 20,\n            \"clientName\": \"Client Name\",\n            \"location\": \"123 Street Address Sydney NSW 2000\",\n            \"address1\": \"123 Street Address\",\n            \"city\": \"Sydney\",\n            \"state\": \"NSW\",\n            \"postcode\": \"2000\",\n            \"zoneValue\": \"Kitchen\",\n            \"char1\": \"QR-12345\",\n            \"char2\": \"Sink\",\n            \"int1\": \"10\",\n            \"char3\": \"Yes\",\n            \"char4\": \"The comment of this asset.\",\n            \"content\": {\n                \"ID\": \"520427\",\n                \"Barcode ID\": \"QR-12345\",\n                \"Area\": \"Sink\",\n                \"Activity Level\": \"10\",\n                \"Replenished (Yes/No)\": \"Yes\",\n                \"Comments\": \"The comment of this asset.\"\n            }\n        }\n    }\n}",
           "type": "JSON"
         }
       ]
@@ -954,7 +794,7 @@
       "examples": [
         {
           "title": "Authorisation Errors",
-          "content": "{\"payload\":{\"error\": {\"message\": \"Username does not exist.\", \"timestamp\": 1521691072, \"code\": 401}}}",
+          "content": "{\n    \"payload\": {\n        \"error\": {\n            \"message\": \"Invalid company/user/password.\",\n            \"timestamp\": 1679273891,\n            \"code\": 401\n        }\n    }\n}",
           "type": "json"
         }
       ]
