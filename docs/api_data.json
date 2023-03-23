@@ -2109,6 +2109,15 @@
         "type": "CSharp"
       }
     ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 200 OK\n{\n    \"payload\": {\n        \"id\": \"1\",\n        \"message\": \"Successfully deleted job.\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
     "filename": "app/system/class/api/rest/v1/job/_apidoc.js",
     "groupTitle": "Job"
   },
@@ -2117,7 +2126,7 @@
     "url": "/job/:id",
     "title": "Get Job",
     "name": "GetJob",
-    "order": "5",
+    "order": "2",
     "group": "Job",
     "version": "1.0.0",
     "description": "<p>Get a job.</p>",
@@ -2132,7 +2141,7 @@
       "examples": [
         {
           "title": "CURL Response",
-          "content": "{\n    \"payload\": {\n        \"id\": \"245\",\n        \"maintenanceID\": \"0\",\n        \"jobNumber\": \"245\",\n        \"orderNumber\": \"\",\n        \"invoiceID\": \"0\",\n        \"invoiceNumber\": \"\",\n        \"title\": \"Test B\",\n        \"forms\": {\n            \"2932\": {\n                \"id\": \"2932\",\n                \"title\": \"Features Test\"\n            }\n        },\n        \"location\": \"\",\n        \"description\": \"\",\n        \"dueDate\": \"1599688800\",\n        \"assignedTo\": \"0\",\n        \"priority\": \"0\",\n        \"status\": \"1\",\n        \"duration\": \"136800\",\n        \"statusLabel\": \"Created\"\n    }\n}",
+          "content": "{\n    \"payload\": {\n        \"id\": \"245\",\n        \"maintenanceID\": \"0\",\n        \"clientID\": \"8\",\n        \"contactID\": \"12\",\n        \"billingName\": \"Test client\",\n        \"contactName\": \"John Doe\",\n        \"jobNumber\": \"245\",\n        \"orderNumber\": \"\",\n        \"invoiceID\": \"0\",\n        \"invoiceNumber\": \"\",\n        \"title\": \"Test B\",\n        \"forms\": {\n            \"2932\": {\n                \"id\": \"2932\",\n                \"title\": \"Features Test\"\n            }\n        },\n        \"location\": \"\",\n        \"description\": \"\",\n        \"dueDate\": \"1599688800\",\n        \"assignedTo\": \"0\",\n        \"priority\": \"0\",\n        \"status\": \"1\",\n        \"duration\": \"136800\",\n        \"statusLabel\": \"Created\",\n        \"history\": {},\n        \"notes\": {}\n    }\n}",
           "type": "JSON"
         }
       ]
@@ -2158,7 +2167,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n \"payload\": [{\n        \"text\": \"Created Job.\",\n        \"startDate\": \"2021-04-28T15:57:46+10:00\",\n        \"endDate\": \"2021-04-28T15:57:46+10:00\",\n }]\n}",
+          "content": "HTTP/1.1 200 OK\n{\n    \"payload\": [\n        {\n            \"type\": \"1\",\n            \"text\": \"Edited Job.\",\n            \"startDate\": \"2022-01-18T10:07:09+11:00\",\n            \"endDate\": \"2022-01-18T10:07:09+11:00\",\n            \"fields\": {\n                \"dueDate\": 1642456800,\n                \"duration\": 5400,\n                \"endDate\": 1642462200\n            },\n            \"lat\": \"\",\n            \"lng\": \"\"\n        },\n        {\n            \"type\": \"1\",\n            \"text\": \"Edited Job.\",\n            \"startDate\": \"2022-01-17T22:31:15+11:00\",\n            \"endDate\": \"2022-01-17T22:31:15+11:00\",\n            \"fields\": [],\n            \"lat\": \"\",\n            \"lng\": \"\"\n        },\n        ...\n    ]\n}",
           "type": "json"
         }
       ]
@@ -2172,7 +2181,7 @@
     "url": "/job/",
     "title": "List Jobs",
     "name": "ListJob",
-    "order": "1",
+    "order": "0",
     "group": "Job",
     "version": "1.0.0",
     "description": "<p>Get a list of jobs.</p>",
@@ -2187,7 +2196,7 @@
       "examples": [
         {
           "title": "CURL Response",
-          "content": "{\n \"payload\": {\n     \"5555\": {\n         \"id\": \"5555\",\n         \"maintenanceID\": \"0\",\n         \"jobNumber\": \"\",\n         \"orderNumber\": \"\",\n         \"invoiceID\": \"0\",\n         \"invoiceNumber\": \"\",\n         \"title\": \"Person A\",\n         \"forms\": {\n             \"2932\": {\n                 \"id\": \"2932\",\n                 \"title\": \"Features Test\"\n             }\n         },\n         \"location\": \"123 Street\",\n         \"description\": \"\",\n         \"dueDate\": \"1417139760\",\n         \"assignedTo\": \"2251\",\n         \"priority\": \"0\",\n         \"status\": \"4\",\n         \"duration\": \"3600\",\n         \"statusLabel\": \"Completed\"\n     }\n }\n}",
+          "content": "{\n    \"payload\": {\n        \"5555\": {\n            \"id\": \"5555\",\n            \"maintenanceID\": \"0\",\n            \"clientID\": \"7\",\n            \"contactID\": \"7\",\n            \"billingName\": \"Fred Flint\",\n            \"contactName\": \"Fred Flint\",            \"jobNumber\": \"\",\n            \"orderNumber\": \"\",\n            \"invoiceID\": \"0\",\n            \"invoiceNumber\": \"\",\n            \"title\": \"Person A\",\n            \"forms\": {\n                \"2932\": {\n                    \"id\": \"2932\",\n                    \"title\": \"Features Test\"\n                }\n            },\n            \"location\": \"123 Street\",\n            \"description\": \"\",\n            \"dueDate\": \"1417139760\",\n            \"assignedTo\": \"2251\",\n            \"priority\": \"0\",\n            \"status\": \"4\",\n            \"duration\": \"3600\",\n            \"statusLabel\": \"Completed\"\n        }\n    }\n}",
           "type": "JSON"
         }
       ]
@@ -2518,7 +2527,7 @@
       "examples": [
         {
           "title": "Request Body Example:",
-          "content": "{\n\t\"id\": 0,\n\t\"title\": \"Job Title\",\n\t\"agent\": \"YourUser\",\n\t\"location\": \"123 Fake St, Suburb, Country\",\n\t\"client\": {\n\t\t\"id\": 0,\n\t\t\"billingName\": \"Test client\",\n\t\t\"contact\": [{\n\t\t\t\"firstName\": \"John\",\n\t\t\t\"lastName\": \"Doe\",\n\t\t\t\"email\": \"john@site.com\",\n\t\t\t\"mobile\": \"0000 000 000\",\n\t\t\t\"mobileAreaCode\": \"+61\",\n\t\t\t\"custom\": {\n\t\t\t\t\"Instagram\": {\"value\": \"@john.doe\", \"type\": \"Text\"},\n\t\t\t\t\"Facebook\": {\"value\": \"@john.doe\", \"type\": \"Text\"},\n\t\t\t}\n\t\t}, \n\t\t{ ... }],\n\t\t\"location\": [{\n\t\t\t\"street1\": \"123 Fake St\",\n\t\t\t\"street2\": \"\",\n\t\t\t\"city\": \"Some city\",\n\t\t\t\"state\": \"Some state\",\n\t\t\t\"postcode\": \"Some postcode\",\n\t\t\t\"country\": \"Some country\"\n\t\t}, \n\t\t{ ... }]\n\t},\n\t\"formData\": {\n\t\t444: {\n\t\t\t\"formText\": \"Test\"\n\t\t\t\"formMultiple\": [ \"Answer1\", \"Answer2\", \"Answer3\" ],\n\t\t\t\"aRepeatedText\": [\"Value1\", \"Value2\", \"Value3\"],\n\t\t\t\"formTextInARepeatableTableRow\": { \"0_1\": \"Test1\", \"0_2\": \"Test2\" ,\"1_1\": \"Test3\", \"1_2\": \"Test4\" }\n\t\t}\n\t}\n}",
+          "content": " {\n    \"title\": \"Job Title\",\n    \"agent\": \"YourUser\",\n    \"location\": \"123 Fake St, Suburb, Country\",\n    \"client\": {\n        \"id\": 0,\n        \"billingName\": \"Test client\",\n        \"contact\": [\n            {\n                \"firstName\": \"John\",\n                \"lastName\": \"Doe\",\n                \"email\": \"john@site.com\",\n                \"mobile\": \"0000 000 000\",\n                \"mobileAreaCode\": \"+61\",\n                \"custom\": {\n                    \"Instagram\": {\n                        \"value\": \"@john.doe\",\n                        \"type\": \"Text\"\n                    },\n                    \"Facebook\": {\n                        \"value\": \"@john.doe\",\n                        \"type\": \"Text\"\n                    }\n                }\n            },\n            ...\n        ],\n        \"location\": [\n            {\n                \"street1\": \"123 Fake St\",\n                \"street2\": \"\",\n                \"city\": \"Some city\",\n                \"state\": \"Some state\",\n                \"postcode\": \"Some postcode\",\n                \"country\": \"Some country\"\n            },\n            ...\n        ]\n    },\n    \"formData\": {\n        \"444\": {\n            \"formText\": \"Test\",\n            \"formMultiple\": [\n                \"Answer1\",\n                \"Answer2\",\n                \"Answer3\"\n            ],\n            \"aRepeatedText\": [\n                \"Value1\",\n                \"Value2\",\n                \"Value3\"\n            ],\n            \"formTextInARepeatableTableRow\": {\n                \"0_1\": \"Test1\",\n                \"0_2\": \"Test2\",\n                \"1_1\": \"Test3\",\n                \"1_2\": \"Test4\"\n            }\n        }\n    }\n}",
           "type": "json"
         },
         {
@@ -2557,7 +2566,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n \"payload\": {\n     \"jobID\": 7,\n     \"agentID\": 1,\n }\n}",
+          "content": "HTTP/1.1 200 OK\n{\n    \"payload\": {\n        \"jobID\": 7,\n        \"agentID\": 1\n    }\n}",
           "type": "json"
         }
       ]
@@ -2570,7 +2579,7 @@
     "url": "/job/",
     "title": "Add Job",
     "name": "PostJob",
-    "order": "3",
+    "order": "1",
     "version": "1.0.0",
     "group": "Job",
     "parameter": {
@@ -2711,7 +2720,7 @@
             "type": "Number",
             "optional": true,
             "field": "deliveryDate",
-            "description": "<p>Unixtimestamp(no-ms) of the delivery date/time.</p>"
+            "description": "<p>Unix timestamp (no-ms) of the delivery date/time.</p>"
           }
         ],
         "Client Fields": [
@@ -2888,7 +2897,7 @@
       "examples": [
         {
           "title": "Request Body Example:",
-          "content": "{\n\t\"id\": 0,\n\t\"title\": \"Job Title\",\n\t\"agent\": \"YourUser\",\n\t\"location\": \"123 Fake St, Suburb, Country\",\n\t\"client\": {\n\t\t\"id\": 0,\n\t\t\"billingName\": \"Test client\",\n\t\t\"contact\": [{\n\t\t\t\"firstName\": \"John\",\n\t\t\t\"lastName\": \"Doe\",\n\t\t\t\"email\": \"john@site.com\",\n\t\t\t\"mobile\": \"0000 000 000\",\n\t\t\t\"mobileAreaCode\": \"+61\",\n\t\t\t\"custom\": {\n\t\t\t\t\"Instagram\": {\"value\": \"@john.doe\", \"type\": \"Text\"},\n\t\t\t\t\"Facebook\": {\"value\": \"@john.doe\", \"type\": \"Text\"},\n\t\t\t}\n\t\t}, \n\t\t{ ... }],\n\t\t\"location\": [{\n\t\t\t\"street1\": \"123 Fake St\",\n\t\t\t\"street2\": \"\",\n\t\t\t\"city\": \"Some city\",\n\t\t\t\"state\": \"Some state\",\n\t\t\t\"postcode\": \"Some postcode\",\n\t\t\t\"country\": \"Some country\"\n\t\t}, \n\t\t{ ... }]\n\t},\n\t\"formData\": {\n\t\t444: {\n\t\t\t\"formText\": \"Test\"\n\t\t\t\"formMultiple\": [ \"Answer1\", \"Answer2\", \"Answer3\" ],\n\t\t\t\"aRepeatedText\": [\"Value1\", \"Value2\", \"Value3\"],\n\t\t\t\"formTextInARepeatableTableRow\": { \"0_1\": \"Test1\", \"0_2\": \"Test2\" ,\"1_1\": \"Test3\", \"1_2\": \"Test4\" }\n\t\t}\n\t}\n}",
+          "content": "{\n    \"id\": 0,\n    \"title\": \"Job Title\",\n    \"agent\": \"YourUser\",\n    \"location\": \"123 Fake St, Suburb, Country\",\n    \"client\": {\n        \"id\": 0,\n        \"billingName\": \"Test client\",\n        \"contact\": [\n            {\n                \"firstName\": \"John\",\n                \"lastName\": \"Doe\",\n                \"email\": \"john@site.com\",\n                \"mobile\": \"0000 000 000\",\n                \"mobileAreaCode\": \"+61\",\n                \"custom\": {\n                    \"Instagram\": {\n                        \"value\": \"@john.doe\",\n                        \"type\": \"Text\"\n                    },\n                    \"Facebook\": {\n                        \"value\": \"@john.doe\",\n                        \"type\": \"Text\"\n                    }\n                }\n            },\n            ...\n        ],\n        \"location\": [\n            {\n                \"street1\": \"123 Fake St\",\n                \"street2\": \"\",\n                \"city\": \"Some city\",\n                \"state\": \"Some state\",\n                \"postcode\": \"Some postcode\",\n                \"country\": \"Some country\"\n            },\n            ...\n        ]\n    },\n    \"formData\": {\n        \"444\": {\n            \"formText\": \"Test\",\n            \"formMultiple\": [\n                \"Answer1\",\n                \"Answer2\",\n                \"Answer3\"\n            ],\n            \"aRepeatedText\": [\n                \"Value1\",\n                \"Value2\",\n                \"Value3\"\n            ],\n            \"formTextInARepeatableTableRow\": {\n                \"0_1\": \"Test1\",\n                \"0_2\": \"Test2\",\n                \"1_1\": \"Test3\",\n                \"1_2\": \"Test4\"\n            }\n        }\n    }\n}",
           "type": "json"
         },
         {
@@ -2899,35 +2908,10 @@
       ]
     },
     "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "payload",
-            "description": "<p>Payload object.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "payload.jobID",
-            "description": "<p>ID of the new created/updaetd job.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "payload.agentID",
-            "description": "<p>ID of the agent assigned to the job.</p>"
-          }
-        ]
-      },
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n \"payload\": {\n     \"jobID\": 7,\n     \"agentID\": 1,\n }\n}",
+          "content": "HTTP/1.1 200 OK\n{\n    \"payload\": {\n        \"jobID\": 1,\n        \"jobNumber\": 1,\n        \"agentID\": false,\n        \"clientID\": 8,\n        \"contactID\": 12\n    }\n}",
           "type": "json"
         }
       ]
@@ -2977,13 +2961,13 @@
       "examples": [
         {
           "title": "CURL Response",
-          "content": "{\n\t\"payload\": {\n\t\t\"submittedFormID\": \"146\",\n\t\t\"jobID\": \"894\",\n\t\t\"formID\": \"35639\",\n\t\t\"userID\": \"20150\",\n\t\t\"userName\": \"admin\",\n\t\t\"count\": \"4\",\n\t\t\"version\": \"8\",\n\t\t\"title\": \"CRM Extra\",\n\t\t\"formDateCreated\": \"1563175490\",\n\t\t\"latitude\": false,\n\t\t\"longitude\": false,\n\t\t\"location\": false,\n\t\t\"content\": {\n\t\t\t\"formSubheader_1\": {\n\t\t\t\t\"0\": {\n\t\t\t\t\t\"id\": 31,\n\t\t\t\t\t\"type\": \"formSubheader\",\n\t\t\t\t\t\"name\": \"formSubheader_1\",\n\t\t\t\t\t\"children\": {\n\t\t\t\t\t\t\"signed\": {\n\t\t\t\t\t\t\t\"id\": 44,\n\t\t\t\t\t\t\t\"type\": \"formSignature\",\n\t\t\t\t\t\t\t\"name\": \"signed\",\n\t\t\t\t\t\t\t\"image\": \"https://url/\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"signedDate\": {\n\t\t\t\t\t\t\t\"id\": 45,\n\t\t\t\t\t\t\t\"type\": \"formText\",\n\t\t\t\t\t\t\t\"name\": \"signedDate\",\n\t\t\t\t\t\t\t\"value\": \"\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"totalPayable\": {\n\t\t\t\t\t\t\t\"id\": 46,\n\t\t\t\t\t\t\t\"type\": \"formText\",\n\t\t\t\t\t\t\t\"name\": \"totalPayable\",\n\t\t\t\t\t\t\t\"value\": \"1231\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"PaymentMethod\": {\n\t\t\t\t\t\t\t\"id\": 53,\n\t\t\t\t\t\t\t\"type\": \"formMultiple\",\n\t\t\t\t\t\t\t\"name\": \"PaymentMethod\",\n\t\t\t\t\t\t\t\"value\": {\n\t\t\t\t\t\t\t\t\"0\": \"Cash\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"sendEmail\": {\n\t\t\t\t\t\t\t\"id\": 65,\n\t\t\t\t\t\t\t\"type\": \"formText\",\n\t\t\t\t\t\t\t\"name\": \"sendEmail\",\n\t\t\t\t\t\t\t\"value\": \"support@formitize.com\"\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t},\n\t\t\"attachments\": {\n\t\t\t\"0\": {\n\t\t\t\t\"url\": \"https://UrlToDocument\",\n\t\t\t\t\"type\": \"pdf\",\n\t\t\t\t\"name\": \"Default\"\n\t\t\t}\n\t\t}\n\t}\n}",
+          "content": "{\n\t\"payload\": {\n\t\t\"submittedFormID\": \"146\",\n\t\t\"jobID\": \"894\",\n\t\t\"formID\": \"35639\",\n\t\t\"userID\": \"20150\",\n\t\t\"userName\": \"admin\",\n\t\t\"count\": \"4\",\n\t\t\"version\": \"8\",\n\t\t\"title\": \"CRM Extra\",\n\t\t\"formDateCreated\": \"1563175490\",\n\t\t\"dateSubmitted\": \"1563175490\",\n        \"dateModified\": \"1563175490\",\n        \"formDataLastSaved\": \"0\",\n        \"modifiedBy\": \"0\",\n\t\t\"latitude\": false,\n\t\t\"longitude\": false,\n\t\t\"location\": false,\n\t\t\"content\": {\n\t\t\t\"formSubheader_1\": {\n\t\t\t\t\"0\": {\n\t\t\t\t\t\"id\": 31,\n\t\t\t\t\t\"type\": \"formSubheader\",\n\t\t\t\t\t\"name\": \"formSubheader_1\",\n\t\t\t\t\t\"children\": {\n\t\t\t\t\t\t\"signed\": {\n\t\t\t\t\t\t\t\"id\": 44,\n\t\t\t\t\t\t\t\"type\": \"formSignature\",\n\t\t\t\t\t\t\t\"name\": \"signed\",\n\t\t\t\t\t\t\t\"image\": \"https://url/\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"signedDate\": {\n\t\t\t\t\t\t\t\"id\": 45,\n\t\t\t\t\t\t\t\"type\": \"formText\",\n\t\t\t\t\t\t\t\"name\": \"signedDate\",\n\t\t\t\t\t\t\t\"value\": \"\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"totalPayable\": {\n\t\t\t\t\t\t\t\"id\": 46,\n\t\t\t\t\t\t\t\"type\": \"formText\",\n\t\t\t\t\t\t\t\"name\": \"totalPayable\",\n\t\t\t\t\t\t\t\"value\": \"1231\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"PaymentMethod\": {\n\t\t\t\t\t\t\t\"id\": 53,\n\t\t\t\t\t\t\t\"type\": \"formMultiple\",\n\t\t\t\t\t\t\t\"name\": \"PaymentMethod\",\n\t\t\t\t\t\t\t\"value\": {\n\t\t\t\t\t\t\t\t\"0\": \"Cash\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"sendEmail\": {\n\t\t\t\t\t\t\t\"id\": 65,\n\t\t\t\t\t\t\t\"type\": \"formText\",\n\t\t\t\t\t\t\t\"name\": \"sendEmail\",\n\t\t\t\t\t\t\t\"value\": \"support@formitize.com\"\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t},\n\t\t\"status\": \"Ok\",\n\t\t\"attachments\": {\n\t\t\t\"0\": {\n\t\t\t\t\"url\": \"https://UrlToDocument\",\n\t\t\t\t\"type\": \"pdf\",\n\t\t\t\t\"name\": \"Default\"\n\t\t\t}\n\t\t}\n\t}\n}",
           "type": "JSON"
         },
         {
-          "title": "CURL Respose using Simple mode",
-          "content": "{\n\t\"payload\": {\n\t\t\"submittedFormID\": \"146\",\n\t\t\"jobID\": \"894\",\n\t\t\"formID\": \"35639\",\n\t\t\"userID\": \"20150\",\n\t\t\"userName\": \"admin\",\n\t\t\"version\": \"8\",\n\t\t\"title\": \"CRM Extra\",\n\t\t\"formDateCreated\": \"1563175490\",\n\t\t\"latitude\": false,\n\t\t\"longitude\": false,\n\t\t\"location\": false,\n\t\t\"content\": {\n\t\t\t\"signed\": {\n\t\t\t\t\"0\": \"https://UrlToImage/\"\n\t\t\t},\n\t\t\t\"signedDate\": {\n\t\t\t\t\"0\": \"\"\n\t\t\t},\n\t\t\t\"totalPayable\": {\n\t\t\t\t\"0\": \"1231\"\n\t\t\t},\n\t\t\t\"Description of work\": {\n\t\t\t\t\"0\": {\n\t\t\t\t\t\"0\": \"Custom\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"formCheckbox_4\": {\n\t\t\t\t\"0\": {\n\t\t\t\t\t\"0\": \"No Risks Identified\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"PaymentMethod\": {\n\t\t\t\t\"0\": {\n\t\t\t\t\t\"0\": \"Cash\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"sendEmail\": {\n\t\t\t\t\"0\": \"dimitri@formitize.com\"\n\t\t\t},\n\t\t\t\"Treatment time\": {\n\t\t\t\t\"0\": \"1:00 AM\"\n\t\t\t}\n\t\t},\n\t\t\"attachments\": {\n\t\t\t\"0\": {\n\t\t\t\t\"url\": \"https://UrlToDocument\",\n\t\t\t\t\"type\": \"pdf\",\n\t\t\t\t\"name\": \"Default\"\n\t\t\t}\n\t\t}\n\t}\n}",
-          "type": "CURL"
+          "title": "CURL Response using Simple mode",
+          "content": "{\n\t\"payload\": {\n\t\t\"submittedFormID\": \"146\",\n\t\t\"jobID\": \"894\",\n\t\t\"formID\": \"35639\",\n\t\t\"version\": \"8\",\n\t\t\"title\": \"CRM Extra\",\n\t\t\"formDateCreated\": \"1563175490\",\n\t\t\"formDataLastSaved\": \"0\",\n        \"dateSubmitted\": \"1563175490\",\n        \"dateModified\": \"1563175490\",\n        \"modifiedBy\": \"0\",\n\t\t\"latitude\": \"0.0\",\n        \"longitude\": \"0.0\",\n        \"location\": \"\",\n        \"status\": \"Ok\",\n        \"userID\": \"20150\",\n        \"userName\": \"admin\",\n\t\t\"content\": {\n\t\t\t\"signed\": {\n\t\t\t\t\"0\": \"https://UrlToImage/\"\n\t\t\t},\n\t\t\t\"signedDate\": {\n\t\t\t\t\"0\": \"\"\n\t\t\t},\n\t\t\t\"totalPayable\": {\n\t\t\t\t\"0\": \"1231\"\n\t\t\t},\n\t\t\t\"Description of work\": {\n\t\t\t\t\"0\": {\n\t\t\t\t\t\"0\": \"Custom\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"formCheckbox_4\": {\n\t\t\t\t\"0\": {\n\t\t\t\t\t\"0\": \"No Risks Identified\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"PaymentMethod\": {\n\t\t\t\t\"0\": {\n\t\t\t\t\t\"0\": \"Cash\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"sendEmail\": {\n\t\t\t\t\"0\": \"dimitri@formitize.com\"\n\t\t\t},\n\t\t\t\"Treatment time\": {\n\t\t\t\t\"0\": \"1:00 AM\"\n\t\t\t}\n\t\t},\n\t\t\"attachments\": {\n\t\t\t\"0\": {\n\t\t\t\t\"url\": \"https://UrlToDocument\",\n\t\t\t\t\"type\": \"pdf\",\n\t\t\t\t\"name\": \"Default\"\n\t\t\t}\n\t\t}\n\t}\n}",
+          "type": "JSON"
         }
       ]
     },
@@ -3037,7 +3021,7 @@
       "examples": [
         {
           "title": "CURL Response",
-          "content": "{\n\t\"payload\": {\n\t\t\"3\": {\n\t\t\t\"submittedFormID\": 3,\n\t\t\t\"title\": \"Assets\",\n\t\t\t\"formID\": 1,\n\t\t\t\"userID\": 20150,\n\t\t\t\"jobID\": 1,\n\t\t\t\"dateCreated\": 1543276384,\n\t\t\t\"dateModified\": 1554265832\n\t\t},\n\t\t\"4\": {\n\t\t\t\"submittedFormID\": 4,\n\t\t\t\"title\": \"New Job - Assets\",\n\t\t\t\"formID\": 1,\n\t\t\t\"userID\": 20150,\n\t\t\t\"jobID\": 3,\n\t\t\t\"dateCreated\": 1543537388,\n\t\t\t\"dateModified\": 1546819983\n\t\t}\n}",
+          "content": "{\n\t\"payload\": {\n\t\t\"3\": {\n\t\t\t\"submittedFormID\": 3,\n\t\t\t\"status\": \"Ok\",\n\t\t\t\"title\": \"Assets\",\n\t\t\t\"formID\": 1,\n\t\t\t\"userID\": 20150,\n\t\t\t\"jobID\": 1,\n\t\t\t\"dateCreated\": 1543276384,\n\t\t\t\"dateModified\": 1554265832,\n\t\t\t\"latitude\": \"\",\n            \"formDataLastSaved\": 0,\n            \"dateSubmitted\": 1543276384,\n            \"longitude\": \"\",\n            \"version\": 2,\n            \"count\": \"2\",\n            \"location\": \"\",\n            \"userName\": \"\"\n\t\t},\n\t\t\"4\": {\n\t\t\t\"submittedFormID\": 4,\n\t\t\t\"status\": \"Ok\",\n\t\t\t\"title\": \"New Job - Assets\",\n\t\t\t\"formID\": 1,\n\t\t\t\"userID\": 20150,\n\t\t\t\"jobID\": 3,\n\t\t\t\"dateCreated\": 1543537388,\n\t\t\t\"dateModified\": 1546819983,\n\t\t\t\"latitude\": \"\",\n            \"formDataLastSaved\": 0,\n            \"dateSubmitted\": 1543537388,\n            \"longitude\": \"\",\n            \"version\": 2,\n            \"count\": \"2\",\n            \"location\": \"\",\n            \"userName\": \"\"\n\t\t}\n}",
           "type": "JSON"
         }
       ]
