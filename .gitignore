@@ -40,3 +40,6 @@ Thumbs.db
 # dotCover
 *.dotCover
 FormitizeAPI/project.lock.json
+
+# IDEs
+.idea/
