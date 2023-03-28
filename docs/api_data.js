@@ -141,168 +141,168 @@ define({ "api": [
         "Client Fields": [
           {
             "group": "Client Fields",
-            "type": "Object",
+            "type": "object",
             "optional": false,
             "field": "client",
             "description": "<p>The Client Object</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "client.id",
             "description": "<p>ID of the client.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "client.billingName",
             "description": "<p>The Billing Name of the client</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Object[]",
+            "type": "object[]",
             "optional": true,
             "field": "client.contact",
             "description": "<p>An array of contacts</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "client.contact.id",
             "description": "<p>The ID of the client's contact.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.firstName",
             "description": "<p>First name of contact.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.lastName",
             "description": "<p>Last name of contact.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.email",
             "description": "<p>First name of contact.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.mobile",
             "description": "<p>Mobile number.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.mobileAreaCode",
             "description": "<p>Mobile number area code.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.workPhone",
             "description": "<p>Work phone number.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.workPhoneAreaCode",
             "description": "<p>Work phone number area code.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.homePhone",
             "description": "<p>Home phone number.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.homePhoneAreaCode",
             "description": "<p>Home phone number area code.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Object",
+            "type": "object",
             "optional": true,
             "field": "client.contact.custom",
             "description": "<p>Object of custom variables.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Object",
+            "type": "object",
             "optional": true,
             "field": "client.contact.custom.OBJECT_1",
             "description": "<p>Custom variable of a client. To set values requires an Object of {&quot;value&quot;: &quot;Example&quot;, &quot;type&quot;: &quot;String&quot;}</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Object[]",
+            "type": "object[]",
             "optional": true,
             "field": "client.location",
             "description": "<p>An array of locations</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "client.location.id",
             "description": "<p>The ID of the client's location.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.location.street1",
             "description": "<p>Street 1 address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.location.street2",
             "description": "<p>Street 2 address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.location.city",
             "description": "<p>City address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.location.state",
             "description": "<p>State address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.location.postcode",
             "description": "<p>Postcode address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.location.country",
             "description": "<p>Country address.</p>"
@@ -544,168 +544,168 @@ define({ "api": [
         "Client Fields": [
           {
             "group": "Client Fields",
-            "type": "Object",
+            "type": "object",
             "optional": false,
             "field": "client",
             "description": "<p>The Client Object</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "client.id",
             "description": "<p>ID of the client.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "client.billingName",
             "description": "<p>The Billing Name of the client</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Object[]",
+            "type": "object[]",
             "optional": true,
             "field": "client.contact",
             "description": "<p>An array of contacts</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "client.contact.id",
             "description": "<p>The ID of the client's contact.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.firstName",
             "description": "<p>First name of contact.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.lastName",
             "description": "<p>Last name of contact.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.email",
             "description": "<p>First name of contact.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.mobile",
             "description": "<p>Mobile number.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.mobileAreaCode",
             "description": "<p>Mobile number area code.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.workPhone",
             "description": "<p>Work phone number.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.workPhoneAreaCode",
             "description": "<p>Work phone number area code.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.homePhone",
             "description": "<p>Home phone number.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.homePhoneAreaCode",
             "description": "<p>Home phone number area code.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Object",
+            "type": "object",
             "optional": true,
             "field": "client.contact.custom",
             "description": "<p>Object of custom variables.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Object",
+            "type": "object",
             "optional": true,
             "field": "client.contact.custom.OBJECT_1",
             "description": "<p>Custom variable of a client. To set values requires an Object of {&quot;value&quot;: &quot;Example&quot;, &quot;type&quot;: &quot;String&quot;}</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Object[]",
+            "type": "object[]",
             "optional": true,
             "field": "client.location",
             "description": "<p>An array of locations</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "client.location.id",
             "description": "<p>The ID of the client's location.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.location.street1",
             "description": "<p>Street 1 address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.location.street2",
             "description": "<p>Street 2 address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.location.city",
             "description": "<p>City address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.location.state",
             "description": "<p>State address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.location.postcode",
             "description": "<p>Postcode address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.location.country",
             "description": "<p>Country address.</p>"
@@ -813,84 +813,84 @@ define({ "api": [
         "Contact Fields": [
           {
             "group": "Contact Fields",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "id",
             "description": "<p>The ID of the client's contact.</p>"
           },
           {
             "group": "Contact Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "firstName",
             "description": "<p>First name of contact.</p>"
           },
           {
             "group": "Contact Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "lastName",
             "description": "<p>Last name of contact.</p>"
           },
           {
             "group": "Contact Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "email",
             "description": "<p>First name of contact.</p>"
           },
           {
             "group": "Contact Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "mobile",
             "description": "<p>Mobile number.</p>"
           },
           {
             "group": "Contact Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "mobileAreaCode",
             "description": "<p>Mobile number area code.</p>"
           },
           {
             "group": "Contact Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "workPhone",
             "description": "<p>Work phone number.</p>"
           },
           {
             "group": "Contact Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "workPhoneAreaCode",
             "description": "<p>Work phone number area code.</p>"
           },
           {
             "group": "Contact Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "homePhone",
             "description": "<p>Home phone number.</p>"
           },
           {
             "group": "Contact Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "homePhoneAreaCode",
             "description": "<p>Home phone number area code.</p>"
           },
           {
             "group": "Contact Fields",
-            "type": "Object",
+            "type": "object",
             "optional": true,
             "field": "custom",
             "description": "<p>Object of custom variables.</p>"
           },
           {
             "group": "Contact Fields",
-            "type": "Object",
+            "type": "object",
             "optional": true,
             "field": "custom.OBJECT_1",
             "description": "<p>Custom variable of a client. To set values requires an Object of {&quot;value&quot;: &quot;Example&quot;, &quot;type&quot;: &quot;String&quot;}</p>"
@@ -984,77 +984,77 @@ define({ "api": [
         "Contact Fields": [
           {
             "group": "Contact Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "firstName",
             "description": "<p>First name of contact.</p>"
           },
           {
             "group": "Contact Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "lastName",
             "description": "<p>Last name of contact.</p>"
           },
           {
             "group": "Contact Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "email",
             "description": "<p>First name of contact.</p>"
           },
           {
             "group": "Contact Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "mobile",
             "description": "<p>Mobile number.</p>"
           },
           {
             "group": "Contact Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "mobileAreaCode",
             "description": "<p>Mobile number area code.</p>"
           },
           {
             "group": "Contact Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "workPhone",
             "description": "<p>Work phone number.</p>"
           },
           {
             "group": "Contact Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "workPhoneAreaCode",
             "description": "<p>Work phone number area code.</p>"
           },
           {
             "group": "Contact Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "homePhone",
             "description": "<p>Home phone number.</p>"
           },
           {
             "group": "Contact Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "homePhoneAreaCode",
             "description": "<p>Home phone number area code.</p>"
           },
           {
             "group": "Contact Fields",
-            "type": "Object",
+            "type": "object",
             "optional": true,
             "field": "custom",
             "description": "<p>Object of custom variables.</p>"
           },
           {
             "group": "Contact Fields",
-            "type": "Object",
+            "type": "object",
             "optional": true,
             "field": "custom.OBJECT_1",
             "description": "<p>Custom variable of a client. To set values requires an Object of {&quot;value&quot;: &quot;Example&quot;, &quot;type&quot;: &quot;String&quot;}</p>"
@@ -1225,161 +1225,161 @@ define({ "api": [
         "Client Fields": [
           {
             "group": "Client Fields",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "id",
             "description": "<p>ID of the client.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "billingName",
             "description": "<p>The Billing Name of the client</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Object[]",
+            "type": "object[]",
             "optional": true,
             "field": "contact",
             "description": "<p>An array of contacts</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "contact.id",
             "description": "<p>The ID of the client's contact.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "contact.firstName",
             "description": "<p>First name of contact.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "contact.lastName",
             "description": "<p>Last name of contact.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "contact.email",
             "description": "<p>First name of contact.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "contact.mobile",
             "description": "<p>Mobile number.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "contact.mobileAreaCode",
             "description": "<p>Mobile number area code.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "contact.workPhone",
             "description": "<p>Work phone number.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "contact.workPhoneAreaCode",
             "description": "<p>Work phone number area code.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "contact.homePhone",
             "description": "<p>Home phone number.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "contact.homePhoneAreaCode",
             "description": "<p>Home phone number area code.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Object",
+            "type": "object",
             "optional": true,
             "field": "contact.custom",
             "description": "<p>Object of custom variables.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Object",
+            "type": "object",
             "optional": true,
             "field": "contact.custom.OBJECT_1",
             "description": "<p>Custom variable of a client. To set values requires an Object of {&quot;value&quot;: &quot;Example&quot;, &quot;type&quot;: &quot;String&quot;}</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Object[]",
+            "type": "object[]",
             "optional": true,
             "field": "location",
             "description": "<p>An array of locations</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "location.id",
             "description": "<p>The ID of the client's location.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "location.street1",
             "description": "<p>Street 1 address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "location.street2",
             "description": "<p>Street 2 address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "location.city",
             "description": "<p>City address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "location.state",
             "description": "<p>State address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "location.postcode",
             "description": "<p>Postcode address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "location.country",
             "description": "<p>Country address.</p>"
@@ -1419,161 +1419,161 @@ define({ "api": [
         "Client Fields": [
           {
             "group": "Client Fields",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "id",
             "description": "<p>ID of the client.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "billingName",
             "description": "<p>The Billing Name of the client</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Object[]",
+            "type": "object[]",
             "optional": true,
             "field": "contact",
             "description": "<p>An array of contacts</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "contact.id",
             "description": "<p>The ID of the client's contact.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "contact.firstName",
             "description": "<p>First name of contact.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "contact.lastName",
             "description": "<p>Last name of contact.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "contact.email",
             "description": "<p>First name of contact.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "contact.mobile",
             "description": "<p>Mobile number.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "contact.mobileAreaCode",
             "description": "<p>Mobile number area code.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "contact.workPhone",
             "description": "<p>Work phone number.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "contact.workPhoneAreaCode",
             "description": "<p>Work phone number area code.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "contact.homePhone",
             "description": "<p>Home phone number.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "contact.homePhoneAreaCode",
             "description": "<p>Home phone number area code.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Object",
+            "type": "object",
             "optional": true,
             "field": "contact.custom",
             "description": "<p>Object of custom variables.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Object",
+            "type": "object",
             "optional": true,
             "field": "contact.custom.OBJECT_1",
             "description": "<p>Custom variable of a client. To set values requires an Object of {&quot;value&quot;: &quot;Example&quot;, &quot;type&quot;: &quot;String&quot;}</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Object[]",
+            "type": "object[]",
             "optional": true,
             "field": "location",
             "description": "<p>An array of locations</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "location.id",
             "description": "<p>The ID of the client's location.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "location.street1",
             "description": "<p>Street 1 address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "location.street2",
             "description": "<p>Street 2 address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "location.city",
             "description": "<p>City address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "location.state",
             "description": "<p>State address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "location.postcode",
             "description": "<p>Postcode address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "location.country",
             "description": "<p>Country address.</p>"
@@ -1630,9 +1630,23 @@ define({ "api": [
     "url": "/crm/accounts/invoice/list",
     "title": "List Invoices",
     "name": "ListInvoice",
+    "description": "<p>List invoices available, returns 500 at a time.</p>",
     "order": "0",
     "group": "CRM_Accounts",
     "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Optional": [
+          {
+            "group": "Optional",
+            "type": "number",
+            "optional": false,
+            "field": "page",
+            "description": "<p>The page number, starting from 1.</p>"
+          }
+        ]
+      }
+    },
     "examples": [
       {
         "title": "CURL Example",
@@ -1773,49 +1787,49 @@ define({ "api": [
         "Location Fields": [
           {
             "group": "Location Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "siteName",
             "description": "<p>Site name.</p>"
           },
           {
             "group": "Location Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "street1",
             "description": "<p>Street 1 address.</p>"
           },
           {
             "group": "Location Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "street2",
             "description": "<p>Street 2 address.</p>"
           },
           {
             "group": "Location Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "city",
             "description": "<p>City address.</p>"
           },
           {
             "group": "Location Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "state",
             "description": "<p>State address.</p>"
           },
           {
             "group": "Location Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "postcode",
             "description": "<p>Postcode address.</p>"
           },
           {
             "group": "Location Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "country",
             "description": "<p>Country address.</p>"
@@ -1848,49 +1862,49 @@ define({ "api": [
         "Location Fields": [
           {
             "group": "Location Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "siteName",
             "description": "<p>Site name.</p>"
           },
           {
             "group": "Location Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "street1",
             "description": "<p>Street 1 address.</p>"
           },
           {
             "group": "Location Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "street2",
             "description": "<p>Street 2 address.</p>"
           },
           {
             "group": "Location Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "city",
             "description": "<p>City address.</p>"
           },
           {
             "group": "Location Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "state",
             "description": "<p>State address.</p>"
           },
           {
             "group": "Location Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "postcode",
             "description": "<p>Postcode address.</p>"
           },
           {
             "group": "Location Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "country",
             "description": "<p>Country address.</p>"
@@ -2009,14 +2023,14 @@ define({ "api": [
         "Optional": [
           {
             "group": "Optional",
-            "type": "Boolean",
+            "type": "boolean",
             "optional": false,
             "field": "simple",
             "description": "<p>If true, only returns a list of objects with no form-schema data.</p>"
           },
           {
             "group": "Optional",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "id",
             "description": "<p>If a form ID is known, then return information about that form.</p>"
@@ -2058,13 +2072,13 @@ define({ "api": [
     "order": "2",
     "parameter": {
       "fields": {
-        "Arguements": [
+        "Optional": [
           {
-            "group": "Arguements",
-            "type": "Number",
+            "group": "Optional",
+            "type": "boolean",
             "optional": false,
-            "field": "id",
-            "description": "<p>Return information about that form template.</p>"
+            "field": "simple",
+            "description": "<p>If true, returns simplified details with no form-schema data.</p>"
           }
         ]
       }
@@ -2184,7 +2198,90 @@ define({ "api": [
     "order": "0",
     "group": "Job",
     "version": "1.0.0",
-    "description": "<p>Get a list of jobs.</p>",
+    "description": "<p>Get a list of jobs, lists 500 at a time. Only lists unfinished jobs by default.</p>",
+    "parameter": {
+      "fields": {
+        "Optional": [
+          {
+            "group": "Optional",
+            "type": "boolean",
+            "optional": false,
+            "field": "finished",
+            "description": "<p>List finished jobs if set (lists unfinished jobs by default).</p>"
+          },
+          {
+            "group": "Optional",
+            "type": "string",
+            "allowedValues": [
+              "\"YYYY-MM-DD\""
+            ],
+            "optional": false,
+            "field": "from",
+            "description": "<p>List jobs with a Due Date starting from the specified date.</p>"
+          },
+          {
+            "group": "Optional",
+            "type": "string",
+            "allowedValues": [
+              "\"YYYY-MM-DD\""
+            ],
+            "optional": false,
+            "field": "to",
+            "description": "<p>List jobs with a Due Date ending before the specified date.</p>"
+          },
+          {
+            "group": "Optional",
+            "type": "number",
+            "optional": false,
+            "field": "page",
+            "description": "<p>The page number, starting from 1.</p>"
+          },
+          {
+            "group": "Optional",
+            "type": "string",
+            "allowedValues": [
+              "\"ASC\"",
+              "\"DESC\""
+            ],
+            "optional": false,
+            "field": "order",
+            "description": "<p>Sort the results by Job ID (defaults to DESC - most recent first).</p>"
+          },
+          {
+            "group": "Optional",
+            "type": "number",
+            "optional": false,
+            "field": "ordernumber",
+            "description": "<p>List jobs for the specified Order Number.</p>"
+          },
+          {
+            "group": "Optional",
+            "type": "number",
+            "optional": false,
+            "field": "jobnumber",
+            "description": "<p>List jobs for the specified Job Number.</p>"
+          },
+          {
+            "group": "Optional",
+            "type": "string",
+            "allowedValues": [
+              "\"2\"",
+              "\"1,2,3\""
+            ],
+            "optional": false,
+            "field": "status",
+            "description": "<p>List jobs matching the specified status. Valid status values (comma-delimited):</p> <ul> <li>Creating: 0</li> <li>Created: 1</li> <li>Assigned: 2</li> <li>Accepted: 3</li> <li>Finished: 4</li> <li>Rejected: 6</li> <li>Rescheduled: 8</li> </ul>"
+          },
+          {
+            "group": "Optional",
+            "type": "string",
+            "optional": false,
+            "field": "agentName",
+            "description": "<p>List jobs assigned to the specified username.</p>"
+          }
+        ]
+      }
+    },
     "examples": [
       {
         "title": "CURL Example",
@@ -2196,7 +2293,7 @@ define({ "api": [
       "examples": [
         {
           "title": "CURL Response",
-          "content": "{\n    \"payload\": {\n        \"5555\": {\n            \"id\": \"5555\",\n            \"maintenanceID\": \"0\",\n            \"clientID\": \"7\",\n            \"contactID\": \"7\",\n            \"billingName\": \"Fred Flint\",\n            \"contactName\": \"Fred Flint\",            \"jobNumber\": \"\",\n            \"orderNumber\": \"\",\n            \"invoiceID\": \"0\",\n            \"invoiceNumber\": \"\",\n            \"title\": \"Person A\",\n            \"forms\": {\n                \"2932\": {\n                    \"id\": \"2932\",\n                    \"title\": \"Features Test\"\n                }\n            },\n            \"location\": \"123 Street\",\n            \"description\": \"\",\n            \"dueDate\": \"1417139760\",\n            \"assignedTo\": \"2251\",\n            \"priority\": \"0\",\n            \"status\": \"4\",\n            \"duration\": \"3600\",\n            \"statusLabel\": \"Completed\"\n        }\n    }\n}",
+          "content": "{\n    \"payload\": {\n        \"5555\": {\n            \"id\": \"5555\",\n            \"maintenanceID\": \"0\",\n            \"clientID\": \"7\",\n            \"contactID\": \"7\",\n            \"billingName\": \"Fred Flint\",\n            \"contactName\": \"Fred Flint\",\n            \"jobNumber\": \"\",\n            \"orderNumber\": \"\",\n            \"invoiceID\": \"0\",\n            \"invoiceNumber\": \"\",\n            \"title\": \"Person A\",\n            \"forms\": {\n                \"2932\": {\n                    \"id\": \"2932\",\n                    \"title\": \"Features Test\"\n                }\n            },\n            \"location\": \"123 Street\",\n            \"description\": \"\",\n            \"dueDate\": \"1417139760\",\n            \"assignedTo\": \"2251\",\n            \"priority\": \"0\",\n            \"status\": \"4\",\n            \"duration\": \"3600\",\n            \"statusLabel\": \"Completed\"\n        }\n    }\n}",
           "type": "JSON"
         }
       ]
@@ -2217,35 +2314,35 @@ define({ "api": [
         "Body": [
           {
             "group": "Body",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "title",
             "description": "<p>The Job Title.</p>"
           },
           {
             "group": "Body",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "jobNumber",
             "description": "<p>The Job Number.</p>"
           },
           {
             "group": "Body",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "orderNumber",
             "description": "<p>The Order Number of the job</p>"
           },
           {
             "group": "Body",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "dueDate",
             "description": "<p>The date represented in unix timestamp (no-milliseconds)</p>"
           },
           {
             "group": "Body",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "duration",
             "defaultValue": "60",
@@ -2253,28 +2350,28 @@ define({ "api": [
           },
           {
             "group": "Body",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "notes",
             "description": "<p>Any notes attached to this job, to be viewed by the Technician.</p>"
           },
           {
             "group": "Body",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "location",
             "description": "<p>Location this job is at.</p>"
           },
           {
             "group": "Body",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "agent",
             "description": "<p>The user agent this job will be assigned to. Can either be the User ID or UserNane.</p>"
           },
           {
             "group": "Body",
-            "type": "Boolean",
+            "type": "boolean",
             "optional": true,
             "field": "sendNotification",
             "defaultValue": "true",
@@ -2282,7 +2379,7 @@ define({ "api": [
           },
           {
             "group": "Body",
-            "type": "String",
+            "type": "string",
             "allowedValues": [
               "Low",
               "Normal",
@@ -2296,14 +2393,14 @@ define({ "api": [
           },
           {
             "group": "Body",
-            "type": "Number[]",
+            "type": "number[]",
             "optional": true,
             "field": "form",
             "description": "<p>The form IDs attached to this job.</p>"
           },
           {
             "group": "Body",
-            "type": "Object[]",
+            "type": "object[]",
             "optional": true,
             "field": "formData",
             "description": "<p>The content of the form.</p>"
@@ -2312,42 +2409,42 @@ define({ "api": [
         "Delivery Fields": [
           {
             "group": "Delivery Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "deliveryLocation",
             "description": "<p>If this is a delivery job, where is the drop-off location.</p>"
           },
           {
             "group": "Delivery Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "siteName",
             "description": "<p>The delivery location site name.</p>"
           },
           {
             "group": "Delivery Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "deliveryContact",
             "description": "<p>The contact person to be delivered to.</p>"
           },
           {
             "group": "Delivery Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "deliveryPhone",
             "description": "<p>The contact's phone number.</p>"
           },
           {
             "group": "Delivery Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "deliveryNotes",
             "description": "<p>Any notes specific to the delivery.</p>"
           },
           {
             "group": "Delivery Fields",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "deliveryDate",
             "description": "<p>Unixtimestamp(no-ms) of the delivery date/time.</p>"
@@ -2356,168 +2453,168 @@ define({ "api": [
         "Client Fields": [
           {
             "group": "Client Fields",
-            "type": "Object",
+            "type": "object",
             "optional": false,
             "field": "client",
             "description": "<p>The Client Object</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "client.id",
             "description": "<p>ID of the client.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "client.billingName",
             "description": "<p>The Billing Name of the client</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Object[]",
+            "type": "object[]",
             "optional": true,
             "field": "client.contact",
             "description": "<p>An array of contacts</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "client.contact.id",
             "description": "<p>The ID of the client's contact.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.firstName",
             "description": "<p>First name of contact.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.lastName",
             "description": "<p>Last name of contact.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.email",
             "description": "<p>First name of contact.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.mobile",
             "description": "<p>Mobile number.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.mobileAreaCode",
             "description": "<p>Mobile number area code.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.workPhone",
             "description": "<p>Work phone number.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.workPhoneAreaCode",
             "description": "<p>Work phone number area code.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.homePhone",
             "description": "<p>Home phone number.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.homePhoneAreaCode",
             "description": "<p>Home phone number area code.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Object",
+            "type": "object",
             "optional": true,
             "field": "client.contact.custom",
             "description": "<p>Object of custom variables.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Object",
+            "type": "object",
             "optional": true,
             "field": "client.contact.custom.OBJECT_1",
             "description": "<p>Custom variable of a client. To set values requires an Object of {&quot;value&quot;: &quot;Example&quot;, &quot;type&quot;: &quot;String&quot;}</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Object[]",
+            "type": "object[]",
             "optional": true,
             "field": "client.location",
             "description": "<p>An array of locations</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "client.location.id",
             "description": "<p>The ID of the client's location.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.location.street1",
             "description": "<p>Street 1 address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.location.street2",
             "description": "<p>Street 2 address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.location.city",
             "description": "<p>City address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.location.state",
             "description": "<p>State address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.location.postcode",
             "description": "<p>Postcode address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.location.country",
             "description": "<p>Country address.</p>"
@@ -2542,21 +2639,21 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "object",
             "optional": false,
             "field": "payload",
             "description": "<p>Payload object.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "payload.jobID",
             "description": "<p>ID of the new created/updaetd job.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "payload.agentID",
             "description": "<p>ID of the agent assigned to the job.</p>"
@@ -2587,35 +2684,35 @@ define({ "api": [
         "Body": [
           {
             "group": "Body",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "title",
             "description": "<p>The Job Title.</p>"
           },
           {
             "group": "Body",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "jobNumber",
             "description": "<p>The Job Number.</p>"
           },
           {
             "group": "Body",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "orderNumber",
             "description": "<p>The Order Number of the job</p>"
           },
           {
             "group": "Body",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "dueDate",
             "description": "<p>The date represented in unix timestamp (no-milliseconds)</p>"
           },
           {
             "group": "Body",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "duration",
             "defaultValue": "60",
@@ -2623,28 +2720,28 @@ define({ "api": [
           },
           {
             "group": "Body",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "notes",
             "description": "<p>Any notes attached to this job, to be viewed by the Technician.</p>"
           },
           {
             "group": "Body",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "location",
             "description": "<p>Location this job is at.</p>"
           },
           {
             "group": "Body",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "agent",
             "description": "<p>The user agent this job will be assigned to. Can either be the User ID or UserNane.</p>"
           },
           {
             "group": "Body",
-            "type": "Boolean",
+            "type": "boolean",
             "optional": true,
             "field": "sendNotification",
             "defaultValue": "true",
@@ -2652,7 +2749,7 @@ define({ "api": [
           },
           {
             "group": "Body",
-            "type": "String",
+            "type": "string",
             "allowedValues": [
               "Low",
               "Normal",
@@ -2666,14 +2763,14 @@ define({ "api": [
           },
           {
             "group": "Body",
-            "type": "Number[]",
+            "type": "number[]",
             "optional": true,
             "field": "form",
             "description": "<p>The form IDs attached to this job.</p>"
           },
           {
             "group": "Body",
-            "type": "Object[]",
+            "type": "object[]",
             "optional": true,
             "field": "formData",
             "description": "<p>The content of the form.</p>"
@@ -2682,42 +2779,42 @@ define({ "api": [
         "Delivery Fields": [
           {
             "group": "Delivery Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "deliveryLocation",
             "description": "<p>If this is a delivery job, where is the drop-off location.</p>"
           },
           {
             "group": "Delivery Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "siteName",
             "description": "<p>The delivery location site name.</p>"
           },
           {
             "group": "Delivery Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "deliveryContact",
             "description": "<p>The contact person to be delivered to.</p>"
           },
           {
             "group": "Delivery Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "deliveryPhone",
             "description": "<p>The contact's phone number.</p>"
           },
           {
             "group": "Delivery Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "deliveryNotes",
             "description": "<p>Any notes specific to the delivery.</p>"
           },
           {
             "group": "Delivery Fields",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "deliveryDate",
             "description": "<p>Unix timestamp (no-ms) of the delivery date/time.</p>"
@@ -2726,168 +2823,168 @@ define({ "api": [
         "Client Fields": [
           {
             "group": "Client Fields",
-            "type": "Object",
+            "type": "object",
             "optional": false,
             "field": "client",
             "description": "<p>The Client Object</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "client.id",
             "description": "<p>ID of the client.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "client.billingName",
             "description": "<p>The Billing Name of the client</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Object[]",
+            "type": "object[]",
             "optional": true,
             "field": "client.contact",
             "description": "<p>An array of contacts</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "client.contact.id",
             "description": "<p>The ID of the client's contact.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.firstName",
             "description": "<p>First name of contact.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.lastName",
             "description": "<p>Last name of contact.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.email",
             "description": "<p>First name of contact.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.mobile",
             "description": "<p>Mobile number.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.mobileAreaCode",
             "description": "<p>Mobile number area code.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.workPhone",
             "description": "<p>Work phone number.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.workPhoneAreaCode",
             "description": "<p>Work phone number area code.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.homePhone",
             "description": "<p>Home phone number.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.contact.homePhoneAreaCode",
             "description": "<p>Home phone number area code.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Object",
+            "type": "object",
             "optional": true,
             "field": "client.contact.custom",
             "description": "<p>Object of custom variables.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Object",
+            "type": "object",
             "optional": true,
             "field": "client.contact.custom.OBJECT_1",
             "description": "<p>Custom variable of a client. To set values requires an Object of {&quot;value&quot;: &quot;Example&quot;, &quot;type&quot;: &quot;String&quot;}</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Object[]",
+            "type": "object[]",
             "optional": true,
             "field": "client.location",
             "description": "<p>An array of locations</p>"
           },
           {
             "group": "Client Fields",
-            "type": "Number",
+            "type": "number",
             "optional": true,
             "field": "client.location.id",
             "description": "<p>The ID of the client's location.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.location.street1",
             "description": "<p>Street 1 address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.location.street2",
             "description": "<p>Street 2 address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.location.city",
             "description": "<p>City address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.location.state",
             "description": "<p>State address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.location.postcode",
             "description": "<p>Postcode address.</p>"
           },
           {
             "group": "Client Fields",
-            "type": "String",
+            "type": "string",
             "optional": true,
             "field": "client.location.country",
             "description": "<p>Country address.</p>"
@@ -2933,7 +3030,7 @@ define({ "api": [
         "Arguments": [
           {
             "group": "Arguments",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "id",
             "description": "<p>The ID of the submitted form.</p>"
@@ -2942,7 +3039,7 @@ define({ "api": [
         "Optional": [
           {
             "group": "Optional",
-            "type": "Boolean",
+            "type": "boolean",
             "optional": false,
             "field": "simple",
             "description": "<p>Submitted form data format is simplified if true.</p>"
@@ -2976,6 +3073,77 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/form/submit/?id=n",
+    "title": "Get Submitted Forms by ID",
+    "name": "SubmittedGetIDs",
+    "group": "Submitted_Forms",
+    "order": "3",
+    "version": "1.0.0",
+    "description": "<p>Returns a list of submitted forms or a single form.</p>",
+    "parameter": {
+      "fields": {
+        "Arguments": [
+          {
+            "group": "Arguments",
+            "type": "string",
+            "allowedValues": [
+              "\"1\"",
+              "\"1,2,3\""
+            ],
+            "optional": false,
+            "field": "id",
+            "description": "<p>The ID(s) of the submitted form(s) (multiples are comma delimited).</p>"
+          }
+        ],
+        "Optional": [
+          {
+            "group": "Optional",
+            "type": "boolean",
+            "optional": false,
+            "field": "simple",
+            "description": "<p>Submitted form data format is simplified if true.</p>"
+          },
+          {
+            "group": "Optional",
+            "type": "number",
+            "optional": false,
+            "field": "jobID",
+            "description": "<p>Returns the list of submitted forms attached to a Job ID.</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "CURL Example",
+        "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/form/submit/?id=1,2,3",
+        "type": "json"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "CURL Response",
+          "content": "{\n\t\"payload\": {\n\t\t\"146\": {\n\t\t\t\"submittedFormID\": \"146\",\n\t\t\t\"jobID\": \"894\",\n\t\t\t\"formID\": \"35639\",\n\t\t\t\"userID\": \"20150\",\n\t\t\t\"userName\": \"admin\",\n\t\t\t\"count\": \"4\",\n\t\t\t\"version\": \"8\",\n\t\t\t\"title\": \"CRM Extra\",\n\t\t\t\"formDateCreated\": \"1563175490\",\n\t\t\t\"dateSubmitted\": \"1563175490\",\n\t\t\t\"dateModified\": \"1563175490\",\n\t\t\t\"formDataLastSaved\": \"0\",\n\t\t\t\"modifiedBy\": \"0\",\n\t\t\t\"latitude\": false,\n\t\t\t\"longitude\": false,\n\t\t\t\"location\": false,\n\t\t\t\"content\": {\n\t\t\t\t\"formSubheader_1\": {\n\t\t\t\t\t\"0\": {\n\t\t\t\t\t\t\"id\": 31,\n\t\t\t\t\t\t\"type\": \"formSubheader\",\n\t\t\t\t\t\t\"name\": \"formSubheader_1\",\n\t\t\t\t\t\t\"children\": {\n\t\t\t\t\t\t\t\"signed\": {\n\t\t\t\t\t\t\t\t\"id\": 44,\n\t\t\t\t\t\t\t\t\"type\": \"formSignature\",\n\t\t\t\t\t\t\t\t\"name\": \"signed\",\n\t\t\t\t\t\t\t\t\"image\": \"https://url/\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"signedDate\": {\n\t\t\t\t\t\t\t\t\"id\": 45,\n\t\t\t\t\t\t\t\t\"type\": \"formText\",\n\t\t\t\t\t\t\t\t\"name\": \"signedDate\",\n\t\t\t\t\t\t\t\t\"value\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"totalPayable\": {\n\t\t\t\t\t\t\t\t\"id\": 46,\n\t\t\t\t\t\t\t\t\"type\": \"formText\",\n\t\t\t\t\t\t\t\t\"name\": \"totalPayable\",\n\t\t\t\t\t\t\t\t\"value\": \"1231\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"PaymentMethod\": {\n\t\t\t\t\t\t\t\t\"id\": 53,\n\t\t\t\t\t\t\t\t\"type\": \"formMultiple\",\n\t\t\t\t\t\t\t\t\"name\": \"PaymentMethod\",\n\t\t\t\t\t\t\t\t\"value\": {\n\t\t\t\t\t\t\t\t\t\"0\": \"Cash\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"sendEmail\": {\n\t\t\t\t\t\t\t\t\"id\": 65,\n\t\t\t\t\t\t\t\t\"type\": \"formText\",\n\t\t\t\t\t\t\t\t\"name\": \"sendEmail\",\n\t\t\t\t\t\t\t\t\"value\": \"support@formitize.com\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"status\": \"Ok\",\n\t\t\t\"attachments\": {\n\t\t\t\t\"0\": {\n\t\t\t\t\t\"url\": \"https://UrlToDocument\",\n\t\t\t\t\t\"type\": \"pdf\",\n\t\t\t\t\t\"name\": \"Default\"\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\t...\n\t}\n}",
+          "type": "JSON"
+        },
+        {
+          "title": "CURL Response (single)",
+          "content": "{\n\t\"payload\": {\n\t\t\"submittedFormID\": \"146\",\n\t\t\"jobID\": \"894\",\n\t\t\"formID\": \"35639\",\n\t\t\"userID\": \"20150\",\n\t\t\"userName\": \"admin\",\n\t\t\"count\": \"4\",\n\t\t\"version\": \"8\",\n\t\t\"title\": \"CRM Extra\",\n\t\t\"formDateCreated\": \"1563175490\",\n\t\t\"dateSubmitted\": \"1563175490\",\n        \"dateModified\": \"1563175490\",\n        \"formDataLastSaved\": \"0\",\n        \"modifiedBy\": \"0\",\n\t\t\"latitude\": false,\n\t\t\"longitude\": false,\n\t\t\"location\": false,\n\t\t\"content\": {\n\t\t\t\"formSubheader_1\": {\n\t\t\t\t\"0\": {\n\t\t\t\t\t\"id\": 31,\n\t\t\t\t\t\"type\": \"formSubheader\",\n\t\t\t\t\t\"name\": \"formSubheader_1\",\n\t\t\t\t\t\"children\": {\n\t\t\t\t\t\t\"signed\": {\n\t\t\t\t\t\t\t\"id\": 44,\n\t\t\t\t\t\t\t\"type\": \"formSignature\",\n\t\t\t\t\t\t\t\"name\": \"signed\",\n\t\t\t\t\t\t\t\"image\": \"https://url/\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"signedDate\": {\n\t\t\t\t\t\t\t\"id\": 45,\n\t\t\t\t\t\t\t\"type\": \"formText\",\n\t\t\t\t\t\t\t\"name\": \"signedDate\",\n\t\t\t\t\t\t\t\"value\": \"\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"totalPayable\": {\n\t\t\t\t\t\t\t\"id\": 46,\n\t\t\t\t\t\t\t\"type\": \"formText\",\n\t\t\t\t\t\t\t\"name\": \"totalPayable\",\n\t\t\t\t\t\t\t\"value\": \"1231\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"PaymentMethod\": {\n\t\t\t\t\t\t\t\"id\": 53,\n\t\t\t\t\t\t\t\"type\": \"formMultiple\",\n\t\t\t\t\t\t\t\"name\": \"PaymentMethod\",\n\t\t\t\t\t\t\t\"value\": {\n\t\t\t\t\t\t\t\t\"0\": \"Cash\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"sendEmail\": {\n\t\t\t\t\t\t\t\"id\": 65,\n\t\t\t\t\t\t\t\"type\": \"formText\",\n\t\t\t\t\t\t\t\"name\": \"sendEmail\",\n\t\t\t\t\t\t\t\"value\": \"support@formitize.com\"\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t},\n\t\t\"status\": \"Ok\",\n\t\t\"attachments\": {\n\t\t\t\"0\": {\n\t\t\t\t\"url\": \"https://UrlToDocument\",\n\t\t\t\t\"type\": \"pdf\",\n\t\t\t\t\"name\": \"Default\"\n\t\t\t}\n\t\t}\n\t}\n}",
+          "type": "JSON"
+        },
+        {
+          "title": "CURL Response (simple)",
+          "content": "{\n\t\"payload\": {\n\t\t\"submittedFormID\": \"146\",\n\t\t\"jobID\": \"894\",\n\t\t\"formID\": \"35639\",\n\t\t\"version\": \"8\",\n\t\t\"title\": \"CRM Extra\",\n\t\t\"formDateCreated\": \"1563175490\",\n\t\t\"formDataLastSaved\": \"0\",\n        \"dateSubmitted\": \"1563175490\",\n        \"dateModified\": \"1563175490\",\n        \"modifiedBy\": \"0\",\n\t\t\"latitude\": \"0.0\",\n        \"longitude\": \"0.0\",\n        \"location\": \"\",\n        \"status\": \"Ok\",\n        \"userID\": \"20150\",\n        \"userName\": \"admin\",\n\t\t\"content\": {\n\t\t\t\"signed\": {\n\t\t\t\t\"0\": \"https://UrlToImage/\"\n\t\t\t},\n\t\t\t\"signedDate\": {\n\t\t\t\t\"0\": \"\"\n\t\t\t},\n\t\t\t\"totalPayable\": {\n\t\t\t\t\"0\": \"1231\"\n\t\t\t},\n\t\t\t\"Description of work\": {\n\t\t\t\t\"0\": {\n\t\t\t\t\t\"0\": \"Custom\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"formCheckbox_4\": {\n\t\t\t\t\"0\": {\n\t\t\t\t\t\"0\": \"No Risks Identified\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"PaymentMethod\": {\n\t\t\t\t\"0\": {\n\t\t\t\t\t\"0\": \"Cash\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"sendEmail\": {\n\t\t\t\t\"0\": \"dimitri@formitize.com\"\n\t\t\t},\n\t\t\t\"Treatment time\": {\n\t\t\t\t\"0\": \"1:00 AM\"\n\t\t\t}\n\t\t},\n\t\t\"attachments\": {\n\t\t\t\"0\": {\n\t\t\t\t\"url\": \"https://UrlToDocument\",\n\t\t\t\t\"type\": \"pdf\",\n\t\t\t\t\"name\": \"Default\"\n\t\t\t}\n\t\t}\n\t}\n}",
+          "type": "JSON"
+        }
+      ]
+    },
+    "filename": "app/system/class/api/rest/v1/form/_apidoc.submit.js",
+    "groupTitle": "Submitted_Forms"
+  },
+  {
+    "type": "get",
     "url": "/form/submit/list",
     "title": "List Submitted Forms",
     "name": "SubmittedList",
@@ -2988,24 +3156,45 @@ define({ "api": [
         "Optional": [
           {
             "group": "Optional",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "title",
             "description": "<p>Searches submitted forms for the title.</p>"
           },
           {
             "group": "Optional",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "page",
             "description": "<p>Returns the results for x page. Defaults to 1.</p>"
           },
           {
             "group": "Optional",
-            "type": "Number",
+            "type": "number",
             "optional": false,
             "field": "jobID",
             "description": "<p>Returns the list of submitted forms attached to a Job ID.</p>"
+          },
+          {
+            "group": "Optional",
+            "type": "string",
+            "allowedValues": [
+              "\"YYYY-MM-DD\""
+            ],
+            "optional": false,
+            "field": "modifiedAfterDate",
+            "description": "<p>List submitted forms modified on or after the specified date.</p>"
+          },
+          {
+            "group": "Optional",
+            "type": "string",
+            "allowedValues": [
+              "\"1\"",
+              "\"1,2,3\""
+            ],
+            "optional": false,
+            "field": "formID",
+            "description": "<p>List submitted forms from the matching Form ID(s) (multiples are comma-delimited).</p>"
           }
         ]
       }
