@@ -42,14 +42,14 @@ define({ "api": [
           {
             "group": "Body",
             "type": "string",
-            "optional": false,
+            "optional": true,
             "field": "number",
             "description": "<p>Asset number.</p>"
           },
           {
             "group": "Body",
             "type": "string",
-            "optional": false,
+            "optional": true,
             "field": "description",
             "description": "<p>description of the asset.</p>"
           },
@@ -407,7 +407,7 @@ define({ "api": [
     "examples": [
       {
         "title": "CURL Example",
-        "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/asset/schema/list/:schemaID",
+        "content": "curl -A YourCompany -u admin:password -X \"GET\" https://service.formitize.com/api/rest/v2/asset/schema/list/3",
         "type": "json"
       }
     ],
@@ -445,14 +445,14 @@ define({ "api": [
           {
             "group": "Body",
             "type": "string",
-            "optional": false,
+            "optional": true,
             "field": "number",
             "description": "<p>Asset number.</p>"
           },
           {
             "group": "Body",
             "type": "string",
-            "optional": false,
+            "optional": true,
             "field": "description",
             "description": "<p>description of the asset.</p>"
           },
@@ -758,14 +758,14 @@ define({ "api": [
         "CURL Authorisation": [
           {
             "group": "CURL Authorisation",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "--user-agent",
             "description": "<p>This is the company login name used on Formitize e.g. &quot;Formitize&quot;</p>"
           },
           {
             "group": "CURL Authorisation",
-            "type": "String",
+            "type": "string",
             "optional": false,
             "field": "--u",
             "description": "<p>This will be the user:password b64 encrypted e.g. Username123:password123</p>"
@@ -1001,7 +1001,7 @@ define({ "api": [
             "type": "string",
             "optional": true,
             "field": "email",
-            "description": "<p>First name of contact.</p>"
+            "description": "<p>Email address of contact.</p>"
           },
           {
             "group": "Contact Fields",
@@ -1150,6 +1150,19 @@ define({ "api": [
     "order": "5",
     "group": "CRM",
     "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Optional": [
+          {
+            "group": "Optional",
+            "type": "number",
+            "optional": true,
+            "field": "page",
+            "description": "<p>The page number, starting from 1.</p>"
+          }
+        ]
+      }
+    },
     "examples": [
       {
         "title": "CURL Example",
@@ -1171,7 +1184,7 @@ define({ "api": [
   },
   {
     "type": "Get",
-    "url": "/crm/client/list/?page=1",
+    "url": "/crm/client/list/",
     "title": "List Clients",
     "description": "<p>List all the contacts and clients available, returns 500 at a time.</p>",
     "name": "ListContactsClient",
@@ -1184,7 +1197,7 @@ define({ "api": [
           {
             "group": "Optional",
             "type": "number",
-            "optional": false,
+            "optional": true,
             "field": "page",
             "description": "<p>The page number, starting from 1.</p>"
           }
@@ -1640,9 +1653,45 @@ define({ "api": [
           {
             "group": "Optional",
             "type": "number",
-            "optional": false,
+            "optional": true,
             "field": "page",
             "description": "<p>The page number, starting from 1.</p>"
+          },
+          {
+            "group": "Optional",
+            "type": "number",
+            "optional": true,
+            "field": "clientID",
+            "description": "<p>List invoices with the specified Client ID.</p>"
+          },
+          {
+            "group": "Optional",
+            "type": "string",
+            "optional": true,
+            "field": "value",
+            "description": "<p>Search for invoices that contain the specified search value.</p>"
+          },
+          {
+            "group": "Optional",
+            "type": "string",
+            "allowedValues": [
+              "\"YYYY-MM-DD\"",
+              "\"Unix_timestamp\""
+            ],
+            "optional": true,
+            "field": "datecreated-from",
+            "description": "<p>List invoices created on or after the given date.</p>"
+          },
+          {
+            "group": "Optional",
+            "type": "string",
+            "allowedValues": [
+              "\"YYYY-MM-DD\"",
+              "\"Unix_timestamp\""
+            ],
+            "optional": true,
+            "field": "datecreated-to",
+            "description": "<p>List invoices created on or after the given date.</p>"
           }
         ]
       }
@@ -1979,9 +2028,9 @@ define({ "api": [
           {
             "group": "Body",
             "type": "json",
-            "optional": false,
+            "optional": true,
             "field": "pk",
-            "description": "<p>Optional, list of primary keys used to match content when insert/updating values.</p>"
+            "description": "<p>List of primary keys used to match content when insert/updating values.</p>"
           }
         ]
       }
@@ -2024,14 +2073,14 @@ define({ "api": [
           {
             "group": "Optional",
             "type": "boolean",
-            "optional": false,
+            "optional": true,
             "field": "simple",
             "description": "<p>If true, only returns a list of objects with no form-schema data.</p>"
           },
           {
             "group": "Optional",
             "type": "number",
-            "optional": false,
+            "optional": true,
             "field": "id",
             "description": "<p>If a form ID is known, then return information about that form.</p>"
           }
@@ -2076,7 +2125,7 @@ define({ "api": [
           {
             "group": "Optional",
             "type": "boolean",
-            "optional": false,
+            "optional": true,
             "field": "simple",
             "description": "<p>If true, returns simplified details with no form-schema data.</p>"
           }
@@ -2205,7 +2254,7 @@ define({ "api": [
           {
             "group": "Optional",
             "type": "boolean",
-            "optional": false,
+            "optional": true,
             "field": "finished",
             "description": "<p>List finished jobs if set (lists unfinished jobs by default).</p>"
           },
@@ -2213,9 +2262,10 @@ define({ "api": [
             "group": "Optional",
             "type": "string",
             "allowedValues": [
-              "\"YYYY-MM-DD\""
+              "\"YYYY-MM-DD\"",
+              "\"Unix_timestamp\""
             ],
-            "optional": false,
+            "optional": true,
             "field": "from",
             "description": "<p>List jobs with a Due Date starting from the specified date.</p>"
           },
@@ -2223,16 +2273,17 @@ define({ "api": [
             "group": "Optional",
             "type": "string",
             "allowedValues": [
-              "\"YYYY-MM-DD\""
+              "\"YYYY-MM-DD\"",
+              "\"Unix_timestamp\""
             ],
-            "optional": false,
+            "optional": true,
             "field": "to",
             "description": "<p>List jobs with a Due Date ending before the specified date.</p>"
           },
           {
             "group": "Optional",
             "type": "number",
-            "optional": false,
+            "optional": true,
             "field": "page",
             "description": "<p>The page number, starting from 1.</p>"
           },
@@ -2243,21 +2294,22 @@ define({ "api": [
               "\"ASC\"",
               "\"DESC\""
             ],
-            "optional": false,
+            "optional": true,
             "field": "order",
-            "description": "<p>Sort the results by Job ID (defaults to DESC - most recent first).</p>"
+            "defaultValue": "DESC",
+            "description": "<p>Sort the results by Job ID (defaults to most recent first).</p>"
           },
           {
             "group": "Optional",
             "type": "number",
-            "optional": false,
+            "optional": true,
             "field": "ordernumber",
             "description": "<p>List jobs for the specified Order Number.</p>"
           },
           {
             "group": "Optional",
             "type": "number",
-            "optional": false,
+            "optional": true,
             "field": "jobnumber",
             "description": "<p>List jobs for the specified Job Number.</p>"
           },
@@ -2268,14 +2320,14 @@ define({ "api": [
               "\"2\"",
               "\"1,2,3\""
             ],
-            "optional": false,
+            "optional": true,
             "field": "status",
             "description": "<p>List jobs matching the specified status. Valid status values (comma-delimited):</p> <ul> <li>Creating: 0</li> <li>Created: 1</li> <li>Assigned: 2</li> <li>Accepted: 3</li> <li>Finished: 4</li> <li>Rejected: 6</li> <li>Rescheduled: 8</li> </ul>"
           },
           {
             "group": "Optional",
             "type": "string",
-            "optional": false,
+            "optional": true,
             "field": "agentName",
             "description": "<p>List jobs assigned to the specified username.</p>"
           }
@@ -2365,9 +2417,9 @@ define({ "api": [
           {
             "group": "Body",
             "type": "string",
-            "optional": false,
+            "optional": true,
             "field": "agent",
-            "description": "<p>The user agent this job will be assigned to. Can either be the User ID or UserNane.</p>"
+            "description": "<p>The user agent this job will be assigned to. Can either be the User ID or Username.</p>"
           },
           {
             "group": "Body",
@@ -2381,11 +2433,11 @@ define({ "api": [
             "group": "Body",
             "type": "string",
             "allowedValues": [
-              "Low",
-              "Normal",
-              "Medium",
-              "High",
-              "Urgent"
+              "\"Low\"",
+              "\"Normal\"",
+              "\"Medium\"",
+              "\"High\"",
+              "\"Urgent\""
             ],
             "optional": true,
             "field": "priority",
@@ -2735,9 +2787,9 @@ define({ "api": [
           {
             "group": "Body",
             "type": "string",
-            "optional": false,
+            "optional": true,
             "field": "agent",
-            "description": "<p>The user agent this job will be assigned to. Can either be the User ID or UserNane.</p>"
+            "description": "<p>The user agent this job will be assigned to. Can either be the User ID or Username.</p>"
           },
           {
             "group": "Body",
@@ -2751,11 +2803,11 @@ define({ "api": [
             "group": "Body",
             "type": "string",
             "allowedValues": [
-              "Low",
-              "Normal",
-              "Medium",
-              "High",
-              "Urgent"
+              "\"Low\"",
+              "\"Normal\"",
+              "\"Medium\"",
+              "\"High\"",
+              "\"Urgent\""
             ],
             "optional": true,
             "field": "priority",
@@ -3027,20 +3079,11 @@ define({ "api": [
     "description": "<p>Returns the submitted form.</p>",
     "parameter": {
       "fields": {
-        "Arguments": [
-          {
-            "group": "Arguments",
-            "type": "number",
-            "optional": false,
-            "field": "id",
-            "description": "<p>The ID of the submitted form.</p>"
-          }
-        ],
         "Optional": [
           {
             "group": "Optional",
             "type": "boolean",
-            "optional": false,
+            "optional": true,
             "field": "simple",
             "description": "<p>Submitted form data format is simplified if true.</p>"
           }
@@ -3099,14 +3142,14 @@ define({ "api": [
           {
             "group": "Optional",
             "type": "boolean",
-            "optional": false,
+            "optional": true,
             "field": "simple",
             "description": "<p>Submitted form data format is simplified if true.</p>"
           },
           {
             "group": "Optional",
             "type": "number",
-            "optional": false,
+            "optional": true,
             "field": "jobID",
             "description": "<p>Returns the list of submitted forms attached to a Job ID.</p>"
           }
@@ -3157,21 +3200,21 @@ define({ "api": [
           {
             "group": "Optional",
             "type": "string",
-            "optional": false,
+            "optional": true,
             "field": "title",
             "description": "<p>Searches submitted forms for the title.</p>"
           },
           {
             "group": "Optional",
             "type": "number",
-            "optional": false,
+            "optional": true,
             "field": "page",
             "description": "<p>Returns the results for x page. Defaults to 1.</p>"
           },
           {
             "group": "Optional",
             "type": "number",
-            "optional": false,
+            "optional": true,
             "field": "jobID",
             "description": "<p>Returns the list of submitted forms attached to a Job ID.</p>"
           },
@@ -3179,9 +3222,10 @@ define({ "api": [
             "group": "Optional",
             "type": "string",
             "allowedValues": [
-              "\"YYYY-MM-DD\""
+              "\"YYYY-MM-DD\"",
+              "\"Unix_timestamp\""
             ],
-            "optional": false,
+            "optional": true,
             "field": "modifiedAfterDate",
             "description": "<p>List submitted forms modified on or after the specified date.</p>"
           },
@@ -3192,7 +3236,7 @@ define({ "api": [
               "\"1\"",
               "\"1,2,3\""
             ],
-            "optional": false,
+            "optional": true,
             "field": "formID",
             "description": "<p>List submitted forms from the matching Form ID(s) (multiples are comma-delimited).</p>"
           }
