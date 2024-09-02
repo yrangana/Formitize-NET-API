@@ -16,7 +16,7 @@ namespace Tests.UnitTests
 
             var client = new WebClient(Helper.createCredentials());
 
-            var getTask = FormitizeHelper.SubmittedForms.QueryForSubmittedForm(client, "Your Value", lastModified: DateTime.Now.AddDays(-14));
+            var getTask = FormitizeHelper.SubmittedForms.QueryForSubmittedForm(client, "Your Value", lastDateModified: DateTime.Now.AddDays(-14));
             var getResponse = getTask.Result;
 
             foreach (var item in getResponse.Payload)
