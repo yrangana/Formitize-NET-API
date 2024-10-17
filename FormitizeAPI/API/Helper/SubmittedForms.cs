@@ -14,11 +14,18 @@ namespace Formitize.API.Helper
          * <exception cref="Formitize.API.Error.APIException">On any API errors.</exception>
          * param name="query" a text
          */
-        public static async Task<Response<Dictionary<string, SubmittedFormListEntry>>> QueryForSubmittedForm(WebClient client, string query, int profileID = 0, int page = 1, DateTime? lastDateModified = null)
+        public static async Task<Response<Dictionary<string, SubmittedFormListEntry>>> QueryForSubmittedForm(
+            WebClient client, string query, int profileID = 0, int page = 1,
+            DateTime? lastDateModified = null,
+            int? formID = 0,
+            string? status = "",
+           )
         {
             SubmittedFormRequest jobRequest = new SubmittedFormRequest();
             jobRequest.Query = query;
             if (profileID != 0) jobRequest.AddHeader("profileID", profileID.ToString());
+            if (formID != 0) jobRequest.AddHeader("formID", formID.ToString());
+            if (status != "") jobRequest.AddHeader("status", status);
             jobRequest.AddHeader("page", page.ToString());
             if (lastDateModified.HasValue)
             {
