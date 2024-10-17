@@ -18,7 +18,7 @@ namespace Formitize.API.Helper
             WebClient client, string query, int profileID = 0, int page = 1,
             DateTime? lastDateModified = null,
             int? formID = 0,
-            string? status = "",
+            string? status = ""
            )
         {
             SubmittedFormRequest jobRequest = new SubmittedFormRequest();
