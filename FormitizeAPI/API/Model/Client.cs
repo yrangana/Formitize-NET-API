@@ -30,6 +30,12 @@ namespace Formitize.API.Model
             get; private set;
         }
 
+        [JsonProperty(PropertyName = "status")]
+        public string Status
+        {
+            get; private set;
+        }
+
         [JsonProperty(PropertyName = "primaryContactPhone")]
         public string PrimaryContactPhone
         {
