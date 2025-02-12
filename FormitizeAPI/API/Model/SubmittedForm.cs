@@ -51,6 +51,48 @@ namespace Formitize.API.Model
             get; set;
         }
 
+        [JsonProperty(PropertyName = "dateSubmitted")]
+        public int DateSubmittedUnixTimestamp
+        {
+            get; private set;
+        }
+
+        public DateTime DateSubmitted
+        {
+            get
+            {
+                return new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(DateSubmittedUnixTimestamp);
+            }
+        }
+
+        [JsonProperty(PropertyName = "dateModified")]
+        public int DateModifiedUnixTimestamp
+        {
+            get; private set;
+        }
+
+        public DateTime DateModified
+        {
+            get
+            {
+                return new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(DateModifiedUnixTimestamp);
+            }
+        }
+
+        [JsonProperty(PropertyName = "dateCreated")]
+        public int DateCreatedUnixTimestamp
+        {
+            get; private set;
+        }
+
+        public DateTime DateCreated
+        {
+            get
+            {
+                return new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(DateCreatedUnixTimestamp);
+            }
+        }
+
 		public SubmittedForm()
 		{
             content = new Dictionary<string, Dictionary<string, object>>();
