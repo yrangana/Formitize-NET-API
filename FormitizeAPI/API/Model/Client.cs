@@ -31,7 +31,7 @@ namespace Formitize.API.Model
         }
 
         [JsonProperty(PropertyName = "status")]
-        public string Status
+        public List<string> Status
         {
             get; private set;
         }
